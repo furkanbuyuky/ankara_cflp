@@ -85,7 +85,7 @@ def run_de(problem: Problem, cfg: DEConfig, tracer: Tracer | None = None) -> tup
     best = sols[best_i]
     tr.state["best"] = ind(best_i)
     costs = np.array([s.total for s in sols])
-    tr.generation(generation_summary(0, ev.evals, costs, np.array([s.genes for s in sols]), best, True))
+    tr.generation(generation_summary(0, ev.evals, costs, np.array([s.genes for s in sols]), best, True, d=problem.d))
 
     gen = 0
     while ev.evals < cfg.max_evals and not tr.stop_requested:
@@ -147,7 +147,7 @@ def run_de(problem: Problem, cfg: DEConfig, tracer: Tracer | None = None) -> tup
         tr.state.pop("target", None)
         tr.emit("de.best", "best_update", improved=improved, best_cost=round(best.total, 3))
         tr.generation(generation_summary(gen, ev.evals, costs, np.array([s.genes for s in sols]),
-                                         best, improved))
+                                         best, improved, d=problem.d))
 
     tr.emit("de.return", "done", best_cost=round(best.total, 3))
     stats = {"evals": ev.evals, "generations": gen, "seconds": round(time.perf_counter() - t0, 3),

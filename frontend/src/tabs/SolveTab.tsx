@@ -18,6 +18,9 @@ const SC_DESC: Record<Scenario, string> = {
   multi: "Her yere küçük (250), orta (600) ya da büyük (1.200 yatak) hastane açılabilir.",
 };
 const methodInfo = (m: Method) => METHODS.find((x) => x.value === m)!;
+/** Gerçek maliyet: açılış + ulaşım. Karşılanmama cezası modelin talebi karşılamaya zorlanması
+ * için konmuş yapay bir terimdir, harcama değildir; ekranda ayrı gösterilir. */
+const realCost = (c: { fixed: number; assign: number }) => c.fixed + c.assign;
 const limitLabel = (l: number | null) => (l == null ? "Sınırsız" : `En fazla ${l}`);
 
 export default function SolveTab() {
@@ -270,7 +273,8 @@ function MapPanel(props: {
       {run && (
         <div className="map-status">
           <b>{methodInfo(run.method).label}</b> · {SC_LABEL[run.scenario]} · {limitLabel(run.limit)}
-          {g ? <> · <span className="num">{g.gen}. nesil · {mtl(g.best)}</span></> : null}
+          {g ? <> · <span className="num">{g.gen}. nesil · {mtl(realCost(g.best_cost))}</span></> : null}
+          {g && (g.unmet_beds ?? 0) > 0 ? <span className="badge bad">{n0(g.unmet_beds)} yatak açıkta</span> : null}
           {run.status === "running" && <span className="live-dot" aria-label="hesaplanıyor" />}
         </div>
       )}
@@ -300,9 +304,14 @@ function ResultCard({ run, idx, mipRef }: { run: Run | null; idx: number; mipRef
   const atEnd = !run.gens.length || idx >= run.gens.length - 1;
   const sol = atEnd && run.best ? run.best : null;
   const cost = sol ? sol.cost : g?.best_cost;
-  const total = cost?.total ?? 0;
-  const ref = run.method === "mip" ? null : mipRef?.cost.total ?? null;
-  const gap = ref ? (total - ref) / ref : null;
+  const real = cost ? realCost(cost) : 0;
+  const unmet = sol ? sol.kpi.unmet_beds : g?.unmet_beds ?? 0;
+  const refReal = mipRef ? realCost(mipRef.cost) : null;
+  const refUnmet = mipRef?.kpi.unmet_beds ?? 0;
+  let costSub: string | undefined;
+  if (run.method === "mip") costSub = "en iyi bilinen çözüm";
+  else if (refReal != null && unmet === 0 && refUnmet === 0) costSub = `MIP'e göre ${real >= refReal ? "+" : ""}${pct((real - refReal) / refReal, 1)}`;
+  else if (refReal != null) costSub = `MIP: ${mtl(refReal)}, ${refUnmet > 0 ? `${n0(refUnmet)} yatak açıkta` : "tüm talep karşılanıyor"}`;
   const nOpen = sol ? sol.kpi.n_open : g?.n_open ?? 0;
   const genes = sol ? sol.genes : g?.best_genes ?? [];
   const mix = types.length > 1 ? types.map((t, k) => `${genes.filter((v) => v === k + 1).length} ${t.name.toLowerCase()}`).join(" · ") : `hepsi ${types[0]?.name.toLowerCase()}`;
@@ -325,24 +334,26 @@ function ResultCard({ run, idx, mipRef }: { run: Run | null; idx: number; mipRef
         ) : null}
       </div>
       <div className="kpis" style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
-        <Kpi
-          label="Toplam yıllık maliyet"
-          value={mtl(total)}
-          sub={gap != null ? `MIP'e göre ${gap >= 0 ? "+" : ""}${pct(gap, 1)}` : run.method === "mip" ? "en iyi bilinen çözüm" : undefined}
-        />
+        <Kpi label="Yıllık maliyet (açılış + ulaşım)" value={mtl(real)} sub={costSub} />
         <Kpi label="Açılan hastane" value={n0(nOpen)} sub={mix} />
         <Kpi label="Ortalama mesafe" value={sol ? `${n1(sol.kpi.avg_dist_km)} km` : "–"} sub={sol ? `en uzak ${n1(sol.kpi.max_dist_km)} km` : "çözüm bitince"} />
         <Kpi
           label="Karşılanmayan talep"
-          value={sol ? (sol.kpi.unmet_beds > 0 ? `${n0(sol.kpi.unmet_beds)} yatak` : "Yok") : cost && cost.penalty > 0 ? "Var" : "Yok"}
-          sub={sol && sol.kpi.unmet_beds > 0 ? `${pct(sol.kpi.unmet_pct / 100)} · ${sol.kpi.unmet_count} mahalle` : "tüm mahalleler bağlı"}
-          alert={sol ? sol.kpi.unmet_beds > 0 : !!cost && cost.penalty > 0}
+          value={unmet > 0 ? `${n0(unmet)} yatak` : "Yok"}
+          sub={unmet > 0 ? (sol ? `${pct(sol.kpi.unmet_pct / 100)} · ${sol.kpi.unmet_count} mahalle hastanesiz` : "bazı mahalleler hastanesiz") : "tüm mahalleler bir hastaneye bağlı"}
+          alert={unmet > 0}
         />
       </div>
       {cost && (
         <div style={{ marginTop: 14 }}>
           <div className="control-label" style={{ marginBottom: 6 }}>Maliyetin dağılımı</div>
-          <CostBar cost={cost} />
+          <CostBar cost={{ ...cost, penalty: 0, total: real }} />
+          {unmet > 0 && (
+            <p className="hint" style={{ marginTop: 8 }}>
+              Hastane sayısı sınırı tüm talebi karşılamaya yetmiyor. Model, karşılanamayan her yatak için bir ceza puanı kullanır
+              (talebi karşılamaya zorlamak için). Bu ceza gerçek bir harcama olmadığı için maliyete eklenmez.
+            </p>
+          )}
         </div>
       )}
     </div>
@@ -366,14 +377,16 @@ function History({ history, current, onSelect, mip }: { history: Run[]; current:
           <thead><tr><th>Yöntem</th><th>Ayar</th><th className="r">Maliyet</th><th className="r">MIP'e fark</th></tr></thead>
           <tbody>
             {history.map((r) => {
-              const ref = mip[r.scenario] ? mipFor(mip[r.scenario]!, r.limit).cost.total : null;
-              const c = r.best?.cost.total ?? 0;
+              const m = mip[r.scenario] ? mipFor(mip[r.scenario]!, r.limit) : null;
+              const ref = m && m.kpi.unmet_beds === 0 ? realCost(m.cost) : null;
+              const c = r.best ? realCost(r.best.cost) : 0;
+              const open = r.best?.kpi.unmet_beds ?? 0;
               return (
                 <tr key={r.id} onClick={() => onSelect(r)} style={{ cursor: "pointer", background: current?.id === r.id ? "var(--accent-wash)" : undefined }}>
                   <td>{methodInfo(r.method).short}</td>
                   <td className="hint">{SC_LABEL[r.scenario]} · {r.limit ?? "∞"} · seed {r.seed}</td>
                   <td className="r">{mtl(c)}</td>
-                  <td className="r">{ref ? `${c >= ref ? "+" : ""}${pct((c - ref) / ref, 1)}` : "–"}</td>
+                  <td className="r">{open > 0 ? <span className="badge bad">{n0(open)} yatak açıkta</span> : ref ? `${c >= ref ? "+" : ""}${pct((c - ref) / ref, 1)}` : "–"}</td>
                 </tr>
               );
             })}
@@ -398,20 +411,28 @@ function ProgressCard(props: {
   const gens = run?.gens ?? [];
   const n = gens.length;
   const i = Math.min(idx, Math.max(0, n - 1));
-  const ref = mipRef?.cost.total ?? null;
+  const refReal = mipRef ? realCost(mipRef.cost) : null;
+  const refUnmet = mipRef?.kpi.unmet_beds ?? 0;
   const improvements = gens.map((g, k) => (g.improved ? k : -1)).filter((k) => k > 0);
+  // sınır tüm talebi karşılamaya yetmiyorsa karşılanamayan yatak ayrı bir grafikte izlenir
+  const hasUnmet = gens.some((g) => (g.unmet_beds ?? 0) > 0) || refUnmet > 0;
+  const cursor = n ? gens[i].gen : null;
+  const xMax = Math.max(10, n ? gens[n - 1].gen : 10);
 
-  const config = useMemo<ChartConfiguration>(() => {
+  const costCfg = useMemo<ChartConfiguration>(() => {
     const color = cssVar("--accent");
-    const finals = gens.length ? gens[gens.length - 1].best : 0;
-    const lo = Math.min(...[finals, ref ?? Infinity].filter((x) => x > 0));
+    const reals = gens.map((g) => realCost(g.best_cost));
+    const lo = Math.min(...reals, refReal ?? Infinity);
+    // sınırsızda maliyet hep düşer: alt kısım yakınlaştırılır; sınır bağlayıcıyken maliyet artabilir: tüm aralık
+    const top = Math.max(...reals, refReal ?? 0);
+    const hi = hasUnmet ? top * 1.03 : Math.max(lo * 1.05, Math.min(top, lo * 1.35));
     return {
       type: "line",
       data: {
         datasets: [
           {
-            label: "En iyi maliyet",
-            data: gens.map((g) => ({ x: g.gen, y: g.best })),
+            label: "En iyi çözümün maliyeti",
+            data: gens.map((g, k) => ({ x: g.gen, y: reals[k] })),
             borderColor: color,
             backgroundColor: withAlpha(color, 0.08),
             fill: "start",
@@ -423,16 +444,47 @@ function ProgressCard(props: {
       },
       options: merge(baseOptions(), {
         plugins: {
-          overlay: { x: n ? gens[i].gen : null, refLines: ref ? [{ y: ref, label: `MIP: ${mtl(ref)}`, color: cssVar("--critical"), dash: [6, 4] }] : [] },
-          tooltip: { callbacks: { title: (it: { parsed: { x: number } }[]) => `${it[0]?.parsed.x}. nesil`, label: (it: { parsed: { y: number } }) => `En iyi maliyet: ${mtl(it.parsed.y)}` } },
+          overlay: { x: cursor, refLines: refReal != null ? [{ y: refReal, label: `MIP: ${mtl(refReal)}`, color: cssVar("--critical"), dash: [6, 4] }] : [] },
+          tooltip: { callbacks: { title: (it: { parsed: { x: number } }[]) => `${it[0]?.parsed.x}. nesil`, label: (it: { parsed: { y: number } }) => `Açılış + ulaşım: ${mtl(it.parsed.y)}` } },
         },
         scales: {
-          x: { type: "linear", min: 0, max: Math.max(10, gens.length ? gens[gens.length - 1].gen : 10), title: { display: true, text: "Nesil (iterasyon)" }, ticks: { maxTicksLimit: 10, includeBounds: false } },
-          y: { min: Number.isFinite(lo) ? lo * 0.97 : undefined, max: Number.isFinite(lo) ? lo * 1.3 : undefined, title: { display: true, text: "Toplam yıllık maliyet" }, ticks: { callback: (v: number) => mtl(v) } },
+          x: { type: "linear", min: 0, max: xMax, title: { display: true, text: "Nesil (iterasyon)" }, ticks: { maxTicksLimit: 10, includeBounds: false } },
+          y: { min: Number.isFinite(lo) ? lo * 0.97 : undefined, max: Number.isFinite(lo) ? hi : undefined, title: { display: true, text: "Yıllık maliyet (açılış + ulaşım)" }, ticks: { callback: (v: number) => mtl(v) } },
         },
       }),
     };
-  }, [gens, i, n, ref]);
+  }, [gens, cursor, refReal, xMax, hasUnmet]);
+
+  const unmetCfg = useMemo<ChartConfiguration>(() => {
+    const color = cssVar("--critical");
+    return {
+      type: "line",
+      data: {
+        datasets: [
+          {
+            label: "Karşılanamayan yatak",
+            data: gens.map((g) => ({ x: g.gen, y: g.unmet_beds ?? 0 })),
+            borderColor: color,
+            backgroundColor: withAlpha(color, 0.08),
+            fill: "start",
+            borderWidth: 2.2,
+            pointRadius: 0,
+            stepped: "before" as const,
+          },
+        ],
+      },
+      options: merge(baseOptions(), {
+        plugins: {
+          overlay: { x: cursor, refLines: [{ y: refUnmet, label: `MIP: ${n0(refUnmet)} yatak`, color: cssVar("--ink-2"), dash: [6, 4] }] },
+          tooltip: { callbacks: { title: (it: { parsed: { x: number } }[]) => `${it[0]?.parsed.x}. nesil`, label: (it: { parsed: { y: number } }) => `Karşılanamayan: ${n0(it.parsed.y)} yatak` } },
+        },
+        scales: {
+          x: { type: "linear", min: 0, max: xMax, title: { display: true, text: "Nesil (iterasyon)" }, ticks: { maxTicksLimit: 10, includeBounds: false } },
+          y: { beginAtZero: true, title: { display: true, text: "Karşılanamayan yatak" }, ticks: { callback: (v: number) => n0(v) } },
+        },
+      }),
+    };
+  }, [gens, cursor, refUnmet, xMax]);
 
   if (!run || run.method === "mip") {
     return (
@@ -447,8 +499,10 @@ function ProgressCard(props: {
     );
   }
 
-  const first = gens[0]?.best ?? 0;
-  const last = gens[gens.length - 1]?.best ?? 0;
+  const first = n ? realCost(gens[0].best_cost) : 0;
+  const last = n ? realCost(gens[n - 1].best_cost) : 0;
+  const unmetFirst = gens[0]?.unmet_beds ?? 0;
+  const unmetLast = gens[n - 1]?.unmet_beds ?? 0;
   const jump = (dir: 1 | -1) => {
     setPlaying(false);
     if (dir > 0) setIdx(improvements.find((k) => k > i) ?? n - 1);
@@ -460,8 +514,9 @@ function ProgressCard(props: {
         <div>
           <h2>Maliyetin nesiller boyunca düşüşü</h2>
           <p className="hint">
-            Her nesilde o ana kadar bulunan en iyi çözümün maliyeti. Kırmızı kesikli çizgi MIP sonucu.
-            {n > 1 && ` İlk nesilden sona maliyet ${pct((first - last) / first, 0)} düştü.`}
+            Her nesilde o ana kadar bulunan en iyi çözümün yıllık maliyeti (açılış + ulaşım). Kırmızı kesikli çizgi MIP sonucu.
+            {n > 1 && !hasUnmet && first > 0 && ` İlk nesilden sona maliyet ${pct((first - last) / first, 0)} düştü.`}
+            {n > 1 && hasUnmet && ` Hastane sınırı bağlayıcı: algoritma önce karşılanamayan talebi azaltır (${n0(unmetFirst)} → ${n0(unmetLast)} yatak), bu sırada maliyet artabilir.`}
           </p>
         </div>
       </div>
@@ -479,7 +534,13 @@ function ProgressCard(props: {
         </div>
         <span className="num small" style={{ minWidth: 110, textAlign: "right" }}>{n ? `${gens[i].gen}. nesil / ${gens[n - 1].gen}` : "–"}</span>
       </div>
-      <ChartBox config={config} height={300} />
+      <ChartBox config={costCfg} height={hasUnmet ? 240 : 300} />
+      {hasUnmet && (
+        <div style={{ marginTop: 16 }}>
+          <div className="control-label" style={{ marginBottom: 6 }}>Karşılanamayan talep</div>
+          <ChartBox config={unmetCfg} height={180} />
+        </div>
+      )}
       {run.status === "done" && <p className="hint" style={{ marginTop: 8 }}>Yeşil çentikler en iyi çözümün iyileştiği nesiller. Kaydırıcıyı sürükleyerek ya da ▶ ile çözümün gelişimini haritada izleyebilirsiniz.</p>}
     </div>
   );

@@ -163,6 +163,7 @@ export interface GenSummary {
   best_cost: Cost;
   improved: boolean;
   assign?: number[];
+  unmet_beds?: number; // karşılanamayan yatak (en iyi çözümde)
 }
 
 export interface RunResult {

@@ -251,7 +251,8 @@ def diversity(pop: np.ndarray) -> float:
 
 
 def generation_summary(
-    gen: int, evals: int, costs: np.ndarray, pop: np.ndarray, best: Solution, improved: bool
+    gen: int, evals: int, costs: np.ndarray, pop: np.ndarray, best: Solution, improved: bool,
+    d: np.ndarray | None = None,
 ) -> dict:
     s = {
         "gen": gen,
@@ -266,6 +267,8 @@ def generation_summary(
         "best_cost": cost_dict(best),
         "improved": improved,
     }
+    if d is not None:  # karşılanamayan yatak (arayüzde cezadan ayrı gösterilir)
+        s["unmet_beds"] = round(float(d[best.assign < 0].sum()), 1)
     if improved:
         s["assign"] = best.assign.tolist()
     return s

@@ -67,7 +67,7 @@ def run_ga(problem: Problem, cfg: GAConfig, tracer: Tracer | None = None) -> tup
     best = min(pop, key=lambda s: s.total)
     tr.state["best"] = _ind(best)
     costs = np.array([s.total for s in pop])
-    tr.generation(generation_summary(0, ev.evals, costs, np.array([s.genes for s in pop]), best, True))
+    tr.generation(generation_summary(0, ev.evals, costs, np.array([s.genes for s in pop]), best, True, d=problem.d))
 
     gen = 0
     while ev.evals < cfg.max_evals and not tr.stop_requested:
@@ -120,7 +120,7 @@ def run_ga(problem: Problem, cfg: GAConfig, tracer: Tracer | None = None) -> tup
         tr.emit("ga.replace", "replace", costs=costs.round(3))
         tr.emit("ga.best", "best_update", improved=improved, best_cost=round(best.total, 3))
         tr.generation(generation_summary(gen, ev.evals, costs, np.array([s.genes for s in pop]),
-                                         best, improved))
+                                         best, improved, d=problem.d))
 
     tr.emit("ga.return", "done", best_cost=round(best.total, 3))
     stats = {"evals": ev.evals, "generations": gen, "seconds": round(time.perf_counter() - t0, 3),
