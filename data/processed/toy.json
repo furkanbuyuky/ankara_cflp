@@ -1,0 +1,266 @@
+{
+ "id": "toy",
+ "name": "Öğretim örneği (10 mahalle, 6 aday)",
+ "source": "osm",
+ "districts": [
+  {
+   "name": "Altındağ",
+   "population": 414893,
+   "land_price_tl_m2": 18000,
+   "land_median_m2": 80000,
+   "center": [
+    39.955,
+    32.885
+   ]
+  },
+  {
+   "name": "Çankaya",
+   "population": 947330,
+   "land_price_tl_m2": 45000,
+   "land_median_m2": 75000,
+   "center": [
+    39.89,
+    32.84
+   ]
+  },
+  {
+   "name": "Etimesgut",
+   "population": 629112,
+   "land_price_tl_m2": 22000,
+   "land_median_m2": 130000,
+   "center": [
+    39.95,
+    32.67
+   ]
+  },
+  {
+   "name": "Gölbaşı",
+   "population": 165201,
+   "land_price_tl_m2": 16000,
+   "land_median_m2": 190000,
+   "center": [
+    39.79,
+    32.81
+   ]
+  },
+  {
+   "name": "Keçiören",
+   "population": 932128,
+   "land_price_tl_m2": 20000,
+   "land_median_m2": 85000,
+   "center": [
+    39.99,
+    32.86
+   ]
+  },
+  {
+   "name": "Mamak",
+   "population": 686777,
+   "land_price_tl_m2": 15000,
+   "land_median_m2": 95000,
+   "center": [
+    39.93,
+    32.92
+   ]
+  },
+  {
+   "name": "Pursaklar",
+   "population": 165665,
+   "land_price_tl_m2": 11000,
+   "land_median_m2": 180000,
+   "center": [
+    40.04,
+    32.9
+   ]
+  },
+  {
+   "name": "Sincan",
+   "population": 590309,
+   "land_price_tl_m2": 12000,
+   "land_median_m2": 170000,
+   "center": [
+    39.97,
+    32.58
+   ]
+  },
+  {
+   "name": "Yenimahalle",
+   "population": 714866,
+   "land_price_tl_m2": 28000,
+   "land_median_m2": 120000,
+   "center": [
+    39.97,
+    32.79
+   ]
+  }
+ ],
+ "demand": [
+  {
+   "name": "Maltepe",
+   "district": "Çankaya",
+   "lat": 39.924994,
+   "lon": 32.844901,
+   "area_km2": 0.4612,
+   "osm_id": "relation/6777213",
+   "population": 40300,
+   "id": 0
+  },
+  {
+   "name": "Güvenevler",
+   "district": "Çankaya",
+   "lat": 39.89812,
+   "lon": 32.853744,
+   "area_km2": 0.4424,
+   "osm_id": "relation/6776400",
+   "population": 60200,
+   "id": 1
+  },
+  {
+   "name": "Topraklık",
+   "district": "Çankaya",
+   "lat": 39.922883,
+   "lon": 32.871887,
+   "area_km2": 0.0615,
+   "osm_id": "relation/6770961",
+   "population": 10600,
+   "id": 2
+  },
+  {
+   "name": "100. Yıl",
+   "district": "Çankaya",
+   "lat": 39.901042,
+   "lon": 32.870696,
+   "area_km2": 0.4131,
+   "osm_id": "relation/6771492",
+   "population": 91700,
+   "id": 3
+  },
+  {
+   "name": "Eti",
+   "district": "Çankaya",
+   "lat": 39.931432,
+   "lon": 32.845665,
+   "area_km2": 0.3729,
+   "osm_id": "relation/6777212",
+   "population": 57500,
+   "id": 4
+  },
+  {
+   "name": "Fidanlık",
+   "district": "Çankaya",
+   "lat": 39.924834,
+   "lon": 32.861005,
+   "area_km2": 0.2535,
+   "osm_id": "relation/6770976",
+   "population": 51000,
+   "id": 5
+  },
+  {
+   "name": "Dilekler",
+   "district": "Çankaya",
+   "lat": 39.920613,
+   "lon": 32.875075,
+   "area_km2": 0.1116,
+   "osm_id": "relation/6770962",
+   "population": 24000,
+   "id": 6
+  },
+  {
+   "name": "Kavaklıdere",
+   "district": "Çankaya",
+   "lat": 39.910989,
+   "lon": 32.858766,
+   "area_km2": 0.5017,
+   "osm_id": "relation/6774717",
+   "population": 70100,
+   "id": 7
+  },
+  {
+   "name": "Cumhuriyet",
+   "district": "Çankaya",
+   "lat": 39.923415,
+   "lon": 32.855805,
+   "area_km2": 0.1298,
+   "osm_id": "relation/6777209",
+   "population": 26000,
+   "id": 8
+  },
+  {
+   "name": "Arka Topraklık",
+   "district": "Çankaya",
+   "lat": 39.920062,
+   "lon": 32.872343,
+   "area_km2": 0.1058,
+   "osm_id": "relation/6771185",
+   "population": 18600,
+   "id": 9
+  }
+ ],
+ "candidates": [
+  {
+   "id": 0,
+   "name": "Aday 1 (100. Yıl)",
+   "district": "Çankaya",
+   "lat": 39.901269,
+   "lon": 32.867636,
+   "land_m2": 40000,
+   "land_price_tl_m2": 44500.0
+  },
+  {
+   "id": 1,
+   "name": "Aday 2 (Topraklık)",
+   "district": "Çankaya",
+   "lat": 39.921265,
+   "lon": 32.874009,
+   "land_m2": 80000,
+   "land_price_tl_m2": 35200.0
+  },
+  {
+   "id": 2,
+   "name": "Aday 3 (Eti)",
+   "district": "Çankaya",
+   "lat": 39.933201,
+   "lon": 32.844498,
+   "land_m2": 160000,
+   "land_price_tl_m2": 44600.0
+  },
+  {
+   "id": 3,
+   "name": "Aday 4 (Fidanlık)",
+   "district": "Çankaya",
+   "lat": 39.924962,
+   "lon": 32.858555,
+   "land_m2": 35000,
+   "land_price_tl_m2": 46300.0
+  },
+  {
+   "id": 4,
+   "name": "Aday 5 (Kavaklıdere)",
+   "district": "Çankaya",
+   "lat": 39.907895,
+   "lon": 32.860485,
+   "land_m2": 120000,
+   "land_price_tl_m2": 63200.0
+  },
+  {
+   "id": 5,
+   "name": "Aday 6 (Maltepe)",
+   "district": "Çankaya",
+   "lat": 39.928995,
+   "lon": 32.846426,
+   "land_m2": 200000,
+   "land_price_tl_m2": 38300.0
+  }
+ ],
+ "meta": {
+  "seed": 7,
+  "note": "Kızılay çevresindeki 10 mahalle; nüfuslar öğretim için ölçeklendi",
+  "sources": {
+   "district_boundaries": "OpenStreetMap (Nominatim)",
+   "mahalle_boundaries": "OpenStreetMap admin_level=8 (github.com/izzetkalic/geojsons-of-turkey)",
+   "district_population": "TÜİK ADNKS 2024",
+   "mahalle_population": "Simülasyon: alan–yoğunluk modeli, ilçe toplamları korunur",
+   "candidates": "Simülasyon: mahallelerden seçilen adaylar; arazi ve arsa fiyatı ilçe profiline göre"
+  }
+ }
+}

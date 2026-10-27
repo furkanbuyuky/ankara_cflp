@@ -1,0 +1,4402 @@
+{
+ "id": "ankara",
+ "name": "Ankara — 9 merkez ilçe",
+ "source": "osm",
+ "districts": [
+  {
+   "name": "Altındağ",
+   "population": 414893,
+   "land_price_tl_m2": 18000,
+   "land_median_m2": 80000,
+   "center": [
+    39.955,
+    32.885
+   ]
+  },
+  {
+   "name": "Çankaya",
+   "population": 947330,
+   "land_price_tl_m2": 45000,
+   "land_median_m2": 75000,
+   "center": [
+    39.89,
+    32.84
+   ]
+  },
+  {
+   "name": "Etimesgut",
+   "population": 629112,
+   "land_price_tl_m2": 22000,
+   "land_median_m2": 130000,
+   "center": [
+    39.95,
+    32.67
+   ]
+  },
+  {
+   "name": "Gölbaşı",
+   "population": 165201,
+   "land_price_tl_m2": 16000,
+   "land_median_m2": 190000,
+   "center": [
+    39.79,
+    32.81
+   ]
+  },
+  {
+   "name": "Keçiören",
+   "population": 932128,
+   "land_price_tl_m2": 20000,
+   "land_median_m2": 85000,
+   "center": [
+    39.99,
+    32.86
+   ]
+  },
+  {
+   "name": "Mamak",
+   "population": 686777,
+   "land_price_tl_m2": 15000,
+   "land_median_m2": 95000,
+   "center": [
+    39.93,
+    32.92
+   ]
+  },
+  {
+   "name": "Pursaklar",
+   "population": 165665,
+   "land_price_tl_m2": 11000,
+   "land_median_m2": 180000,
+   "center": [
+    40.04,
+    32.9
+   ]
+  },
+  {
+   "name": "Sincan",
+   "population": 590309,
+   "land_price_tl_m2": 12000,
+   "land_median_m2": 170000,
+   "center": [
+    39.97,
+    32.58
+   ]
+  },
+  {
+   "name": "Yenimahalle",
+   "population": 714866,
+   "land_price_tl_m2": 28000,
+   "land_median_m2": 120000,
+   "center": [
+    39.97,
+    32.79
+   ]
+  }
+ ],
+ "demand": [
+  {
+   "name": "Aydıncık",
+   "district": "Altındağ",
+   "lat": 40.028314,
+   "lon": 33.056227,
+   "area_km2": 21.6775,
+   "osm_id": "relation/3113766",
+   "population": 780,
+   "id": 0
+  },
+  {
+   "name": "Baraj",
+   "district": "Altındağ",
+   "lat": 40.021389,
+   "lon": 32.946585,
+   "area_km2": 13.0946,
+   "osm_id": "relation/3113767",
+   "population": 1320,
+   "id": 1
+  },
+  {
+   "name": "Beşikkaya",
+   "district": "Altındağ",
+   "lat": 39.982144,
+   "lon": 32.953674,
+   "area_km2": 2.8004,
+   "osm_id": "relation/3113768",
+   "population": 24430,
+   "id": 2
+  },
+  {
+   "name": "Feridun Çelik",
+   "district": "Altındağ",
+   "lat": 39.986703,
+   "lon": 32.940461,
+   "area_km2": 5.3473,
+   "osm_id": "relation/3113769",
+   "population": 13570,
+   "id": 3
+  },
+  {
+   "name": "Gicik",
+   "district": "Altındağ",
+   "lat": 40.023216,
+   "lon": 32.968114,
+   "area_km2": 11.5168,
+   "osm_id": "relation/3113770",
+   "population": 1230,
+   "id": 4
+  },
+  {
+   "name": "Karacaören",
+   "district": "Altındağ",
+   "lat": 40.032392,
+   "lon": 32.927904,
+   "area_km2": 10.1867,
+   "osm_id": "relation/3113771",
+   "population": 1960,
+   "id": 5
+  },
+  {
+   "name": "Karapürçek",
+   "district": "Altındağ",
+   "lat": 39.973736,
+   "lon": 32.976707,
+   "area_km2": 11.5235,
+   "osm_id": "relation/3113772",
+   "population": 2540,
+   "id": 6
+  },
+  {
+   "name": "Peçenek",
+   "district": "Altındağ",
+   "lat": 40.022288,
+   "lon": 33.007198,
+   "area_km2": 16.9688,
+   "osm_id": "relation/3113774",
+   "population": 1130,
+   "id": 7
+  },
+  {
+   "name": "Tatlar",
+   "district": "Altındağ",
+   "lat": 39.985835,
+   "lon": 33.001827,
+   "area_km2": 10.7301,
+   "osm_id": "relation/3113775",
+   "population": 2070,
+   "id": 8
+  },
+  {
+   "name": "Çamlık",
+   "district": "Altındağ",
+   "lat": 39.965946,
+   "lon": 32.940723,
+   "area_km2": 0.7141,
+   "osm_id": "relation/3113776",
+   "population": 11660,
+   "id": 9
+  },
+  {
+   "name": "Anafartalar",
+   "district": "Altındağ",
+   "lat": 39.94065,
+   "lon": 32.850699,
+   "area_km2": 2.3853,
+   "osm_id": "relation/3114194",
+   "population": 25350,
+   "id": 10
+  },
+  {
+   "name": "Hacettepe",
+   "district": "Altındağ",
+   "lat": 39.931175,
+   "lon": 32.862125,
+   "area_km2": 0.7695,
+   "osm_id": "relation/3114196",
+   "population": 9420,
+   "id": 11
+  },
+  {
+   "name": "Hacı Bayram",
+   "district": "Altındağ",
+   "lat": 39.946508,
+   "lon": 32.858011,
+   "area_km2": 0.4358,
+   "osm_id": "relation/3114197",
+   "population": 7840,
+   "id": 12
+  },
+  {
+   "name": "Kale",
+   "district": "Altındağ",
+   "lat": 39.939339,
+   "lon": 32.865366,
+   "area_km2": 0.7512,
+   "osm_id": "relation/3114198",
+   "population": 10600,
+   "id": 13
+  },
+  {
+   "name": "Sakarya",
+   "district": "Altındağ",
+   "lat": 39.937435,
+   "lon": 32.874214,
+   "area_km2": 0.5749,
+   "osm_id": "relation/3114200",
+   "population": 5140,
+   "id": 14
+  },
+  {
+   "name": "Ziraat",
+   "district": "Altındağ",
+   "lat": 39.95554,
+   "lon": 32.859509,
+   "area_km2": 0.7872,
+   "osm_id": "relation/3114201",
+   "population": 10700,
+   "id": 15
+  },
+  {
+   "name": "Zübeydehanım",
+   "district": "Altındağ",
+   "lat": 39.949839,
+   "lon": 32.843456,
+   "area_km2": 2.7961,
+   "osm_id": "relation/3114202",
+   "population": 13440,
+   "id": 16
+  },
+  {
+   "name": "Örnek",
+   "district": "Altındağ",
+   "lat": 39.955671,
+   "lon": 32.874809,
+   "area_km2": 1.0192,
+   "osm_id": "relation/6745855",
+   "population": 16230,
+   "id": 17
+  },
+  {
+   "name": "Başpınar",
+   "district": "Altındağ",
+   "lat": 39.974682,
+   "lon": 32.924798,
+   "area_km2": 1.6929,
+   "osm_id": "relation/6748455",
+   "population": 17160,
+   "id": 18
+  },
+  {
+   "name": "Doğantepe",
+   "district": "Altındağ",
+   "lat": 39.97946,
+   "lon": 32.920582,
+   "area_km2": 2.1508,
+   "osm_id": "relation/6748456",
+   "population": 17920,
+   "id": 19
+  },
+  {
+   "name": "Solfasol",
+   "district": "Altındağ",
+   "lat": 39.982317,
+   "lon": 32.912548,
+   "area_km2": 0.6959,
+   "osm_id": "relation/6748492",
+   "population": 6590,
+   "id": 20
+  },
+  {
+   "name": "Bağlariçi",
+   "district": "Altındağ",
+   "lat": 39.990745,
+   "lon": 32.911887,
+   "area_km2": 2.2629,
+   "osm_id": "relation/6748493",
+   "population": 29550,
+   "id": 21
+  },
+  {
+   "name": "Doğu",
+   "district": "Altındağ",
+   "lat": 39.984008,
+   "lon": 32.898192,
+   "area_km2": 1.1852,
+   "osm_id": "relation/6750585",
+   "population": 12870,
+   "id": 22
+  },
+  {
+   "name": "Yıldıztepe",
+   "district": "Altındağ",
+   "lat": 39.973875,
+   "lon": 32.903349,
+   "area_km2": 0.7102,
+   "osm_id": "relation/6750636",
+   "population": 7340,
+   "id": 23
+  },
+  {
+   "name": "Gülpınar",
+   "district": "Altındağ",
+   "lat": 39.975927,
+   "lon": 32.894826,
+   "area_km2": 0.7113,
+   "osm_id": "relation/6750637",
+   "population": 7550,
+   "id": 24
+  },
+  {
+   "name": "Ali Ersoy",
+   "district": "Altındağ",
+   "lat": 39.967643,
+   "lon": 32.897764,
+   "area_km2": 0.7492,
+   "osm_id": "relation/6750667",
+   "population": 10810,
+   "id": 25
+  },
+  {
+   "name": "Güneşevler",
+   "district": "Altındağ",
+   "lat": 39.971669,
+   "lon": 32.887387,
+   "area_km2": 0.5971,
+   "osm_id": "relation/6750668",
+   "population": 8190,
+   "id": 26
+  },
+  {
+   "name": "Altınpark",
+   "district": "Altındağ",
+   "lat": 39.965123,
+   "lon": 32.882429,
+   "area_km2": 1.595,
+   "osm_id": "relation/6750669",
+   "population": 19490,
+   "id": 27
+  },
+  {
+   "name": "Aydınlıkevler",
+   "district": "Altındağ",
+   "lat": 39.961917,
+   "lon": 32.8751,
+   "area_km2": 0.8488,
+   "osm_id": "relation/6750709",
+   "population": 11740,
+   "id": 28
+  },
+  {
+   "name": "Ulubey",
+   "district": "Altındağ",
+   "lat": 39.963348,
+   "lon": 32.908242,
+   "area_km2": 1.7299,
+   "osm_id": "relation/6750750",
+   "population": 37370,
+   "id": 29
+  },
+  {
+   "name": "Önder",
+   "district": "Altındağ",
+   "lat": 39.956933,
+   "lon": 32.912322,
+   "area_km2": 1.1965,
+   "osm_id": "relation/6750778",
+   "population": 11870,
+   "id": 30
+  },
+  {
+   "name": "Gültepe",
+   "district": "Altındağ",
+   "lat": 39.949958,
+   "lon": 32.886733,
+   "area_km2": 1.4665,
+   "osm_id": "relation/6750779",
+   "population": 13350,
+   "id": 31
+  },
+  {
+   "name": "Plevne",
+   "district": "Altındağ",
+   "lat": 39.949687,
+   "lon": 32.876154,
+   "area_km2": 0.527,
+   "osm_id": "relation/6750780",
+   "population": 4800,
+   "id": 32
+  },
+  {
+   "name": "Atıfbey",
+   "district": "Altındağ",
+   "lat": 39.947139,
+   "lon": 32.867394,
+   "area_km2": 1.0488,
+   "osm_id": "relation/6750842",
+   "population": 15180,
+   "id": 33
+  },
+  {
+   "name": "Aktaş",
+   "district": "Altındağ",
+   "lat": 39.944382,
+   "lon": 32.877054,
+   "area_km2": 0.6667,
+   "osm_id": "relation/6750949",
+   "population": 11910,
+   "id": 34
+  },
+  {
+   "name": "Alemdağ",
+   "district": "Altındağ",
+   "lat": 39.965117,
+   "lon": 32.924917,
+   "area_km2": 1.0534,
+   "osm_id": "relation/6752750",
+   "population": 11800,
+   "id": 35
+  },
+  {
+   "name": "Erzurum",
+   "district": "Çankaya",
+   "lat": 39.931836,
+   "lon": 32.872069,
+   "area_km2": 0.1641,
+   "osm_id": "relation/6753443",
+   "population": 1750,
+   "id": 36
+  },
+  {
+   "name": "Cebeci",
+   "district": "Çankaya",
+   "lat": 39.931595,
+   "lon": 32.880571,
+   "area_km2": 0.2918,
+   "osm_id": "relation/6753459",
+   "population": 3120,
+   "id": 37
+  },
+  {
+   "name": "Ertuğrulgazi",
+   "district": "Çankaya",
+   "lat": 39.927143,
+   "lon": 32.879961,
+   "area_km2": 0.2441,
+   "osm_id": "relation/6770649",
+   "population": 4370,
+   "id": 38
+  },
+  {
+   "name": "Fakülteler",
+   "district": "Çankaya",
+   "lat": 39.929141,
+   "lon": 32.874276,
+   "area_km2": 0.2936,
+   "osm_id": "relation/6770650",
+   "population": 5430,
+   "id": 39
+  },
+  {
+   "name": "Çamlıtepe",
+   "district": "Çankaya",
+   "lat": 39.926162,
+   "lon": 32.87046,
+   "area_km2": 0.2694,
+   "osm_id": "relation/6770656",
+   "population": 4650,
+   "id": 40
+  },
+  {
+   "name": "İleri",
+   "district": "Çankaya",
+   "lat": 39.92174,
+   "lon": 32.868938,
+   "area_km2": 0.1392,
+   "osm_id": "relation/6770696",
+   "population": 1570,
+   "id": 41
+  },
+  {
+   "name": "Ön Cebeci",
+   "district": "Çankaya",
+   "lat": 39.924636,
+   "lon": 32.865871,
+   "area_km2": 0.2035,
+   "osm_id": "relation/6770914",
+   "population": 3150,
+   "id": 42
+  },
+  {
+   "name": "İncesu",
+   "district": "Çankaya",
+   "lat": 39.920191,
+   "lon": 32.866667,
+   "area_km2": 0.1185,
+   "osm_id": "relation/6770915",
+   "population": 1760,
+   "id": 43
+  },
+  {
+   "name": "Topraklık",
+   "district": "Çankaya",
+   "lat": 39.922883,
+   "lon": 32.871887,
+   "area_km2": 0.0615,
+   "osm_id": "relation/6770961",
+   "population": 950,
+   "id": 44
+  },
+  {
+   "name": "Dilekler",
+   "district": "Çankaya",
+   "lat": 39.920613,
+   "lon": 32.875075,
+   "area_km2": 0.1116,
+   "osm_id": "relation/6770962",
+   "population": 2160,
+   "id": 45
+  },
+  {
+   "name": "50. Yıl",
+   "district": "Çankaya",
+   "lat": 39.923832,
+   "lon": 32.879414,
+   "area_km2": 0.3474,
+   "osm_id": "relation/6770963",
+   "population": 5350,
+   "id": 46
+  },
+  {
+   "name": "Fidanlık",
+   "district": "Çankaya",
+   "lat": 39.924834,
+   "lon": 32.861005,
+   "area_km2": 0.2535,
+   "osm_id": "relation/6770976",
+   "population": 4590,
+   "id": 47
+  },
+  {
+   "name": "Sağlık",
+   "district": "Çankaya",
+   "lat": 39.926323,
+   "lon": 32.858151,
+   "area_km2": 0.2263,
+   "osm_id": "relation/6770977",
+   "population": 3310,
+   "id": 48
+  },
+  {
+   "name": "Arka Topraklık",
+   "district": "Çankaya",
+   "lat": 39.920062,
+   "lon": 32.872343,
+   "area_km2": 0.1058,
+   "osm_id": "relation/6771185",
+   "population": 1670,
+   "id": 49
+  },
+  {
+   "name": "Zafertepe",
+   "district": "Çankaya",
+   "lat": 39.915882,
+   "lon": 32.873664,
+   "area_km2": 0.2149,
+   "osm_id": "relation/6771251",
+   "population": 3820,
+   "id": 50
+  },
+  {
+   "name": "Göktürk",
+   "district": "Çankaya",
+   "lat": 39.911883,
+   "lon": 32.873551,
+   "area_km2": 0.2072,
+   "osm_id": "relation/6771252",
+   "population": 1780,
+   "id": 51
+  },
+  {
+   "name": "Mimar Sinan",
+   "district": "Çankaya",
+   "lat": 39.914918,
+   "lon": 32.878394,
+   "area_km2": 0.227,
+   "osm_id": "relation/6771326",
+   "population": 2900,
+   "id": 52
+  },
+  {
+   "name": "Metin Oktay",
+   "district": "Çankaya",
+   "lat": 39.909003,
+   "lon": 32.875853,
+   "area_km2": 0.225,
+   "osm_id": "relation/6771327",
+   "population": 2720,
+   "id": 53
+  },
+  {
+   "name": "Aşıkpaşa",
+   "district": "Çankaya",
+   "lat": 39.906476,
+   "lon": 32.881473,
+   "area_km2": 0.4172,
+   "osm_id": "relation/6771385",
+   "population": 4750,
+   "id": 54
+  },
+  {
+   "name": "Bayraktar",
+   "district": "Çankaya",
+   "lat": 39.902013,
+   "lon": 32.878859,
+   "area_km2": 0.1944,
+   "osm_id": "relation/6771397",
+   "population": 2520,
+   "id": 55
+  },
+  {
+   "name": "Büyükesat",
+   "district": "Çankaya",
+   "lat": 39.892405,
+   "lon": 32.877042,
+   "area_km2": 0.7799,
+   "osm_id": "relation/6771418",
+   "population": 18460,
+   "id": 56
+  },
+  {
+   "name": "Kazım Özalp",
+   "district": "Çankaya",
+   "lat": 39.891526,
+   "lon": 32.869852,
+   "area_km2": 0.5769,
+   "osm_id": "relation/6771450",
+   "population": 6040,
+   "id": 57
+  },
+  {
+   "name": "100. Yıl",
+   "district": "Çankaya",
+   "lat": 39.901042,
+   "lon": 32.870696,
+   "area_km2": 0.4131,
+   "osm_id": "relation/6771492",
+   "population": 8250,
+   "id": 58
+  },
+  {
+   "name": "Umut",
+   "district": "Çankaya",
+   "lat": 39.90542,
+   "lon": 32.874582,
+   "area_km2": 0.2667,
+   "osm_id": "relation/6774560",
+   "population": 2110,
+   "id": 59
+  },
+  {
+   "name": "Murat",
+   "district": "Çankaya",
+   "lat": 39.901627,
+   "lon": 32.875419,
+   "area_km2": 0.1301,
+   "osm_id": "relation/6774561",
+   "population": 1650,
+   "id": 60
+  },
+  {
+   "name": "Küçükesat",
+   "district": "Çankaya",
+   "lat": 39.907412,
+   "lon": 32.867141,
+   "area_km2": 0.1093,
+   "osm_id": "relation/6774604",
+   "population": 1650,
+   "id": 61
+  },
+  {
+   "name": "Doğuş",
+   "district": "Çankaya",
+   "lat": 39.910509,
+   "lon": 32.868944,
+   "area_km2": 0.107,
+   "osm_id": "relation/6774605",
+   "population": 1870,
+   "id": 62
+  },
+  {
+   "name": "Esatoğlu",
+   "district": "Çankaya",
+   "lat": 39.911197,
+   "lon": 32.864361,
+   "area_km2": 0.1273,
+   "osm_id": "relation/6774715",
+   "population": 2330,
+   "id": 63
+  },
+  {
+   "name": "Muhsin Ertuğrul",
+   "district": "Çankaya",
+   "lat": 39.90661,
+   "lon": 32.870038,
+   "area_km2": 0.1172,
+   "osm_id": "relation/6774716",
+   "population": 2210,
+   "id": 64
+  },
+  {
+   "name": "Kavaklıdere",
+   "district": "Çankaya",
+   "lat": 39.910989,
+   "lon": 32.858766,
+   "area_km2": 0.5017,
+   "osm_id": "relation/6774717",
+   "population": 6310,
+   "id": 65
+  },
+  {
+   "name": "Tınaztepe",
+   "district": "Çankaya",
+   "lat": 39.916039,
+   "lon": 32.863677,
+   "area_km2": 0.2117,
+   "osm_id": "relation/6774795",
+   "population": 2570,
+   "id": 66
+  },
+  {
+   "name": "Seyranbağları",
+   "district": "Çankaya",
+   "lat": 39.917087,
+   "lon": 32.867355,
+   "area_km2": 0.3236,
+   "osm_id": "relation/6774796",
+   "population": 6230,
+   "id": 67
+  },
+  {
+   "name": "Barbaros",
+   "district": "Çankaya",
+   "lat": 39.905389,
+   "lon": 32.863971,
+   "area_km2": 0.3558,
+   "osm_id": "relation/6774812",
+   "population": 4740,
+   "id": 68
+  },
+  {
+   "name": "Gaziosmanpaşa",
+   "district": "Çankaya",
+   "lat": 39.898351,
+   "lon": 32.865656,
+   "area_km2": 0.4961,
+   "osm_id": "relation/6774813",
+   "population": 4510,
+   "id": 69
+  },
+  {
+   "name": "Birlik",
+   "district": "Çankaya",
+   "lat": 39.877388,
+   "lon": 32.878363,
+   "area_km2": 3.1505,
+   "osm_id": "relation/6774849",
+   "population": 14010,
+   "id": 70
+  },
+  {
+   "name": "Kırkkonaklar",
+   "district": "Çankaya",
+   "lat": 39.888091,
+   "lon": 32.889716,
+   "area_km2": 1.7727,
+   "osm_id": "relation/6774990",
+   "population": 15200,
+   "id": 71
+  },
+  {
+   "name": "Bağcılar",
+   "district": "Çankaya",
+   "lat": 39.898266,
+   "lon": 32.881655,
+   "area_km2": 0.3537,
+   "osm_id": "relation/6774991",
+   "population": 6000,
+   "id": 72
+  },
+  {
+   "name": "Bademlidere",
+   "district": "Çankaya",
+   "lat": 39.898212,
+   "lon": 32.889644,
+   "area_km2": 0.8988,
+   "osm_id": "relation/6774999",
+   "population": 13130,
+   "id": 73
+  },
+  {
+   "name": "Boztepe",
+   "district": "Çankaya",
+   "lat": 39.905449,
+   "lon": 32.888858,
+   "area_km2": 0.4015,
+   "osm_id": "relation/6776399",
+   "population": 7280,
+   "id": 74
+  },
+  {
+   "name": "Güvenevler",
+   "district": "Çankaya",
+   "lat": 39.89812,
+   "lon": 32.853744,
+   "area_km2": 0.4424,
+   "osm_id": "relation/6776400",
+   "population": 5420,
+   "id": 75
+  },
+  {
+   "name": "Aziziye",
+   "district": "Çankaya",
+   "lat": 39.890198,
+   "lon": 32.851251,
+   "area_km2": 0.8215,
+   "osm_id": "relation/6776427",
+   "population": 12140,
+   "id": 76
+  },
+  {
+   "name": "Güzeltepe",
+   "district": "Çankaya",
+   "lat": 39.884925,
+   "lon": 32.848549,
+   "area_km2": 0.4552,
+   "osm_id": "relation/6776519",
+   "population": 8060,
+   "id": 77
+  },
+  {
+   "name": "Yıldızevler",
+   "district": "Çankaya",
+   "lat": 39.876348,
+   "lon": 32.857184,
+   "area_km2": 1.0857,
+   "osm_id": "relation/6776520",
+   "population": 13280,
+   "id": 78
+  },
+  {
+   "name": "Hilal",
+   "district": "Çankaya",
+   "lat": 39.868909,
+   "lon": 32.855259,
+   "area_km2": 0.6582,
+   "osm_id": "relation/6776562",
+   "population": 10910,
+   "id": 79
+  },
+  {
+   "name": "İlkbahar",
+   "district": "Çankaya",
+   "lat": 39.851001,
+   "lon": 32.861537,
+   "area_km2": 3.856,
+   "osm_id": "relation/6776563",
+   "population": 13980,
+   "id": 80
+  },
+  {
+   "name": "Sancak",
+   "district": "Çankaya",
+   "lat": 39.869585,
+   "lon": 32.864062,
+   "area_km2": 0.9632,
+   "osm_id": "relation/6776797",
+   "population": 11720,
+   "id": 81
+  },
+  {
+   "name": "Çankaya",
+   "district": "Çankaya",
+   "lat": 39.889663,
+   "lon": 32.861343,
+   "area_km2": 1.7976,
+   "osm_id": "relation/6776826",
+   "population": 18470,
+   "id": 82
+  },
+  {
+   "name": "Orta İmrahor",
+   "district": "Çankaya",
+   "lat": 39.894482,
+   "lon": 32.898376,
+   "area_km2": 1.1542,
+   "osm_id": "relation/6776870",
+   "population": 10260,
+   "id": 83
+  },
+  {
+   "name": "Remzi Oğuz Arık",
+   "district": "Çankaya",
+   "lat": 39.904825,
+   "lon": 32.856654,
+   "area_km2": 0.5937,
+   "osm_id": "relation/6776871",
+   "population": 9970,
+   "id": 84
+  },
+  {
+   "name": "Ayrancı",
+   "district": "Çankaya",
+   "lat": 39.896951,
+   "lon": 32.846687,
+   "area_km2": 0.7884,
+   "osm_id": "relation/6776895",
+   "population": 9380,
+   "id": 85
+  },
+  {
+   "name": "Kültür",
+   "district": "Çankaya",
+   "lat": 39.919729,
+   "lon": 32.861096,
+   "area_km2": 0.2886,
+   "osm_id": "relation/6776913",
+   "population": 4130,
+   "id": 86
+  },
+  {
+   "name": "Kocatepe",
+   "district": "Çankaya",
+   "lat": 39.918749,
+   "lon": 32.858441,
+   "area_km2": 0.1045,
+   "osm_id": "relation/6777018",
+   "population": 1760,
+   "id": 87
+  },
+  {
+   "name": "Meşrutiyet",
+   "district": "Çankaya",
+   "lat": 39.917822,
+   "lon": 32.855867,
+   "area_km2": 0.1779,
+   "osm_id": "relation/6777019",
+   "population": 2970,
+   "id": 88
+  },
+  {
+   "name": "Cumhuriyet",
+   "district": "Çankaya",
+   "lat": 39.923415,
+   "lon": 32.855805,
+   "area_km2": 0.1298,
+   "osm_id": "relation/6777209",
+   "population": 2340,
+   "id": 89
+  },
+  {
+   "name": "Kızılay",
+   "district": "Çankaya",
+   "lat": 39.922858,
+   "lon": 32.851344,
+   "area_km2": 0.2669,
+   "osm_id": "relation/6777210",
+   "population": 3680,
+   "id": 90
+  },
+  {
+   "name": "Korkutreis",
+   "district": "Çankaya",
+   "lat": 39.926265,
+   "lon": 32.851485,
+   "area_km2": 0.1958,
+   "osm_id": "relation/6777211",
+   "population": 2410,
+   "id": 91
+  },
+  {
+   "name": "Eti",
+   "district": "Çankaya",
+   "lat": 39.931432,
+   "lon": 32.845665,
+   "area_km2": 0.3729,
+   "osm_id": "relation/6777212",
+   "population": 5170,
+   "id": 92
+  },
+  {
+   "name": "Maltepe",
+   "district": "Çankaya",
+   "lat": 39.924994,
+   "lon": 32.844901,
+   "area_km2": 0.4612,
+   "osm_id": "relation/6777213",
+   "population": 3630,
+   "id": 93
+  },
+  {
+   "name": "Namık Kemal",
+   "district": "Çankaya",
+   "lat": 39.919244,
+   "lon": 32.849168,
+   "area_km2": 0.1525,
+   "osm_id": "relation/6779434",
+   "population": 1310,
+   "id": 94
+  },
+  {
+   "name": "Yücetepe",
+   "district": "Çankaya",
+   "lat": 39.919787,
+   "lon": 32.841265,
+   "area_km2": 0.4667,
+   "osm_id": "relation/6779435",
+   "population": 4180,
+   "id": 95
+  },
+  {
+   "name": "Anıttepe",
+   "district": "Çankaya",
+   "lat": 39.931357,
+   "lon": 32.84088,
+   "area_km2": 0.252,
+   "osm_id": "relation/6779557",
+   "population": 2540,
+   "id": 96
+  },
+  {
+   "name": "Mebusevleri",
+   "district": "Çankaya",
+   "lat": 39.928108,
+   "lon": 32.835886,
+   "area_km2": 0.91,
+   "osm_id": "relation/6779579",
+   "population": 14530,
+   "id": 97
+  },
+  {
+   "name": "Bahçelievler",
+   "district": "Çankaya",
+   "lat": 39.929065,
+   "lon": 32.826985,
+   "area_km2": 0.5889,
+   "osm_id": "relation/6779580",
+   "population": 6080,
+   "id": 98
+  },
+  {
+   "name": "Yukarı Bahçelievler",
+   "district": "Çankaya",
+   "lat": 39.920621,
+   "lon": 32.829701,
+   "area_km2": 1.0416,
+   "osm_id": "relation/6779619",
+   "population": 12500,
+   "id": 99
+  },
+  {
+   "name": "Emek",
+   "district": "Çankaya",
+   "lat": 39.922715,
+   "lon": 32.818355,
+   "area_km2": 1.4355,
+   "osm_id": "relation/6779678",
+   "population": 29100,
+   "id": 100
+  },
+  {
+   "name": "Balgat",
+   "district": "Çankaya",
+   "lat": 39.909078,
+   "lon": 32.817426,
+   "area_km2": 0.5102,
+   "osm_id": "relation/6779679",
+   "population": 6400,
+   "id": 101
+  },
+  {
+   "name": "Nasuh Akar",
+   "district": "Çankaya",
+   "lat": 39.909466,
+   "lon": 32.822464,
+   "area_km2": 0.4566,
+   "osm_id": "relation/6779680",
+   "population": 8410,
+   "id": 102
+  },
+  {
+   "name": "Devlet",
+   "district": "Çankaya",
+   "lat": 39.907702,
+   "lon": 32.838151,
+   "area_km2": 5.0976,
+   "osm_id": "relation/6779698",
+   "population": 8890,
+   "id": 103
+  },
+  {
+   "name": "Oğuzlar",
+   "district": "Çankaya",
+   "lat": 39.900856,
+   "lon": 32.817859,
+   "area_km2": 0.6226,
+   "osm_id": "relation/6783096",
+   "population": 8200,
+   "id": 104
+  },
+  {
+   "name": "Ehlibeyt",
+   "district": "Çankaya",
+   "lat": 39.892038,
+   "lon": 32.816085,
+   "area_km2": 0.5683,
+   "osm_id": "relation/6783097",
+   "population": 5780,
+   "id": 105
+  },
+  {
+   "name": "Yukarı Öveçler",
+   "district": "Çankaya",
+   "lat": 39.889152,
+   "lon": 32.822081,
+   "area_km2": 0.4181,
+   "osm_id": "relation/6783098",
+   "population": 5290,
+   "id": 106
+  },
+  {
+   "name": "Cevizlidere",
+   "district": "Çankaya",
+   "lat": 39.884637,
+   "lon": 32.816139,
+   "area_km2": 0.6617,
+   "osm_id": "relation/6783132",
+   "population": 12540,
+   "id": 107
+  },
+  {
+   "name": "Huzur",
+   "district": "Çankaya",
+   "lat": 39.875564,
+   "lon": 32.820792,
+   "area_km2": 0.776,
+   "osm_id": "relation/6783133",
+   "population": 5950,
+   "id": 108
+  },
+  {
+   "name": "Gökkuşağı",
+   "district": "Çankaya",
+   "lat": 39.875185,
+   "lon": 32.814814,
+   "area_km2": 0.4266,
+   "osm_id": "relation/6783217",
+   "population": 7070,
+   "id": 109
+  },
+  {
+   "name": "Akpınar",
+   "district": "Çankaya",
+   "lat": 39.860731,
+   "lon": 32.813208,
+   "area_km2": 0.9347,
+   "osm_id": "relation/6783218",
+   "population": 14070,
+   "id": 110
+  },
+  {
+   "name": "Karapınar",
+   "district": "Çankaya",
+   "lat": 39.86894,
+   "lon": 32.817581,
+   "area_km2": 0.4184,
+   "osm_id": "relation/6783285",
+   "population": 4840,
+   "id": 111
+  },
+  {
+   "name": "Ata",
+   "district": "Çankaya",
+   "lat": 39.876457,
+   "lon": 32.824456,
+   "area_km2": 0.4586,
+   "osm_id": "relation/6786489",
+   "population": 3930,
+   "id": 112
+  },
+  {
+   "name": "Şehit Cengiz Karaca",
+   "district": "Çankaya",
+   "lat": 39.875961,
+   "lon": 32.828747,
+   "area_km2": 0.3702,
+   "osm_id": "relation/6786490",
+   "population": 5410,
+   "id": 113
+  },
+  {
+   "name": "Aydınlar",
+   "district": "Çankaya",
+   "lat": 39.878196,
+   "lon": 32.834858,
+   "area_km2": 0.2998,
+   "osm_id": "relation/6786491",
+   "population": 3550,
+   "id": 114
+  },
+  {
+   "name": "Şehit Cevdet Özdemir",
+   "district": "Çankaya",
+   "lat": 39.880797,
+   "lon": 32.831545,
+   "area_km2": 0.3139,
+   "osm_id": "relation/6786507",
+   "population": 4850,
+   "id": 115
+  },
+  {
+   "name": "Öveçler",
+   "district": "Çankaya",
+   "lat": 39.888879,
+   "lon": 32.830826,
+   "area_km2": 0.4086,
+   "osm_id": "relation/6786508",
+   "population": 5860,
+   "id": 116
+  },
+  {
+   "name": "Sokullu Mehmet Paşa",
+   "district": "Çankaya",
+   "lat": 39.89024,
+   "lon": 32.833835,
+   "area_km2": 0.3813,
+   "osm_id": "relation/6786509",
+   "population": 9510,
+   "id": 117
+  },
+  {
+   "name": "Harbiye",
+   "district": "Çankaya",
+   "lat": 39.889202,
+   "lon": 32.838411,
+   "area_km2": 0.6906,
+   "osm_id": "relation/6786510",
+   "population": 8960,
+   "id": 118
+  },
+  {
+   "name": "Aşağı Öveçler",
+   "district": "Çankaya",
+   "lat": 39.888799,
+   "lon": 32.826645,
+   "area_km2": 0.5878,
+   "osm_id": "relation/6786604",
+   "population": 5820,
+   "id": 119
+  },
+  {
+   "name": "İlkadım",
+   "district": "Çankaya",
+   "lat": 39.887153,
+   "lon": 32.841993,
+   "area_km2": 0.988,
+   "osm_id": "relation/6786647",
+   "population": 14500,
+   "id": 120
+  },
+  {
+   "name": "Naci Çakır",
+   "district": "Çankaya",
+   "lat": 39.875958,
+   "lon": 32.843379,
+   "area_km2": 0.4078,
+   "osm_id": "relation/6786697",
+   "population": 6270,
+   "id": 121
+  },
+  {
+   "name": "Osman Temiz",
+   "district": "Çankaya",
+   "lat": 39.872938,
+   "lon": 32.837273,
+   "area_km2": 0.4092,
+   "osm_id": "relation/6786698",
+   "population": 9370,
+   "id": 122
+  },
+  {
+   "name": "Malazgirt",
+   "district": "Çankaya",
+   "lat": 39.867546,
+   "lon": 32.83083,
+   "area_km2": 0.3873,
+   "osm_id": "relation/6786699",
+   "population": 7390,
+   "id": 123
+  },
+  {
+   "name": "Keklik Pınarı",
+   "district": "Çankaya",
+   "lat": 39.860489,
+   "lon": 32.822113,
+   "area_km2": 1.758,
+   "osm_id": "relation/6786722",
+   "population": 23670,
+   "id": 124
+  },
+  {
+   "name": "Mürsel Uluç",
+   "district": "Çankaya",
+   "lat": 39.862221,
+   "lon": 32.832493,
+   "area_km2": 1.0806,
+   "osm_id": "relation/6786723",
+   "population": 24590,
+   "id": 125
+  },
+  {
+   "name": "Metin Akkuş",
+   "district": "Çankaya",
+   "lat": 39.870138,
+   "lon": 32.844348,
+   "area_km2": 0.4962,
+   "osm_id": "relation/6787175",
+   "population": 4650,
+   "id": 126
+  },
+  {
+   "name": "İlker",
+   "district": "Çankaya",
+   "lat": 39.860473,
+   "lon": 32.838647,
+   "area_km2": 0.5411,
+   "osm_id": "relation/6787176",
+   "population": 6140,
+   "id": 127
+  },
+  {
+   "name": "Yukarı Dikmen",
+   "district": "Çankaya",
+   "lat": 39.860255,
+   "lon": 32.847438,
+   "area_km2": 2.1844,
+   "osm_id": "relation/6787177",
+   "population": 16260,
+   "id": 128
+  },
+  {
+   "name": "Oran",
+   "district": "Çankaya",
+   "lat": 39.832583,
+   "lon": 32.820934,
+   "area_km2": 12.966,
+   "osm_id": "relation/6787190",
+   "population": 1980,
+   "id": 129
+  },
+  {
+   "name": "Kızılırmak",
+   "district": "Çankaya",
+   "lat": 39.903865,
+   "lon": 32.810335,
+   "area_km2": 1.1156,
+   "osm_id": "relation/6787222",
+   "population": 9350,
+   "id": 130
+  },
+  {
+   "name": "Çukurambar",
+   "district": "Çankaya",
+   "lat": 39.90253,
+   "lon": 32.797609,
+   "area_km2": 2.0775,
+   "osm_id": "relation/6787293",
+   "population": 27800,
+   "id": 131
+  },
+  {
+   "name": "Söğütözü",
+   "district": "Çankaya",
+   "lat": 39.91562,
+   "lon": 32.793355,
+   "area_km2": 1.8245,
+   "osm_id": "relation/6787479",
+   "population": 19670,
+   "id": 132
+  },
+  {
+   "name": "İşçi Blokları",
+   "district": "Çankaya",
+   "lat": 39.89416,
+   "lon": 32.79824,
+   "area_km2": 1.6888,
+   "osm_id": "relation/6789062",
+   "population": 12220,
+   "id": 133
+  },
+  {
+   "name": "Çiğdem",
+   "district": "Çankaya",
+   "lat": 39.884057,
+   "lon": 32.803558,
+   "area_km2": 1.4467,
+   "osm_id": "relation/6789063",
+   "population": 13010,
+   "id": 134
+  },
+  {
+   "name": "Mustafa Kemal",
+   "district": "Çankaya",
+   "lat": 39.912416,
+   "lon": 32.763779,
+   "area_km2": 3.6891,
+   "osm_id": "relation/6789073",
+   "population": 24690,
+   "id": 135
+  },
+  {
+   "name": "Mutlukent",
+   "district": "Çankaya",
+   "lat": 39.886531,
+   "lon": 32.712222,
+   "area_km2": 7.3122,
+   "osm_id": "relation/6789092",
+   "population": 13560,
+   "id": 136
+  },
+  {
+   "name": "Ümit",
+   "district": "Çankaya",
+   "lat": 39.896418,
+   "lon": 32.697862,
+   "area_km2": 1.9782,
+   "osm_id": "relation/6789093",
+   "population": 60840,
+   "id": 137
+  },
+  {
+   "name": "Çayyolu",
+   "district": "Çankaya",
+   "lat": 39.883666,
+   "lon": 32.69772,
+   "area_km2": 2.3915,
+   "osm_id": "relation/6789110",
+   "population": 26190,
+   "id": 138
+  },
+  {
+   "name": "Koru",
+   "district": "Çankaya",
+   "lat": 39.890676,
+   "lon": 32.680916,
+   "area_km2": 2.9256,
+   "osm_id": "relation/6789120",
+   "population": 15320,
+   "id": 139
+  },
+  {
+   "name": "Konutkent",
+   "district": "Çankaya",
+   "lat": 39.878783,
+   "lon": 32.665888,
+   "area_km2": 1.9286,
+   "osm_id": "relation/6789121",
+   "population": 10310,
+   "id": 140
+  },
+  {
+   "name": "Yaşamkent",
+   "district": "Çankaya",
+   "lat": 39.863322,
+   "lon": 32.64705,
+   "area_km2": 5.2742,
+   "osm_id": "relation/6789274",
+   "population": 12850,
+   "id": 141
+  },
+  {
+   "name": "Alacaatlı",
+   "district": "Çankaya",
+   "lat": 39.842348,
+   "lon": 32.674793,
+   "area_km2": 19.6642,
+   "osm_id": "relation/6789284",
+   "population": 750,
+   "id": 142
+  },
+  {
+   "name": "Dodurga",
+   "district": "Çankaya",
+   "lat": 39.816376,
+   "lon": 32.665811,
+   "area_km2": 13.8842,
+   "osm_id": "relation/6789345",
+   "population": 1710,
+   "id": 143
+  },
+  {
+   "name": "Prof. Dr. Ahmet Taner Kışlalı",
+   "district": "Çankaya",
+   "lat": 39.872025,
+   "lon": 32.686965,
+   "area_km2": 3.9111,
+   "osm_id": "relation/6789346",
+   "population": 14010,
+   "id": 144
+  },
+  {
+   "name": "Beytepe",
+   "district": "Çankaya",
+   "lat": 39.852461,
+   "lon": 32.713383,
+   "area_km2": 21.0549,
+   "osm_id": "relation/6789376",
+   "population": 830,
+   "id": 145
+  },
+  {
+   "name": "Ahlatlıbel",
+   "district": "Çankaya",
+   "lat": 39.841372,
+   "lon": 32.750662,
+   "area_km2": 11.9124,
+   "osm_id": "relation/6792629",
+   "population": 3880,
+   "id": 146
+  },
+  {
+   "name": "Aşağı Dikmen",
+   "district": "Çankaya",
+   "lat": 39.844746,
+   "lon": 32.844735,
+   "area_km2": 2.0453,
+   "osm_id": "relation/8732916",
+   "population": 23420,
+   "id": 147
+  },
+  {
+   "name": "Atakent",
+   "district": "Etimesgut",
+   "lat": 39.953156,
+   "lon": 32.608765,
+   "area_km2": 0.894,
+   "osm_id": "relation/6745047",
+   "population": 16730,
+   "id": 148
+  },
+  {
+   "name": "Topçu",
+   "district": "Etimesgut",
+   "lat": 39.948045,
+   "lon": 32.617097,
+   "area_km2": 1.4621,
+   "osm_id": "relation/6745048",
+   "population": 18520,
+   "id": 149
+  },
+  {
+   "name": "Oğuzlar",
+   "district": "Etimesgut",
+   "lat": 39.937613,
+   "lon": 32.60409,
+   "area_km2": 2.3487,
+   "osm_id": "relation/6745049",
+   "population": 17930,
+   "id": 150
+  },
+  {
+   "name": "Ayyıldız",
+   "district": "Etimesgut",
+   "lat": 39.929119,
+   "lon": 32.615212,
+   "area_km2": 4.5224,
+   "osm_id": "relation/6745064",
+   "population": 17500,
+   "id": 151
+  },
+  {
+   "name": "Ahi Mesut",
+   "district": "Etimesgut",
+   "lat": 39.932156,
+   "lon": 32.635241,
+   "area_km2": 2.7603,
+   "osm_id": "relation/6745097",
+   "population": 30920,
+   "id": 152
+  },
+  {
+   "name": "Elvan",
+   "district": "Etimesgut",
+   "lat": 39.947841,
+   "lon": 32.628101,
+   "area_km2": 1.2754,
+   "osm_id": "relation/6745117",
+   "population": 44650,
+   "id": 153
+  },
+  {
+   "name": "Piyade",
+   "district": "Etimesgut",
+   "lat": 39.947507,
+   "lon": 32.63715,
+   "area_km2": 1.1895,
+   "osm_id": "relation/6745118",
+   "population": 23800,
+   "id": 154
+  },
+  {
+   "name": "Süvari",
+   "district": "Etimesgut",
+   "lat": 39.943804,
+   "lon": 32.644603,
+   "area_km2": 1.1629,
+   "osm_id": "relation/6745141",
+   "population": 31480,
+   "id": 155
+  },
+  {
+   "name": "Kazım Karabekir",
+   "district": "Etimesgut",
+   "lat": 39.947421,
+   "lon": 32.655119,
+   "area_km2": 0.5884,
+   "osm_id": "relation/6745142",
+   "population": 9960,
+   "id": 156
+  },
+  {
+   "name": "İstasyon",
+   "district": "Etimesgut",
+   "lat": 39.941049,
+   "lon": 32.661956,
+   "area_km2": 1.5501,
+   "osm_id": "relation/6745143",
+   "population": 18270,
+   "id": 157
+  },
+  {
+   "name": "Alsancak",
+   "district": "Etimesgut",
+   "lat": 39.930651,
+   "lon": 32.650818,
+   "area_km2": 1.1107,
+   "osm_id": "relation/6745165",
+   "population": 15310,
+   "id": 158
+  },
+  {
+   "name": "Bağlıca",
+   "district": "Etimesgut",
+   "lat": 39.90284,
+   "lon": 32.640139,
+   "area_km2": 13.057,
+   "osm_id": "relation/6745185",
+   "population": 2470,
+   "id": 159
+  },
+  {
+   "name": "Şeker",
+   "district": "Etimesgut",
+   "lat": 39.966476,
+   "lon": 32.661218,
+   "area_km2": 1.3476,
+   "osm_id": "relation/6747513",
+   "population": 52850,
+   "id": 160
+  },
+  {
+   "name": "Şehit Osman Avcı",
+   "district": "Etimesgut",
+   "lat": 39.979265,
+   "lon": 32.653906,
+   "area_km2": 2.0415,
+   "osm_id": "relation/6747514",
+   "population": 23650,
+   "id": 161
+  },
+  {
+   "name": "Altay",
+   "district": "Etimesgut",
+   "lat": 39.972533,
+   "lon": 32.641803,
+   "area_km2": 2.1809,
+   "osm_id": "relation/6747515",
+   "population": 42910,
+   "id": 162
+  },
+  {
+   "name": "Göksu",
+   "district": "Etimesgut",
+   "lat": 39.990614,
+   "lon": 32.645328,
+   "area_km2": 3.4586,
+   "osm_id": "relation/6747547",
+   "population": 20220,
+   "id": 163
+  },
+  {
+   "name": "Şeyh Şamil",
+   "district": "Etimesgut",
+   "lat": 39.998623,
+   "lon": 32.629444,
+   "area_km2": 1.7354,
+   "osm_id": "relation/6747548",
+   "population": 40910,
+   "id": 164
+  },
+  {
+   "name": "Tunahan",
+   "district": "Etimesgut",
+   "lat": 39.987444,
+   "lon": 32.624233,
+   "area_km2": 2.4783,
+   "osm_id": "relation/6747568",
+   "population": 36820,
+   "id": 165
+  },
+  {
+   "name": "Güzelkent",
+   "district": "Etimesgut",
+   "lat": 39.990091,
+   "lon": 32.60717,
+   "area_km2": 1.5735,
+   "osm_id": "relation/6747569",
+   "population": 26430,
+   "id": 166
+  },
+  {
+   "name": "Eryaman",
+   "district": "Etimesgut",
+   "lat": 39.975357,
+   "lon": 32.618627,
+   "area_km2": 3.7913,
+   "osm_id": "relation/6747593",
+   "population": 25150,
+   "id": 167
+  },
+  {
+   "name": "Yavuz Selim",
+   "district": "Etimesgut",
+   "lat": 39.999381,
+   "lon": 32.614284,
+   "area_km2": 1.3897,
+   "osm_id": "relation/6747594",
+   "population": 20410,
+   "id": 168
+  },
+  {
+   "name": "Yeşilova",
+   "district": "Etimesgut",
+   "lat": 39.964525,
+   "lon": 32.615789,
+   "area_km2": 2.6113,
+   "osm_id": "relation/6747595",
+   "population": 37350,
+   "id": 169
+  },
+  {
+   "name": "Etiler",
+   "district": "Etimesgut",
+   "lat": 39.957799,
+   "lon": 32.647535,
+   "area_km2": 5.0641,
+   "osm_id": "relation/6747635",
+   "population": 15090,
+   "id": 170
+  },
+  {
+   "name": "30 Ağustos",
+   "district": "Etimesgut",
+   "lat": 39.941962,
+   "lon": 32.653857,
+   "area_km2": 0.7832,
+   "osm_id": "relation/6747744",
+   "population": 9990,
+   "id": 171
+  },
+  {
+   "name": "Bahçekapı",
+   "district": "Etimesgut",
+   "lat": 39.929254,
+   "lon": 32.751552,
+   "area_km2": 22.4333,
+   "osm_id": "relation/6748082",
+   "population": 1150,
+   "id": 172
+  },
+  {
+   "name": "Fatih Sultan",
+   "district": "Etimesgut",
+   "lat": 39.879383,
+   "lon": 32.643,
+   "area_km2": 5.3098,
+   "osm_id": "relation/6789375",
+   "population": 28630,
+   "id": 173
+  },
+  {
+   "name": "Subaşı",
+   "district": "Gölbaşı",
+   "lat": 39.640183,
+   "lon": 32.539106,
+   "area_km2": 25.8839,
+   "osm_id": "relation/1809463",
+   "population": 2330,
+   "id": 174
+  },
+  {
+   "name": "İncek",
+   "district": "Gölbaşı",
+   "lat": 39.803642,
+   "lon": 32.695467,
+   "area_km2": 12.0187,
+   "osm_id": "relation/6792323",
+   "population": 11140,
+   "id": 175
+  },
+  {
+   "name": "Kızılcaşar",
+   "district": "Gölbaşı",
+   "lat": 39.812242,
+   "lon": 32.732004,
+   "area_km2": 14.6513,
+   "osm_id": "relation/6792446",
+   "population": 10790,
+   "id": 176
+  },
+  {
+   "name": "Taşpınar",
+   "district": "Gölbaşı",
+   "lat": 39.815207,
+   "lon": 32.769689,
+   "area_km2": 15.1821,
+   "osm_id": "relation/6792597",
+   "population": 6870,
+   "id": 177
+  },
+  {
+   "name": "Karşıyaka",
+   "district": "Gölbaşı",
+   "lat": 39.781175,
+   "lon": 32.770519,
+   "area_km2": 26.8957,
+   "osm_id": "relation/6794450",
+   "population": 1770,
+   "id": 178
+  },
+  {
+   "name": "Gaziosmanpaşa",
+   "district": "Gölbaşı",
+   "lat": 39.771651,
+   "lon": 32.798694,
+   "area_km2": 7.499,
+   "osm_id": "relation/6794464",
+   "population": 36390,
+   "id": 179
+  },
+  {
+   "name": "Şafak",
+   "district": "Gölbaşı",
+   "lat": 39.803484,
+   "lon": 32.809298,
+   "area_km2": 1.8759,
+   "osm_id": "relation/7064697",
+   "population": 95910,
+   "id": 180
+  },
+  {
+   "name": "Gümüşdere",
+   "district": "Keçiören",
+   "lat": 39.962617,
+   "lon": 32.856159,
+   "area_km2": 0.7986,
+   "osm_id": "relation/5525500",
+   "population": 28680,
+   "id": 181
+  },
+  {
+   "name": "Kavacık Subayevleri",
+   "district": "Keçiören",
+   "lat": 39.968806,
+   "lon": 32.869989,
+   "area_km2": 1.3702,
+   "osm_id": "relation/5525645",
+   "population": 28510,
+   "id": 182
+  },
+  {
+   "name": "Hasköy",
+   "district": "Keçiören",
+   "lat": 39.974948,
+   "lon": 32.881192,
+   "area_km2": 0.2879,
+   "osm_id": "relation/5525677",
+   "population": 4010,
+   "id": 183
+  },
+  {
+   "name": "Şefkat",
+   "district": "Keçiören",
+   "lat": 39.980339,
+   "lon": 32.87787,
+   "area_km2": 0.8354,
+   "osm_id": "relation/5525679",
+   "population": 10830,
+   "id": 184
+  },
+  {
+   "name": "Kalaba",
+   "district": "Keçiören",
+   "lat": 39.974385,
+   "lon": 32.864665,
+   "area_km2": 0.729,
+   "osm_id": "relation/5525754",
+   "population": 27380,
+   "id": 185
+  },
+  {
+   "name": "Güçlükaya",
+   "district": "Keçiören",
+   "lat": 39.983341,
+   "lon": 32.869563,
+   "area_km2": 0.8268,
+   "osm_id": "relation/5525799",
+   "population": 31650,
+   "id": 186
+  },
+  {
+   "name": "Bağlarbaşı",
+   "district": "Keçiören",
+   "lat": 39.992376,
+   "lon": 32.881681,
+   "area_km2": 1.2177,
+   "osm_id": "relation/5525820",
+   "population": 22910,
+   "id": 187
+  },
+  {
+   "name": "Yakacık",
+   "district": "Keçiören",
+   "lat": 39.990021,
+   "lon": 32.869747,
+   "area_km2": 0.4046,
+   "osm_id": "relation/5525821",
+   "population": 7540,
+   "id": 188
+  },
+  {
+   "name": "Tepebaşı",
+   "district": "Keçiören",
+   "lat": 39.987678,
+   "lon": 32.862434,
+   "area_km2": 0.8356,
+   "osm_id": "relation/5525831",
+   "population": 29160,
+   "id": 189
+  },
+  {
+   "name": "Çiçekli",
+   "district": "Keçiören",
+   "lat": 39.980785,
+   "lon": 32.854177,
+   "area_km2": 0.4755,
+   "osm_id": "relation/5525888",
+   "population": 6870,
+   "id": 190
+  },
+  {
+   "name": "Karargahtepe",
+   "district": "Keçiören",
+   "lat": 39.97261,
+   "lon": 32.859931,
+   "area_km2": 0.5362,
+   "osm_id": "relation/5525921",
+   "population": 8330,
+   "id": 191
+  },
+  {
+   "name": "Basınevleri",
+   "district": "Keçiören",
+   "lat": 39.971326,
+   "lon": 32.854096,
+   "area_km2": 0.7151,
+   "osm_id": "relation/5525940",
+   "population": 18890,
+   "id": 192
+  },
+  {
+   "name": "Emrah",
+   "district": "Keçiören",
+   "lat": 39.970687,
+   "lon": 32.846652,
+   "area_km2": 1.3968,
+   "osm_id": "relation/5525974",
+   "population": 23620,
+   "id": 193
+  },
+  {
+   "name": "Aşağı Eğlence",
+   "district": "Keçiören",
+   "lat": 39.973593,
+   "lon": 32.835546,
+   "area_km2": 0.9436,
+   "osm_id": "relation/5526123",
+   "population": 19530,
+   "id": 194
+  },
+  {
+   "name": "İncirli",
+   "district": "Keçiören",
+   "lat": 39.982567,
+   "lon": 32.844772,
+   "area_km2": 1.1219,
+   "osm_id": "relation/5526130",
+   "population": 21520,
+   "id": 195
+  },
+  {
+   "name": "19 Mayıs",
+   "district": "Keçiören",
+   "lat": 39.988048,
+   "lon": 32.853395,
+   "area_km2": 0.8836,
+   "osm_id": "relation/5526161",
+   "population": 20730,
+   "id": 196
+  },
+  {
+   "name": "Kuşcağız",
+   "district": "Keçiören",
+   "lat": 39.997858,
+   "lon": 32.847197,
+   "area_km2": 1.8238,
+   "osm_id": "relation/5526587",
+   "population": 52090,
+   "id": 197
+  },
+  {
+   "name": "Pınarbaşı",
+   "district": "Keçiören",
+   "lat": 40.000634,
+   "lon": 32.863645,
+   "area_km2": 1.1911,
+   "osm_id": "relation/5526951",
+   "population": 24730,
+   "id": 198
+  },
+  {
+   "name": "Şenlik",
+   "district": "Keçiören",
+   "lat": 39.995587,
+   "lon": 32.868778,
+   "area_km2": 0.749,
+   "osm_id": "relation/5527199",
+   "population": 19750,
+   "id": 199
+  },
+  {
+   "name": "Atapark",
+   "district": "Keçiören",
+   "lat": 40.009229,
+   "lon": 32.843341,
+   "area_km2": 1.7377,
+   "osm_id": "relation/5527457",
+   "population": 15170,
+   "id": 200
+  },
+  {
+   "name": "Ufuktepe",
+   "district": "Keçiören",
+   "lat": 40.011319,
+   "lon": 32.853676,
+   "area_km2": 0.541,
+   "osm_id": "relation/5527717",
+   "population": 11300,
+   "id": 201
+  },
+  {
+   "name": "Osmangazi",
+   "district": "Keçiören",
+   "lat": 40.013455,
+   "lon": 32.861162,
+   "area_km2": 0.759,
+   "osm_id": "relation/5527723",
+   "population": 11880,
+   "id": 202
+  },
+  {
+   "name": "Kamil Ocak",
+   "district": "Keçiören",
+   "lat": 39.98397,
+   "lon": 32.881687,
+   "area_km2": 0.5653,
+   "osm_id": "relation/5527733",
+   "population": 7830,
+   "id": 203
+  },
+  {
+   "name": "Çaldıran",
+   "district": "Keçiören",
+   "lat": 39.987436,
+   "lon": 32.888731,
+   "area_km2": 0.4615,
+   "osm_id": "relation/5527798",
+   "population": 7230,
+   "id": 204
+  },
+  {
+   "name": "Yeşiltepe",
+   "district": "Keçiören",
+   "lat": 39.99853,
+   "lon": 32.89433,
+   "area_km2": 1.0504,
+   "osm_id": "relation/5527866",
+   "population": 19150,
+   "id": 205
+  },
+  {
+   "name": "Yeşilöz",
+   "district": "Keçiören",
+   "lat": 39.989716,
+   "lon": 32.895882,
+   "area_km2": 0.5498,
+   "osm_id": "relation/5527904",
+   "population": 16090,
+   "id": 206
+  },
+  {
+   "name": "Aktepe",
+   "district": "Keçiören",
+   "lat": 40.000791,
+   "lon": 32.887427,
+   "area_km2": 0.3427,
+   "osm_id": "relation/5527921",
+   "population": 4600,
+   "id": 207
+  },
+  {
+   "name": "Adnan Menderes",
+   "district": "Keçiören",
+   "lat": 40.00095,
+   "lon": 32.881647,
+   "area_km2": 0.5607,
+   "osm_id": "relation/5536418",
+   "population": 12040,
+   "id": 208
+  },
+  {
+   "name": "Güzelyurt",
+   "district": "Keçiören",
+   "lat": 40.005315,
+   "lon": 32.886038,
+   "area_km2": 0.2643,
+   "osm_id": "relation/5536424",
+   "population": 4770,
+   "id": 209
+  },
+  {
+   "name": "Şenyuva",
+   "district": "Keçiören",
+   "lat": 40.017399,
+   "lon": 32.883829,
+   "area_km2": 4.3419,
+   "osm_id": "relation/5536438",
+   "population": 20530,
+   "id": 210
+  },
+  {
+   "name": "23 Nisan",
+   "district": "Keçiören",
+   "lat": 40.007279,
+   "lon": 32.879721,
+   "area_km2": 0.3204,
+   "osm_id": "relation/5536530",
+   "population": 9720,
+   "id": 211
+  },
+  {
+   "name": "Köşk",
+   "district": "Keçiören",
+   "lat": 40.004387,
+   "lon": 32.875289,
+   "area_km2": 0.2895,
+   "osm_id": "relation/5536545",
+   "population": 7460,
+   "id": 212
+  },
+  {
+   "name": "Uyanış",
+   "district": "Keçiören",
+   "lat": 40.006186,
+   "lon": 32.868803,
+   "area_km2": 0.6084,
+   "osm_id": "relation/5536616",
+   "population": 20600,
+   "id": 213
+  },
+  {
+   "name": "Bademlik",
+   "district": "Keçiören",
+   "lat": 40.012989,
+   "lon": 32.871261,
+   "area_km2": 0.9579,
+   "osm_id": "relation/5536650",
+   "population": 18790,
+   "id": 214
+  },
+  {
+   "name": "Kanuni",
+   "district": "Keçiören",
+   "lat": 40.023238,
+   "lon": 32.855122,
+   "area_km2": 2.6686,
+   "osm_id": "relation/5536676",
+   "population": 26240,
+   "id": 215
+  },
+  {
+   "name": "Karşıyaka",
+   "district": "Keçiören",
+   "lat": 40.070089,
+   "lon": 32.837856,
+   "area_km2": 20.9204,
+   "osm_id": "relation/5536806",
+   "population": 1220,
+   "id": 216
+  },
+  {
+   "name": "Karakaya",
+   "district": "Keçiören",
+   "lat": 40.039204,
+   "lon": 32.851744,
+   "area_km2": 1.7289,
+   "osm_id": "relation/5536815",
+   "population": 33770,
+   "id": 217
+  },
+  {
+   "name": "Kafkas",
+   "district": "Keçiören",
+   "lat": 40.034419,
+   "lon": 32.848322,
+   "area_km2": 0.829,
+   "osm_id": "relation/5536830",
+   "population": 18460,
+   "id": 218
+  },
+  {
+   "name": "Hisar",
+   "district": "Keçiören",
+   "lat": 40.063728,
+   "lon": 32.821152,
+   "area_km2": 15.5014,
+   "osm_id": "relation/5536841",
+   "population": 1630,
+   "id": 219
+  },
+  {
+   "name": "Ovacık",
+   "district": "Keçiören",
+   "lat": 40.021608,
+   "lon": 32.828759,
+   "area_km2": 8.8655,
+   "osm_id": "relation/5536912",
+   "population": 7300,
+   "id": 220
+  },
+  {
+   "name": "Yükseltepe",
+   "district": "Keçiören",
+   "lat": 40.014425,
+   "lon": 32.803309,
+   "area_km2": 5.296,
+   "osm_id": "relation/5536946",
+   "population": 18860,
+   "id": 221
+  },
+  {
+   "name": "Esertepe",
+   "district": "Keçiören",
+   "lat": 39.993172,
+   "lon": 32.837719,
+   "area_km2": 1.8382,
+   "osm_id": "relation/5536970",
+   "population": 77100,
+   "id": 222
+  },
+  {
+   "name": "Etlik",
+   "district": "Keçiören",
+   "lat": 39.980089,
+   "lon": 32.829662,
+   "area_km2": 1.2954,
+   "osm_id": "relation/5537036",
+   "population": 49430,
+   "id": 223
+  },
+  {
+   "name": "Ayvalı",
+   "district": "Keçiören",
+   "lat": 39.979146,
+   "lon": 32.817225,
+   "area_km2": 1.9957,
+   "osm_id": "relation/5537040",
+   "population": 24450,
+   "id": 224
+  },
+  {
+   "name": "Yayla",
+   "district": "Keçiören",
+   "lat": 39.995332,
+   "lon": 32.826763,
+   "area_km2": 2.3077,
+   "osm_id": "relation/5537126",
+   "population": 30650,
+   "id": 225
+  },
+  {
+   "name": "Sancaktepe",
+   "district": "Keçiören",
+   "lat": 39.995519,
+   "lon": 32.81507,
+   "area_km2": 1.1106,
+   "osm_id": "relation/5537167",
+   "population": 13540,
+   "id": 226
+  },
+  {
+   "name": "Şehit Kubilay",
+   "district": "Keçiören",
+   "lat": 39.995046,
+   "lon": 32.80502,
+   "area_km2": 1.5366,
+   "osm_id": "relation/5537178",
+   "population": 23550,
+   "id": 227
+  },
+  {
+   "name": "Kösrelik",
+   "district": "Keçiören",
+   "lat": 40.080064,
+   "lon": 32.858132,
+   "area_km2": 16.292,
+   "osm_id": "relation/5537300",
+   "population": 2410,
+   "id": 228
+  },
+  {
+   "name": "Sarıbeyler",
+   "district": "Keçiören",
+   "lat": 40.124463,
+   "lon": 32.772472,
+   "area_km2": 15.4452,
+   "osm_id": "relation/5537364",
+   "population": 3660,
+   "id": 229
+  },
+  {
+   "name": "Çalseki",
+   "district": "Keçiören",
+   "lat": 40.145895,
+   "lon": 32.79536,
+   "area_km2": 10.6322,
+   "osm_id": "relation/5537367",
+   "population": 3870,
+   "id": 230
+  },
+  {
+   "name": "Bağlum Güzelyurt",
+   "district": "Keçiören",
+   "lat": 40.185169,
+   "lon": 32.816285,
+   "area_km2": 14.5976,
+   "osm_id": "relation/5537405",
+   "population": 2140,
+   "id": 231
+  },
+  {
+   "name": "Şirintepe",
+   "district": "Mamak",
+   "lat": 39.917316,
+   "lon": 32.922109,
+   "area_km2": 0.4418,
+   "osm_id": "relation/6521565",
+   "population": 3430,
+   "id": 232
+  },
+  {
+   "name": "Misket",
+   "district": "Mamak",
+   "lat": 39.926878,
+   "lon": 32.915262,
+   "area_km2": 0.5484,
+   "osm_id": "relation/6521760",
+   "population": 8510,
+   "id": 233
+  },
+  {
+   "name": "Bostancık",
+   "district": "Mamak",
+   "lat": 39.957932,
+   "lon": 32.929965,
+   "area_km2": 0.8345,
+   "osm_id": "relation/6752749",
+   "population": 9310,
+   "id": 234
+  },
+  {
+   "name": "Ekin",
+   "district": "Mamak",
+   "lat": 39.959191,
+   "lon": 32.944011,
+   "area_km2": 1.3828,
+   "osm_id": "relation/6752807",
+   "population": 17300,
+   "id": 235
+  },
+  {
+   "name": "Başak",
+   "district": "Mamak",
+   "lat": 39.957933,
+   "lon": 32.960379,
+   "area_km2": 3.6764,
+   "osm_id": "relation/6752808",
+   "population": 15750,
+   "id": 236
+  },
+  {
+   "name": "PTT Evleri",
+   "district": "Mamak",
+   "lat": 39.943581,
+   "lon": 32.946845,
+   "area_km2": 7.3894,
+   "osm_id": "relation/6752829",
+   "population": 7410,
+   "id": 237
+  },
+  {
+   "name": "Karaağaç",
+   "district": "Mamak",
+   "lat": 39.940084,
+   "lon": 32.923068,
+   "area_km2": 0.3429,
+   "osm_id": "relation/6752845",
+   "population": 3060,
+   "id": 238
+  },
+  {
+   "name": "Altıağaç",
+   "district": "Mamak",
+   "lat": 39.938357,
+   "lon": 32.918081,
+   "area_km2": 0.4448,
+   "osm_id": "relation/6752846",
+   "population": 4390,
+   "id": 239
+  },
+  {
+   "name": "Bahçeleriçi",
+   "district": "Mamak",
+   "lat": 39.930511,
+   "lon": 32.91632,
+   "area_km2": 0.3585,
+   "osm_id": "relation/6752847",
+   "population": 12470,
+   "id": 240
+  },
+  {
+   "name": "Hüseyingazi",
+   "district": "Mamak",
+   "lat": 39.941081,
+   "lon": 32.91376,
+   "area_km2": 1.4471,
+   "osm_id": "relation/6753031",
+   "population": 13710,
+   "id": 241
+  },
+  {
+   "name": "Harman",
+   "district": "Mamak",
+   "lat": 39.939392,
+   "lon": 32.906338,
+   "area_km2": 0.7362,
+   "osm_id": "relation/6753032",
+   "population": 8170,
+   "id": 242
+  },
+  {
+   "name": "Çiğiltepe",
+   "district": "Mamak",
+   "lat": 39.953419,
+   "lon": 32.912694,
+   "area_km2": 0.274,
+   "osm_id": "relation/6753085",
+   "population": 8610,
+   "id": 243
+  },
+  {
+   "name": "Anayurt",
+   "district": "Mamak",
+   "lat": 39.948886,
+   "lon": 32.905355,
+   "area_km2": 0.6537,
+   "osm_id": "relation/6753086",
+   "population": 29570,
+   "id": 244
+  },
+  {
+   "name": "Gülseren",
+   "district": "Mamak",
+   "lat": 39.947844,
+   "lon": 32.898481,
+   "area_km2": 0.252,
+   "osm_id": "relation/6753087",
+   "population": 2760,
+   "id": 245
+  },
+  {
+   "name": "Altınevler",
+   "district": "Mamak",
+   "lat": 39.95049,
+   "lon": 32.895785,
+   "area_km2": 0.4874,
+   "osm_id": "relation/6753088",
+   "population": 7050,
+   "id": 246
+  },
+  {
+   "name": "Gülveren",
+   "district": "Mamak",
+   "lat": 39.943638,
+   "lon": 32.893147,
+   "area_km2": 0.3138,
+   "osm_id": "relation/6753147",
+   "population": 5840,
+   "id": 247
+  },
+  {
+   "name": "Bahçelerüstü",
+   "district": "Mamak",
+   "lat": 39.941048,
+   "lon": 32.896911,
+   "area_km2": 0.3583,
+   "osm_id": "relation/6753148",
+   "population": 10830,
+   "id": 248
+  },
+  {
+   "name": "Abidinpaşa",
+   "district": "Mamak",
+   "lat": 39.927179,
+   "lon": 32.886468,
+   "area_km2": 0.403,
+   "osm_id": "relation/6753495",
+   "population": 4710,
+   "id": 249
+  },
+  {
+   "name": "Balkiraz",
+   "district": "Mamak",
+   "lat": 39.932687,
+   "lon": 32.887795,
+   "area_km2": 0.5258,
+   "osm_id": "relation/6753496",
+   "population": 7940,
+   "id": 250
+  },
+  {
+   "name": "Hürel",
+   "district": "Mamak",
+   "lat": 39.937557,
+   "lon": 32.901475,
+   "area_km2": 0.3957,
+   "osm_id": "relation/6753530",
+   "population": 8570,
+   "id": 251
+  },
+  {
+   "name": "Şafaktepe",
+   "district": "Mamak",
+   "lat": 39.938956,
+   "lon": 32.888681,
+   "area_km2": 0.5666,
+   "osm_id": "relation/6753531",
+   "population": 10840,
+   "id": 252
+  },
+  {
+   "name": "Demirlibahçe",
+   "district": "Mamak",
+   "lat": 39.938089,
+   "lon": 32.880742,
+   "area_km2": 0.5341,
+   "osm_id": "relation/6753541",
+   "population": 7700,
+   "id": 253
+  },
+  {
+   "name": "Mehtap",
+   "district": "Mamak",
+   "lat": 39.931042,
+   "lon": 32.899137,
+   "area_km2": 0.3643,
+   "osm_id": "relation/6753704",
+   "population": 5740,
+   "id": 254
+  },
+  {
+   "name": "Saimekadın",
+   "district": "Mamak",
+   "lat": 39.930225,
+   "lon": 32.893795,
+   "area_km2": 0.2905,
+   "osm_id": "relation/6753705",
+   "population": 2970,
+   "id": 255
+  },
+  {
+   "name": "Kartaltepe",
+   "district": "Mamak",
+   "lat": 39.92784,
+   "lon": 32.901252,
+   "area_km2": 0.3094,
+   "osm_id": "relation/6753706",
+   "population": 4700,
+   "id": 256
+  },
+  {
+   "name": "Çağlayan",
+   "district": "Mamak",
+   "lat": 39.928997,
+   "lon": 32.908485,
+   "area_km2": 0.4359,
+   "osm_id": "relation/6755828",
+   "population": 6550,
+   "id": 257
+  },
+  {
+   "name": "Tuzluçayır",
+   "district": "Mamak",
+   "lat": 39.923595,
+   "lon": 32.907074,
+   "area_km2": 0.458,
+   "osm_id": "relation/6755862",
+   "population": 8180,
+   "id": 258
+  },
+  {
+   "name": "Aşık Veysel",
+   "district": "Mamak",
+   "lat": 39.925529,
+   "lon": 32.893716,
+   "area_km2": 0.457,
+   "osm_id": "relation/6755884",
+   "population": 6200,
+   "id": 259
+  },
+  {
+   "name": "Peyami Sefa",
+   "district": "Mamak",
+   "lat": 39.920475,
+   "lon": 32.895425,
+   "area_km2": 0.5251,
+   "osm_id": "relation/6755902",
+   "population": 10190,
+   "id": 260
+  },
+  {
+   "name": "General Zeki Doğan",
+   "district": "Mamak",
+   "lat": 39.914707,
+   "lon": 32.908277,
+   "area_km2": 1.2915,
+   "osm_id": "relation/6755930",
+   "population": 28190,
+   "id": 261
+  },
+  {
+   "name": "Şahintepe",
+   "district": "Mamak",
+   "lat": 39.917441,
+   "lon": 32.915236,
+   "area_km2": 0.7904,
+   "osm_id": "relation/6755935",
+   "population": 13550,
+   "id": 262
+  },
+  {
+   "name": "Mutlu",
+   "district": "Mamak",
+   "lat": 39.905927,
+   "lon": 32.904793,
+   "area_km2": 1.3739,
+   "osm_id": "relation/6755950",
+   "population": 23440,
+   "id": 263
+  },
+  {
+   "name": "Kutlu",
+   "district": "Mamak",
+   "lat": 39.914097,
+   "lon": 32.899543,
+   "area_km2": 0.6248,
+   "osm_id": "relation/6755987",
+   "population": 10430,
+   "id": 264
+  },
+  {
+   "name": "Kazım Orbay",
+   "district": "Mamak",
+   "lat": 39.915359,
+   "lon": 32.892592,
+   "area_km2": 0.3252,
+   "osm_id": "relation/6755988",
+   "population": 5370,
+   "id": 265
+  },
+  {
+   "name": "Türközü",
+   "district": "Mamak",
+   "lat": 39.910464,
+   "lon": 32.88974,
+   "area_km2": 0.7686,
+   "osm_id": "relation/6756066",
+   "population": 9710,
+   "id": 266
+  },
+  {
+   "name": "Akdere",
+   "district": "Mamak",
+   "lat": 39.918781,
+   "lon": 32.886765,
+   "area_km2": 0.3824,
+   "osm_id": "relation/6759086",
+   "population": 7050,
+   "id": 267
+  },
+  {
+   "name": "Şehit Cengiz Topel",
+   "district": "Mamak",
+   "lat": 39.918644,
+   "lon": 32.880742,
+   "area_km2": 0.3086,
+   "osm_id": "relation/6767479",
+   "population": 4930,
+   "id": 268
+  },
+  {
+   "name": "Fahri Korutürk",
+   "district": "Mamak",
+   "lat": 39.909099,
+   "lon": 32.922947,
+   "area_km2": 0.7643,
+   "osm_id": "relation/6767480",
+   "population": 25860,
+   "id": 269
+  },
+  {
+   "name": "Durali Alıç",
+   "district": "Mamak",
+   "lat": 39.903158,
+   "lon": 32.931399,
+   "area_km2": 1.4106,
+   "osm_id": "relation/6767589",
+   "population": 36640,
+   "id": 270
+  },
+  {
+   "name": "Boğaziçi",
+   "district": "Mamak",
+   "lat": 39.915742,
+   "lon": 32.933387,
+   "area_km2": 0.4698,
+   "osm_id": "relation/6767590",
+   "population": 8860,
+   "id": 271
+  },
+  {
+   "name": "Akşemsettin",
+   "district": "Mamak",
+   "lat": 39.898085,
+   "lon": 32.938636,
+   "area_km2": 1.8003,
+   "osm_id": "relation/6767686",
+   "population": 18740,
+   "id": 272
+  },
+  {
+   "name": "Cengizhan",
+   "district": "Mamak",
+   "lat": 39.897924,
+   "lon": 32.923885,
+   "area_km2": 1.0804,
+   "osm_id": "relation/6767687",
+   "population": 11560,
+   "id": 273
+  },
+  {
+   "name": "Dutluk",
+   "district": "Mamak",
+   "lat": 39.92034,
+   "lon": 32.92546,
+   "area_km2": 0.4556,
+   "osm_id": "relation/6767752",
+   "population": 11390,
+   "id": 274
+  },
+  {
+   "name": "Derbent",
+   "district": "Mamak",
+   "lat": 39.925848,
+   "lon": 32.929962,
+   "area_km2": 1.6645,
+   "osm_id": "relation/6767753",
+   "population": 25770,
+   "id": 275
+  },
+  {
+   "name": "Araplar",
+   "district": "Mamak",
+   "lat": 39.93547,
+   "lon": 32.961374,
+   "area_km2": 5.0358,
+   "osm_id": "relation/6767764",
+   "population": 17190,
+   "id": 276
+  },
+  {
+   "name": "Dostlar",
+   "district": "Mamak",
+   "lat": 39.92557,
+   "lon": 32.955133,
+   "area_km2": 1.2464,
+   "osm_id": "relation/6767825",
+   "population": 10440,
+   "id": 277
+  },
+  {
+   "name": "Köstence",
+   "district": "Mamak",
+   "lat": 39.920298,
+   "lon": 32.938658,
+   "area_km2": 0.5776,
+   "osm_id": "relation/6767826",
+   "population": 13120,
+   "id": 278
+  },
+  {
+   "name": "Üreğil",
+   "district": "Mamak",
+   "lat": 39.895986,
+   "lon": 32.945611,
+   "area_km2": 4.1858,
+   "osm_id": "relation/6767836",
+   "population": 21830,
+   "id": 279
+  },
+  {
+   "name": "Tepecik",
+   "district": "Mamak",
+   "lat": 39.925133,
+   "lon": 32.965596,
+   "area_km2": 1.7614,
+   "osm_id": "relation/6767865",
+   "population": 16420,
+   "id": 280
+  },
+  {
+   "name": "Kayaş",
+   "district": "Mamak",
+   "lat": 39.921372,
+   "lon": 32.980477,
+   "area_km2": 3.9207,
+   "osm_id": "relation/6767866",
+   "population": 17010,
+   "id": 281
+  },
+  {
+   "name": "Şahap Gürler",
+   "district": "Mamak",
+   "lat": 39.899442,
+   "lon": 32.957694,
+   "area_km2": 2.9638,
+   "osm_id": "relation/6768082",
+   "population": 27360,
+   "id": 282
+  },
+  {
+   "name": "Yeşilbayır",
+   "district": "Mamak",
+   "lat": 39.902242,
+   "lon": 32.971943,
+   "area_km2": 2.4221,
+   "osm_id": "relation/6768083",
+   "population": 26730,
+   "id": 283
+  },
+  {
+   "name": "Küçük Kayaş",
+   "district": "Mamak",
+   "lat": 39.909005,
+   "lon": 32.97556,
+   "area_km2": 1.2013,
+   "osm_id": "relation/6768248",
+   "population": 16850,
+   "id": 284
+  },
+  {
+   "name": "Ege",
+   "district": "Mamak",
+   "lat": 39.89521,
+   "lon": 32.912124,
+   "area_km2": 3.098,
+   "osm_id": "relation/6792771",
+   "population": 23510,
+   "id": 285
+  },
+  {
+   "name": "Kızılca",
+   "district": "Mamak",
+   "lat": 39.944884,
+   "lon": 33.004673,
+   "area_km2": 13.0635,
+   "osm_id": "relation/6792836",
+   "population": 2370,
+   "id": 286
+  },
+  {
+   "name": "Ayyıldız",
+   "district": "Pursaklar",
+   "lat": 40.026892,
+   "lon": 32.890472,
+   "area_km2": 0.1833,
+   "osm_id": "relation/6748047",
+   "population": 4580,
+   "id": 287
+  },
+  {
+   "name": "Mimar Sinan",
+   "district": "Pursaklar",
+   "lat": 40.043318,
+   "lon": 32.88305,
+   "area_km2": 4.1999,
+   "osm_id": "relation/6768370",
+   "population": 44440,
+   "id": 288
+  },
+  {
+   "name": "Yunus Emre",
+   "district": "Pursaklar",
+   "lat": 40.028129,
+   "lon": 32.886325,
+   "area_km2": 1.158,
+   "osm_id": "relation/6770556",
+   "population": 10560,
+   "id": 289
+  },
+  {
+   "name": "Merkez",
+   "district": "Pursaklar",
+   "lat": 40.039552,
+   "lon": 32.892521,
+   "area_km2": 1.2245,
+   "osm_id": "relation/6770589",
+   "population": 24980,
+   "id": 290
+  },
+  {
+   "name": "Fatih",
+   "district": "Pursaklar",
+   "lat": 40.047394,
+   "lon": 32.907246,
+   "area_km2": 2.1561,
+   "osm_id": "relation/6770611",
+   "population": 39590,
+   "id": 291
+  },
+  {
+   "name": "Tevfik İleri",
+   "district": "Pursaklar",
+   "lat": 40.040033,
+   "lon": 32.909373,
+   "area_km2": 2.5328,
+   "osm_id": "relation/6770620",
+   "population": 41520,
+   "id": 292
+  },
+  {
+   "name": "Malazgirt",
+   "district": "Sincan",
+   "lat": 39.955154,
+   "lon": 32.564302,
+   "area_km2": 1.0902,
+   "osm_id": "relation/6652689",
+   "population": 17930,
+   "id": 293
+  },
+  {
+   "name": "Tandoğan",
+   "district": "Sincan",
+   "lat": 39.959491,
+   "lon": 32.559417,
+   "area_km2": 1.3498,
+   "osm_id": "relation/6652734",
+   "population": 13130,
+   "id": 294
+  },
+  {
+   "name": "Atatürk",
+   "district": "Sincan",
+   "lat": 39.9605,
+   "lon": 32.579027,
+   "area_km2": 0.7932,
+   "osm_id": "relation/6725996",
+   "population": 17150,
+   "id": 295
+  },
+  {
+   "name": "Mareşal Çakmak",
+   "district": "Sincan",
+   "lat": 39.959082,
+   "lon": 32.592582,
+   "area_km2": 0.9287,
+   "osm_id": "relation/6726010",
+   "population": 32420,
+   "id": 296
+  },
+  {
+   "name": "Andiçen",
+   "district": "Sincan",
+   "lat": 39.953547,
+   "lon": 32.584188,
+   "area_km2": 0.696,
+   "osm_id": "relation/6726011",
+   "population": 7890,
+   "id": 297
+  },
+  {
+   "name": "Osmanlı",
+   "district": "Sincan",
+   "lat": 39.946832,
+   "lon": 32.583328,
+   "area_km2": 1.2986,
+   "osm_id": "relation/6726055",
+   "population": 31910,
+   "id": 298
+  },
+  {
+   "name": "Pınarbaşı",
+   "district": "Sincan",
+   "lat": 39.949234,
+   "lon": 32.568723,
+   "area_km2": 1.5339,
+   "osm_id": "relation/6726111",
+   "population": 23680,
+   "id": 299
+  },
+  {
+   "name": "Ertuğrulgazi",
+   "district": "Sincan",
+   "lat": 39.944781,
+   "lon": 32.594358,
+   "area_km2": 0.7741,
+   "osm_id": "relation/6726112",
+   "population": 14620,
+   "id": 300
+  },
+  {
+   "name": "Selçuklu",
+   "district": "Sincan",
+   "lat": 39.953988,
+   "lon": 32.59769,
+   "area_km2": 1.0649,
+   "osm_id": "relation/6726163",
+   "population": 13840,
+   "id": 301
+  },
+  {
+   "name": "Plevne",
+   "district": "Sincan",
+   "lat": 39.967041,
+   "lon": 32.598756,
+   "area_km2": 1.091,
+   "osm_id": "relation/6726164",
+   "population": 18180,
+   "id": 302
+  },
+  {
+   "name": "Akşemsettin",
+   "district": "Sincan",
+   "lat": 39.969414,
+   "lon": 32.589831,
+   "area_km2": 0.9403,
+   "osm_id": "relation/6726193",
+   "population": 28230,
+   "id": 303
+  },
+  {
+   "name": "İstasyon",
+   "district": "Sincan",
+   "lat": 39.970483,
+   "lon": 32.582888,
+   "area_km2": 0.7545,
+   "osm_id": "relation/6726260",
+   "population": 17880,
+   "id": 304
+  },
+  {
+   "name": "Ahi Evren",
+   "district": "Sincan",
+   "lat": 39.976574,
+   "lon": 32.557596,
+   "area_km2": 8.307,
+   "osm_id": "relation/6726365",
+   "population": 13450,
+   "id": 305
+  },
+  {
+   "name": "Yunus Emre",
+   "district": "Sincan",
+   "lat": 39.979079,
+   "lon": 32.59248,
+   "area_km2": 1.7214,
+   "osm_id": "relation/6726470",
+   "population": 42930,
+   "id": 306
+  },
+  {
+   "name": "Ulubatlı Hasan",
+   "district": "Sincan",
+   "lat": 39.99128,
+   "lon": 32.596658,
+   "area_km2": 1.3108,
+   "osm_id": "relation/6726508",
+   "population": 27700,
+   "id": 307
+  },
+  {
+   "name": "Fatih",
+   "district": "Sincan",
+   "lat": 39.987489,
+   "lon": 32.587119,
+   "area_km2": 0.8603,
+   "osm_id": "relation/6726590",
+   "population": 30380,
+   "id": 308
+  },
+  {
+   "name": "Gökçek",
+   "district": "Sincan",
+   "lat": 39.982693,
+   "lon": 32.575556,
+   "area_km2": 1.2675,
+   "osm_id": "relation/6728445",
+   "population": 26980,
+   "id": 309
+  },
+  {
+   "name": "Gazi Osmanpaşa",
+   "district": "Sincan",
+   "lat": 39.992416,
+   "lon": 32.58114,
+   "area_km2": 1.0618,
+   "osm_id": "relation/6728446",
+   "population": 26670,
+   "id": 310
+  },
+  {
+   "name": "Mevlana",
+   "district": "Sincan",
+   "lat": 39.993587,
+   "lon": 32.570134,
+   "area_km2": 0.8432,
+   "osm_id": "relation/6728461",
+   "population": 14600,
+   "id": 311
+  },
+  {
+   "name": "Törenkent",
+   "district": "Sincan",
+   "lat": 39.999255,
+   "lon": 32.558278,
+   "area_km2": 6.7625,
+   "osm_id": "relation/6728462",
+   "population": 10910,
+   "id": 312
+  },
+  {
+   "name": "Mustafa Kemal",
+   "district": "Sincan",
+   "lat": 39.989019,
+   "lon": 32.511916,
+   "area_km2": 11.3288,
+   "osm_id": "relation/6728843",
+   "population": 3180,
+   "id": 313
+  },
+  {
+   "name": "Menderes",
+   "district": "Sincan",
+   "lat": 40.014043,
+   "lon": 32.523816,
+   "area_km2": 2.3223,
+   "osm_id": "relation/6728890",
+   "population": 44040,
+   "id": 314
+  },
+  {
+   "name": "29 Ekim",
+   "district": "Sincan",
+   "lat": 40.014059,
+   "lon": 32.532546,
+   "area_km2": 1.6041,
+   "osm_id": "relation/6729026",
+   "population": 18090,
+   "id": 315
+  },
+  {
+   "name": "Fevzi Çakmak",
+   "district": "Sincan",
+   "lat": 40.019358,
+   "lon": 32.506776,
+   "area_km2": 3.8865,
+   "osm_id": "relation/6729027",
+   "population": 31610,
+   "id": 316
+  },
+  {
+   "name": "Çoğlu",
+   "district": "Sincan",
+   "lat": 40.027034,
+   "lon": 32.544295,
+   "area_km2": 9.8017,
+   "osm_id": "relation/6729173",
+   "population": 5020,
+   "id": 317
+  },
+  {
+   "name": "Yeniçimşit",
+   "district": "Sincan",
+   "lat": 39.939924,
+   "lon": 32.539149,
+   "area_km2": 10.3797,
+   "osm_id": "relation/6792223",
+   "population": 7240,
+   "id": 318
+  },
+  {
+   "name": "Saraycık",
+   "district": "Sincan",
+   "lat": 39.920491,
+   "lon": 32.571345,
+   "area_km2": 18.1865,
+   "osm_id": "relation/6792224",
+   "population": 2080,
+   "id": 319
+  },
+  {
+   "name": "Osmaniye",
+   "district": "Sincan",
+   "lat": 39.974516,
+   "lon": 32.529441,
+   "area_km2": 7.5643,
+   "osm_id": "relation/6792299",
+   "population": 16490,
+   "id": 320
+  },
+  {
+   "name": "Adalet",
+   "district": "Sincan",
+   "lat": 40.030095,
+   "lon": 32.566491,
+   "area_km2": 3.7666,
+   "osm_id": "relation/6793006",
+   "population": 32060,
+   "id": 321
+  },
+  {
+   "name": "Beştepe",
+   "district": "Yenimahalle",
+   "lat": 39.92343,
+   "lon": 32.806702,
+   "area_km2": 2.7813,
+   "osm_id": "relation/3680866",
+   "population": 15670,
+   "id": 322
+  },
+  {
+   "name": "Emniyet",
+   "district": "Yenimahalle",
+   "lat": 39.935809,
+   "lon": 32.819295,
+   "area_km2": 4.5213,
+   "osm_id": "relation/5540962",
+   "population": 11900,
+   "id": 323
+  },
+  {
+   "name": "Gazi",
+   "district": "Yenimahalle",
+   "lat": 39.944208,
+   "lon": 32.794783,
+   "area_km2": 6.3163,
+   "osm_id": "relation/5541250",
+   "population": 8950,
+   "id": 324
+  },
+  {
+   "name": "Macun",
+   "district": "Yenimahalle",
+   "lat": 39.953551,
+   "lon": 32.761976,
+   "area_km2": 2.8391,
+   "osm_id": "relation/5541275",
+   "population": 45780,
+   "id": 325
+  },
+  {
+   "name": "25 Mart",
+   "district": "Yenimahalle",
+   "lat": 39.953776,
+   "lon": 32.795888,
+   "area_km2": 0.4972,
+   "osm_id": "relation/5546023",
+   "population": 10860,
+   "id": 326
+  },
+  {
+   "name": "Çamlıca",
+   "district": "Yenimahalle",
+   "lat": 39.954183,
+   "lon": 32.780981,
+   "area_km2": 2.332,
+   "osm_id": "relation/5546025",
+   "population": 21810,
+   "id": 327
+  },
+  {
+   "name": "Gayret Mahllesi",
+   "district": "Yenimahalle",
+   "lat": 39.958714,
+   "lon": 32.806317,
+   "area_km2": 1.8008,
+   "osm_id": "relation/5546215",
+   "population": 18230,
+   "id": 328
+  },
+  {
+   "name": "Demetgül",
+   "district": "Yenimahalle",
+   "lat": 39.961325,
+   "lon": 32.794011,
+   "area_km2": 0.4284,
+   "osm_id": "relation/5546301",
+   "population": 7580,
+   "id": 329
+  },
+  {
+   "name": "Varlık",
+   "district": "Yenimahalle",
+   "lat": 39.961234,
+   "lon": 32.834135,
+   "area_km2": 2.614,
+   "osm_id": "relation/5554811",
+   "population": 18040,
+   "id": 330
+  },
+  {
+   "name": "Işınlar",
+   "district": "Yenimahalle",
+   "lat": 39.961841,
+   "lon": 32.817255,
+   "area_km2": 0.7444,
+   "osm_id": "relation/5554853",
+   "population": 10180,
+   "id": 331
+  },
+  {
+   "name": "Demetlale",
+   "district": "Yenimahalle",
+   "lat": 39.964507,
+   "lon": 32.790634,
+   "area_km2": 0.2981,
+   "osm_id": "relation/5554884",
+   "population": 5830,
+   "id": 332
+  },
+  {
+   "name": "Barış",
+   "district": "Yenimahalle",
+   "lat": 39.968381,
+   "lon": 32.795915,
+   "area_km2": 0.2238,
+   "osm_id": "relation/5554887",
+   "population": 5880,
+   "id": 333
+  },
+  {
+   "name": "Ragıp Tüzün",
+   "district": "Yenimahalle",
+   "lat": 39.964903,
+   "lon": 32.808077,
+   "area_km2": 0.1715,
+   "osm_id": "relation/5596459",
+   "population": 3720,
+   "id": 334
+  },
+  {
+   "name": "Yeniçağ",
+   "district": "Yenimahalle",
+   "lat": 39.965341,
+   "lon": 32.814248,
+   "area_km2": 0.1965,
+   "osm_id": "relation/5596477",
+   "population": 1550,
+   "id": 335
+  },
+  {
+   "name": "Yunus Emre",
+   "district": "Yenimahalle",
+   "lat": 39.970631,
+   "lon": 32.814096,
+   "area_km2": 0.4307,
+   "osm_id": "relation/5596484",
+   "population": 8380,
+   "id": 336
+  },
+  {
+   "name": "Çarşı",
+   "district": "Yenimahalle",
+   "lat": 39.967769,
+   "lon": 32.808146,
+   "area_km2": 0.1467,
+   "osm_id": "relation/5596514",
+   "population": 2640,
+   "id": 337
+  },
+  {
+   "name": "Tepealtı",
+   "district": "Yenimahalle",
+   "lat": 39.96538,
+   "lon": 32.801772,
+   "area_km2": 0.2099,
+   "osm_id": "relation/5596556",
+   "population": 4260,
+   "id": 338
+  },
+  {
+   "name": "Esentepe",
+   "district": "Yenimahalle",
+   "lat": 39.968696,
+   "lon": 32.802381,
+   "area_km2": 0.2718,
+   "osm_id": "relation/5596580",
+   "population": 8390,
+   "id": 339
+  },
+  {
+   "name": "Ergenekon",
+   "district": "Yenimahalle",
+   "lat": 39.973109,
+   "lon": 32.80635,
+   "area_km2": 0.5833,
+   "osm_id": "relation/5596689",
+   "population": 4940,
+   "id": 340
+  },
+  {
+   "name": "Anadolu",
+   "district": "Yenimahalle",
+   "lat": 39.972387,
+   "lon": 32.79672,
+   "area_km2": 0.2524,
+   "osm_id": "relation/5608962",
+   "population": 3600,
+   "id": 341
+  },
+  {
+   "name": "Karşıyaka",
+   "district": "Yenimahalle",
+   "lat": 39.971924,
+   "lon": 32.790969,
+   "area_km2": 0.2788,
+   "osm_id": "relation/5608971",
+   "population": 6010,
+   "id": 342
+  },
+  {
+   "name": "Demetevler",
+   "district": "Yenimahalle",
+   "lat": 39.964745,
+   "lon": 32.784383,
+   "area_km2": 0.9014,
+   "osm_id": "relation/5608995",
+   "population": 8860,
+   "id": 343
+  },
+  {
+   "name": "Mehmet Akif Ersoy",
+   "district": "Yenimahalle",
+   "lat": 39.967925,
+   "lon": 32.770441,
+   "area_km2": 2.3074,
+   "osm_id": "relation/5609003",
+   "population": 46660,
+   "id": 344
+  },
+  {
+   "name": "Özevler",
+   "district": "Yenimahalle",
+   "lat": 39.974875,
+   "lon": 32.778302,
+   "area_km2": 0.3522,
+   "osm_id": "relation/5609011",
+   "population": 7020,
+   "id": 345
+  },
+  {
+   "name": "Yeşilevler",
+   "district": "Yenimahalle",
+   "lat": 39.975245,
+   "lon": 32.786878,
+   "area_km2": 0.812,
+   "osm_id": "relation/5609015",
+   "population": 18800,
+   "id": 346
+  },
+  {
+   "name": "Güzelyaka",
+   "district": "Yenimahalle",
+   "lat": 39.975417,
+   "lon": 32.798326,
+   "area_km2": 0.2619,
+   "osm_id": "relation/5609028",
+   "population": 3760,
+   "id": 347
+  },
+  {
+   "name": "Pamuklar",
+   "district": "Yenimahalle",
+   "lat": 39.98224,
+   "lon": 32.808695,
+   "area_km2": 0.6237,
+   "osm_id": "relation/5609034",
+   "population": 14430,
+   "id": 348
+  },
+  {
+   "name": "Güventepe",
+   "district": "Yenimahalle",
+   "lat": 39.97955,
+   "lon": 32.803326,
+   "area_km2": 0.3807,
+   "osm_id": "relation/5609052",
+   "population": 9690,
+   "id": 349
+  },
+  {
+   "name": "Burç",
+   "district": "Yenimahalle",
+   "lat": 39.98594,
+   "lon": 32.802258,
+   "area_km2": 0.3887,
+   "osm_id": "relation/5609054",
+   "population": 7390,
+   "id": 350
+  },
+  {
+   "name": "Barıştepe",
+   "district": "Yenimahalle",
+   "lat": 39.98431,
+   "lon": 32.799416,
+   "area_km2": 0.3901,
+   "osm_id": "relation/5609065",
+   "population": 7420,
+   "id": 351
+  },
+  {
+   "name": "Kayalar",
+   "district": "Yenimahalle",
+   "lat": 39.980066,
+   "lon": 32.794281,
+   "area_km2": 0.3673,
+   "osm_id": "relation/5609083",
+   "population": 7070,
+   "id": 352
+  },
+  {
+   "name": "Çiğdemtepe",
+   "district": "Yenimahalle",
+   "lat": 40.001782,
+   "lon": 32.790429,
+   "area_km2": 2.8496,
+   "osm_id": "relation/5611743",
+   "population": 19910,
+   "id": 353
+  },
+  {
+   "name": "Aşağı Yahyalar",
+   "district": "Yenimahalle",
+   "lat": 39.981611,
+   "lon": 32.773858,
+   "area_km2": 0.8343,
+   "osm_id": "relation/5623458",
+   "population": 13610,
+   "id": 354
+  },
+  {
+   "name": "Yukarı Yahyalar",
+   "district": "Yenimahalle",
+   "lat": 39.982924,
+   "lon": 32.779963,
+   "area_km2": 0.3619,
+   "osm_id": "relation/5623480",
+   "population": 6010,
+   "id": 355
+  },
+  {
+   "name": "Kaletepe",
+   "district": "Yenimahalle",
+   "lat": 39.982659,
+   "lon": 32.78881,
+   "area_km2": 0.5935,
+   "osm_id": "relation/5623513",
+   "population": 11820,
+   "id": 356
+  },
+  {
+   "name": "Avcılar",
+   "district": "Yenimahalle",
+   "lat": 39.987295,
+   "lon": 32.784776,
+   "area_km2": 0.6337,
+   "osm_id": "relation/5623518",
+   "population": 15640,
+   "id": 357
+  },
+  {
+   "name": "İvedik",
+   "district": "Yenimahalle",
+   "lat": 40.003,
+   "lon": 32.769537,
+   "area_km2": 7.5508,
+   "osm_id": "relation/5623621",
+   "population": 5400,
+   "id": 358
+  },
+  {
+   "name": "Serhat",
+   "district": "Yenimahalle",
+   "lat": 39.982307,
+   "lon": 32.761276,
+   "area_km2": 6.2569,
+   "osm_id": "relation/5623684",
+   "population": 10440,
+   "id": 359
+  },
+  {
+   "name": "Uğur Mumcu",
+   "district": "Yenimahalle",
+   "lat": 39.956235,
+   "lon": 32.74142,
+   "area_km2": 3.2308,
+   "osm_id": "relation/5623780",
+   "population": 42350,
+   "id": 360
+  },
+  {
+   "name": "Ostim",
+   "district": "Yenimahalle",
+   "lat": 39.970419,
+   "lon": 32.746427,
+   "area_km2": 4.7656,
+   "osm_id": "relation/5623786",
+   "population": 12870,
+   "id": 361
+  },
+  {
+   "name": "İlkyerleşim",
+   "district": "Yenimahalle",
+   "lat": 39.975277,
+   "lon": 32.725063,
+   "area_km2": 2.1309,
+   "osm_id": "relation/5623804",
+   "population": 20650,
+   "id": 362
+  },
+  {
+   "name": "Yuvaköy",
+   "district": "Yenimahalle",
+   "lat": 40.034666,
+   "lon": 32.724829,
+   "area_km2": 25.8132,
+   "osm_id": "relation/5623959",
+   "population": 760,
+   "id": 363
+  },
+  {
+   "name": "Yakacık",
+   "district": "Yenimahalle",
+   "lat": 40.035136,
+   "lon": 32.75965,
+   "area_km2": 13.7557,
+   "osm_id": "relation/5623969",
+   "population": 3330,
+   "id": 364
+  },
+  {
+   "name": "Kuzey Yıldızı",
+   "district": "Yenimahalle",
+   "lat": 40.049753,
+   "lon": 32.790317,
+   "area_km2": 15.5994,
+   "osm_id": "relation/5623991",
+   "population": 1940,
+   "id": 365
+  },
+  {
+   "name": "Memlik",
+   "district": "Yenimahalle",
+   "lat": 40.081324,
+   "lon": 32.75788,
+   "area_km2": 17.8688,
+   "osm_id": "relation/5624447",
+   "population": 2350,
+   "id": 366
+  },
+  {
+   "name": "Turgut Özal",
+   "district": "Yenimahalle",
+   "lat": 39.991593,
+   "lon": 32.708224,
+   "area_km2": 5.5677,
+   "osm_id": "relation/5635764",
+   "population": 17840,
+   "id": 367
+  },
+  {
+   "name": "Kardelen",
+   "district": "Yenimahalle",
+   "lat": 39.978264,
+   "lon": 32.708949,
+   "area_km2": 3.0808,
+   "osm_id": "relation/5635799",
+   "population": 34860,
+   "id": 368
+  },
+  {
+   "name": "İnönü",
+   "district": "Yenimahalle",
+   "lat": 39.951602,
+   "lon": 32.725849,
+   "area_km2": 2.416,
+   "osm_id": "relation/5635841",
+   "population": 33820,
+   "id": 369
+  },
+  {
+   "name": "Kentkoop",
+   "district": "Yenimahalle",
+   "lat": 39.964461,
+   "lon": 32.719541,
+   "area_km2": 2.4761,
+   "osm_id": "relation/5635858",
+   "population": 62830,
+   "id": 370
+  },
+  {
+   "name": "Ergazi",
+   "district": "Yenimahalle",
+   "lat": 39.954699,
+   "lon": 32.710155,
+   "area_km2": 1.8311,
+   "osm_id": "relation/6747493",
+   "population": 24370,
+   "id": 371
+  },
+  {
+   "name": "Batı Sitesi",
+   "district": "Yenimahalle",
+   "lat": 39.95802,
+   "lon": 32.696346,
+   "area_km2": 1.7247,
+   "osm_id": "relation/6747494",
+   "population": 12620,
+   "id": 372
+  },
+  {
+   "name": "Yeni Batı",
+   "district": "Yenimahalle",
+   "lat": 39.982554,
+   "lon": 32.675598,
+   "area_km2": 12.1495,
+   "osm_id": "relation/6747495",
+   "population": 5550,
+   "id": 373
+  },
+  {
+   "name": "Karacakaya",
+   "district": "Yenimahalle",
+   "lat": 40.059799,
+   "lon": 32.69805,
+   "area_km2": 26.1022,
+   "osm_id": "relation/6789619",
+   "population": 590,
+   "id": 374
+  }
+ ],
+ "candidates": [
+  {
+   "id": 0,
+   "name": "Aday 1 (Peçenek)",
+   "district": "Altındağ",
+   "lat": 40.022069,
+   "lon": 33.007127,
+   "land_m2": 86000.0,
+   "land_price_tl_m2": 14000.0
+  },
+  {
+   "id": 1,
+   "name": "Aday 2 (Kalaba)",
+   "district": "Keçiören",
+   "lat": 39.972901,
+   "lon": 32.866514,
+   "land_m2": 40000.0,
+   "land_price_tl_m2": 18800.0
+  },
+  {
+   "id": 2,
+   "name": "Aday 3 (Gökçek)",
+   "district": "Sincan",
+   "lat": 39.982481,
+   "lon": 32.576002,
+   "land_m2": 173000.0,
+   "land_price_tl_m2": 11200.0
+  },
+  {
+   "id": 3,
+   "name": "Aday 4 (Ümit)",
+   "district": "Çankaya",
+   "lat": 39.894335,
+   "lon": 32.700071,
+   "land_m2": 105000.0,
+   "land_price_tl_m2": 35000.0
+  },
+  {
+   "id": 4,
+   "name": "Aday 5 (Gümüşdere)",
+   "district": "Keçiören",
+   "lat": 39.963505,
+   "lon": 32.857086,
+   "land_m2": 68000.0,
+   "land_price_tl_m2": 14000.0
+  },
+  {
+   "id": 5,
+   "name": "Aday 6 (Çayyolu)",
+   "district": "Çankaya",
+   "lat": 39.885137,
+   "lon": 32.698469,
+   "land_m2": 32000.0,
+   "land_price_tl_m2": 47700.0
+  },
+  {
+   "id": 6,
+   "name": "Aday 7 (Mehmet Akif Ersoy)",
+   "district": "Yenimahalle",
+   "lat": 39.968587,
+   "lon": 32.769836,
+   "land_m2": 170000.0,
+   "land_price_tl_m2": 19700.0
+  },
+  {
+   "id": 7,
+   "name": "Aday 8 (Osmanlı)",
+   "district": "Sincan",
+   "lat": 39.949791,
+   "lon": 32.586917,
+   "land_m2": 130000.0,
+   "land_price_tl_m2": 14900.0
+  },
+  {
+   "id": 8,
+   "name": "Aday 9 (Mimar Sinan)",
+   "district": "Çankaya",
+   "lat": 39.915623,
+   "lon": 32.879928,
+   "land_m2": 68000.0,
+   "land_price_tl_m2": 43800.0
+  },
+  {
+   "id": 9,
+   "name": "Aday 10 (Batı Sitesi)",
+   "district": "Yenimahalle",
+   "lat": 39.959668,
+   "lon": 32.696227,
+   "land_m2": 128000.0,
+   "land_price_tl_m2": 28900.0
+  },
+  {
+   "id": 10,
+   "name": "Aday 11 (Çamlıca)",
+   "district": "Yenimahalle",
+   "lat": 39.955451,
+   "lon": 32.780987,
+   "land_m2": 80000.0,
+   "land_price_tl_m2": 25200.0
+  },
+  {
+   "id": 11,
+   "name": "Aday 12 (Çiğdem)",
+   "district": "Çankaya",
+   "lat": 39.883307,
+   "lon": 32.80507,
+   "land_m2": 90000.0,
+   "land_price_tl_m2": 53200.0
+  },
+  {
+   "id": 12,
+   "name": "Aday 13 (Menderes)",
+   "district": "Sincan",
+   "lat": 40.016928,
+   "lon": 32.522815,
+   "land_m2": 209000.0,
+   "land_price_tl_m2": 8800.0
+  },
+  {
+   "id": 13,
+   "name": "Aday 14 (Sağlık)",
+   "district": "Çankaya",
+   "lat": 39.924281,
+   "lon": 32.858255,
+   "land_m2": 30000.0,
+   "land_price_tl_m2": 34700.0
+  },
+  {
+   "id": 14,
+   "name": "Aday 15 (Yeni Batı)",
+   "district": "Yenimahalle",
+   "lat": 39.983793,
+   "lon": 32.676278,
+   "land_m2": 103000.0,
+   "land_price_tl_m2": 25700.0
+  },
+  {
+   "id": 15,
+   "name": "Aday 16 (Şahintepe)",
+   "district": "Mamak",
+   "lat": 39.918673,
+   "lon": 32.91102,
+   "land_m2": 113000.0,
+   "land_price_tl_m2": 16600.0
+  },
+  {
+   "id": 16,
+   "name": "Aday 17 (Saimekadın)",
+   "district": "Mamak",
+   "lat": 39.930297,
+   "lon": 32.893786,
+   "land_m2": 78000.0,
+   "land_price_tl_m2": 8700.0
+  },
+  {
+   "id": 17,
+   "name": "Aday 18 (Ragıp Tüzün)",
+   "district": "Yenimahalle",
+   "lat": 39.965309,
+   "lon": 32.807076,
+   "land_m2": 51000.0,
+   "land_price_tl_m2": 37700.0
+  },
+  {
+   "id": 18,
+   "name": "Aday 19 (Sokullu Mehmet Paşa)",
+   "district": "Çankaya",
+   "lat": 39.890237,
+   "lon": 32.835807,
+   "land_m2": 98000.0,
+   "land_price_tl_m2": 39400.0
+  },
+  {
+   "id": 19,
+   "name": "Aday 20 (Kırkkonaklar)",
+   "district": "Çankaya",
+   "lat": 39.889446,
+   "lon": 32.887806,
+   "land_m2": 55000.0,
+   "land_price_tl_m2": 55000.0
+  },
+  {
+   "id": 20,
+   "name": "Aday 21 (Mareşal Çakmak)",
+   "district": "Sincan",
+   "lat": 39.959286,
+   "lon": 32.591057,
+   "land_m2": 279000.0,
+   "land_price_tl_m2": 14300.0
+  },
+  {
+   "id": 21,
+   "name": "Aday 22 (Bahçelievler)",
+   "district": "Çankaya",
+   "lat": 39.93015,
+   "lon": 32.825074,
+   "land_m2": 47000.0,
+   "land_price_tl_m2": 39300.0
+  },
+  {
+   "id": 22,
+   "name": "Aday 23 (Karşıyaka)",
+   "district": "Yenimahalle",
+   "lat": 39.971516,
+   "lon": 32.791188,
+   "land_m2": 84000.0,
+   "land_price_tl_m2": 20500.0
+  },
+  {
+   "id": 23,
+   "name": "Aday 24 (Örnek)",
+   "district": "Altındağ",
+   "lat": 39.958615,
+   "lon": 32.875109,
+   "land_m2": 306000.0,
+   "land_price_tl_m2": 12800.0
+  },
+  {
+   "id": 24,
+   "name": "Aday 25 (Beşikkaya)",
+   "district": "Altındağ",
+   "lat": 39.983033,
+   "lon": 32.953367,
+   "land_m2": 100000.0,
+   "land_price_tl_m2": 18500.0
+  },
+  {
+   "id": 25,
+   "name": "Aday 26 (Doğu)",
+   "district": "Altındağ",
+   "lat": 39.986272,
+   "lon": 32.896903,
+   "land_m2": 178000.0,
+   "land_price_tl_m2": 16100.0
+  },
+  {
+   "id": 26,
+   "name": "Aday 27 (Ekin)",
+   "district": "Mamak",
+   "lat": 39.960101,
+   "lon": 32.946901,
+   "land_m2": 92000.0,
+   "land_price_tl_m2": 11500.0
+  },
+  {
+   "id": 27,
+   "name": "Aday 28 (Fevzi Çakmak)",
+   "district": "Sincan",
+   "lat": 40.017129,
+   "lon": 32.506317,
+   "land_m2": 163000.0,
+   "land_price_tl_m2": 11400.0
+  },
+  {
+   "id": 28,
+   "name": "Aday 29 (Pamuklar)",
+   "district": "Yenimahalle",
+   "lat": 39.982694,
+   "lon": 32.811333,
+   "land_m2": 50000.0,
+   "land_price_tl_m2": 22300.0
+  },
+  {
+   "id": 29,
+   "name": "Aday 30 (Cengizhan)",
+   "district": "Mamak",
+   "lat": 39.900795,
+   "lon": 32.924373,
+   "land_m2": 320000.0,
+   "land_price_tl_m2": 13000.0
+  },
+  {
+   "id": 30,
+   "name": "Aday 31 (Başpınar)",
+   "district": "Altındağ",
+   "lat": 39.974806,
+   "lon": 32.925019,
+   "land_m2": 74000.0,
+   "land_price_tl_m2": 20100.0
+  },
+  {
+   "id": 31,
+   "name": "Aday 32 (Murat)",
+   "district": "Çankaya",
+   "lat": 39.89854,
+   "lon": 32.876725,
+   "land_m2": 39000.0,
+   "land_price_tl_m2": 31700.0
+  },
+  {
+   "id": 32,
+   "name": "Aday 33 (Şenlik)",
+   "district": "Keçiören",
+   "lat": 39.995604,
+   "lon": 32.870368,
+   "land_m2": 73000.0,
+   "land_price_tl_m2": 17200.0
+  },
+  {
+   "id": 33,
+   "name": "Aday 34 (Mimar Sinan)",
+   "district": "Pursaklar",
+   "lat": 40.045771,
+   "lon": 32.886208,
+   "land_m2": 199000.0,
+   "land_price_tl_m2": 9300.0
+  },
+  {
+   "id": 34,
+   "name": "Aday 35 (Gülseren)",
+   "district": "Mamak",
+   "lat": 39.950328,
+   "lon": 32.900741,
+   "land_m2": 76000.0,
+   "land_price_tl_m2": 19100.0
+  },
+  {
+   "id": 35,
+   "name": "Aday 36 (Çoğlu)",
+   "district": "Sincan",
+   "lat": 40.028073,
+   "lon": 32.5421,
+   "land_m2": 238000.0,
+   "land_price_tl_m2": 13900.0
+  },
+  {
+   "id": 36,
+   "name": "Aday 37 (Aziziye)",
+   "district": "Çankaya",
+   "lat": 39.888609,
+   "lon": 32.853858,
+   "land_m2": 110000.0,
+   "land_price_tl_m2": 32100.0
+  },
+  {
+   "id": 37,
+   "name": "Aday 38 (Küçük Kayaş)",
+   "district": "Mamak",
+   "lat": 39.908462,
+   "lon": 32.973256,
+   "land_m2": 151000.0,
+   "land_price_tl_m2": 21800.0
+  },
+  {
+   "id": 38,
+   "name": "Aday 39 (Yücetepe)",
+   "district": "Çankaya",
+   "lat": 39.919945,
+   "lon": 32.843532,
+   "land_m2": 66000.0,
+   "land_price_tl_m2": 46200.0
+  },
+  {
+   "id": 39,
+   "name": "Aday 40 (Kızılırmak)",
+   "district": "Çankaya",
+   "lat": 39.901888,
+   "lon": 32.811236,
+   "land_m2": 61000.0,
+   "land_price_tl_m2": 49100.0
+  },
+  {
+   "id": 40,
+   "name": "Aday 41 (Dostlar)",
+   "district": "Mamak",
+   "lat": 39.925098,
+   "lon": 32.954765,
+   "land_m2": 95000.0,
+   "land_price_tl_m2": 12400.0
+  },
+  {
+   "id": 41,
+   "name": "Aday 42 (Kardelen)",
+   "district": "Yenimahalle",
+   "lat": 39.978067,
+   "lon": 32.708461,
+   "land_m2": 103000.0,
+   "land_price_tl_m2": 43600.0
+  },
+  {
+   "id": 42,
+   "name": "Aday 43 (Karaağaç)",
+   "district": "Mamak",
+   "lat": 39.939558,
+   "lon": 32.921696,
+   "land_m2": 30000.0,
+   "land_price_tl_m2": 12000.0
+  },
+  {
+   "id": 43,
+   "name": "Aday 44 (Yıldıztepe)",
+   "district": "Altındağ",
+   "lat": 39.976452,
+   "lon": 32.903472,
+   "land_m2": 171000.0,
+   "land_price_tl_m2": 17300.0
+  },
+  {
+   "id": 44,
+   "name": "Aday 45 (Bahçeleriçi)",
+   "district": "Mamak",
+   "lat": 39.930519,
+   "lon": 32.919758,
+   "land_m2": 97000.0,
+   "land_price_tl_m2": 14700.0
+  },
+  {
+   "id": 45,
+   "name": "Aday 46 (Ertuğrulgazi)",
+   "district": "Çankaya",
+   "lat": 39.926057,
+   "lon": 32.87999,
+   "land_m2": 21000.0,
+   "land_price_tl_m2": 27300.0
+  },
+  {
+   "id": 46,
+   "name": "Aday 47 (Etlik)",
+   "district": "Keçiören",
+   "lat": 39.979321,
+   "lon": 32.8317,
+   "land_m2": 124000.0,
+   "land_price_tl_m2": 22500.0
+  },
+  {
+   "id": 47,
+   "name": "Aday 48 (Yukarı Yahyalar)",
+   "district": "Yenimahalle",
+   "lat": 39.984849,
+   "lon": 32.780508,
+   "land_m2": 109000.0,
+   "land_price_tl_m2": 29300.0
+  },
+  {
+   "id": 48,
+   "name": "Aday 49 (Çiğdemtepe)",
+   "district": "Yenimahalle",
+   "lat": 40.002003,
+   "lon": 32.790432,
+   "land_m2": 88000.0,
+   "land_price_tl_m2": 33300.0
+  },
+  {
+   "id": 49,
+   "name": "Aday 50 (Ufuktepe)",
+   "district": "Keçiören",
+   "lat": 40.008484,
+   "lon": 32.851302,
+   "land_m2": 162000.0,
+   "land_price_tl_m2": 10800.0
+  },
+  {
+   "id": 50,
+   "name": "Aday 51 (Yeşilova)",
+   "district": "Etimesgut",
+   "lat": 39.96151,
+   "lon": 32.613819,
+   "land_m2": 106000.0,
+   "land_price_tl_m2": 20600.0
+  },
+  {
+   "id": 51,
+   "name": "Aday 52 (Kazım Özalp)",
+   "district": "Çankaya",
+   "lat": 39.895129,
+   "lon": 32.869029,
+   "land_m2": 47000.0,
+   "land_price_tl_m2": 83200.0
+  },
+  {
+   "id": 52,
+   "name": "Aday 53 (Söğütözü)",
+   "district": "Çankaya",
+   "lat": 39.911804,
+   "lon": 32.793121,
+   "land_m2": 61000.0,
+   "land_price_tl_m2": 33800.0
+  },
+  {
+   "id": 53,
+   "name": "Aday 54 (Koru)",
+   "district": "Çankaya",
+   "lat": 39.887476,
+   "lon": 32.679392,
+   "land_m2": 43000.0,
+   "land_price_tl_m2": 44100.0
+  },
+  {
+   "id": 54,
+   "name": "Aday 55 (Gaziosmanpaşa)",
+   "district": "Gölbaşı",
+   "lat": 39.772486,
+   "lon": 32.796053,
+   "land_m2": 206000.0,
+   "land_price_tl_m2": 17500.0
+  },
+  {
+   "id": 55,
+   "name": "Aday 56 (PTT Evleri)",
+   "district": "Mamak",
+   "lat": 39.944847,
+   "lon": 32.946824,
+   "land_m2": 152000.0,
+   "land_price_tl_m2": 12300.0
+  },
+  {
+   "id": 56,
+   "name": "Aday 57 (30 Ağustos)",
+   "district": "Etimesgut",
+   "lat": 39.942693,
+   "lon": 32.655083,
+   "land_m2": 61000.0,
+   "land_price_tl_m2": 20300.0
+  },
+  {
+   "id": 57,
+   "name": "Aday 58 (Etiler)",
+   "district": "Etimesgut",
+   "lat": 39.959814,
+   "lon": 32.647022,
+   "land_m2": 120000.0,
+   "land_price_tl_m2": 32300.0
+  },
+  {
+   "id": 58,
+   "name": "Aday 59 (Şehit Kubilay)",
+   "district": "Keçiören",
+   "lat": 39.998967,
+   "lon": 32.802564,
+   "land_m2": 128000.0,
+   "land_price_tl_m2": 32400.0
+  },
+  {
+   "id": 59,
+   "name": "Aday 60 (Ahlatlıbel)",
+   "district": "Çankaya",
+   "lat": 39.839255,
+   "lon": 32.748017,
+   "land_m2": 45000.0,
+   "land_price_tl_m2": 65200.0
+  }
+ ],
+ "meta": {
+  "seed": 42,
+  "sources": {
+   "district_boundaries": "OpenStreetMap (Nominatim)",
+   "mahalle_boundaries": "OpenStreetMap admin_level=8 (github.com/izzetkalic/geojsons-of-turkey)",
+   "district_population": "TÜİK ADNKS 2024",
+   "mahalle_population": "Simülasyon: alan–yoğunluk modeli, ilçe toplamları korunur",
+   "candidates": "Simülasyon: mahallelerden seçilen adaylar; arazi ve arsa fiyatı ilçe profiline göre"
+  },
+  "osm_mahalle_count": 380
+ }
+}

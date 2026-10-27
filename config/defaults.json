@@ -1,0 +1,16 @@
+{
+  "_note": "Para birimi: milyon TL (M₺). Değerler illüstratiftir; önemli olan ölçek ekonomisidir.",
+  "beds_per_1000": 2.5,
+  "alpha_tl_per_person_km": 250.0,
+  "discount_rate": 0.05,
+  "lifetime_years": 30,
+  "circuity": 1.3,
+  "assign_k_nearest": 15,
+  "penalty_multiplier": 10.0,
+  "single_type_key": "M",
+  "hospital_types": [
+    {"key": "S", "name": "Küçük", "beds": 250, "land_m2": 35000, "construction_mtl": 3000},
+    {"key": "M", "name": "Orta", "beds": 600, "land_m2": 70000, "construction_mtl": 5400},
+    {"key": "L", "name": "Büyük", "beds": 1200, "land_m2": 120000, "construction_mtl": 8400}
+  ]
+}
