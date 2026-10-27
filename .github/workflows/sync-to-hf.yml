@@ -1,0 +1,28 @@
+# main dalına her push'ta depoyu Hugging Face Space'e kopyalar; Space kendini yeniden derler.
+# Gerekenler (GitHub depo ayarları → Secrets and variables → Actions):
+#   secret   HF_TOKEN  : Hugging Face "write" yetkili erişim anahtarı
+#   variable HF_SPACE  : kullanıcı-adı/space-adı  (ör. furkanbuyuky/ankara-cflp)
+name: Hugging Face Space'e senkronize et
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Space'e gönder
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_SPACE: ${{ vars.HF_SPACE }}
+        run: |
+          if [ -z "$HF_TOKEN" ] || [ -z "$HF_SPACE" ]; then
+            echo "::error::HF_TOKEN secret'ı ve HF_SPACE değişkeni tanımlı olmalı"
+            exit 1
+          fi
+          git push --force "https://${HF_SPACE%%/*}:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}" HEAD:main

@@ -1,3 +1,14 @@
+---
+title: Ankara Hastane CFLP
+emoji: 🏥
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+short_description: Ankara için kapasiteli hastane yerleşimi — MIP, GA ve DE
+---
+
 # Ankara Hastane CFLP
 
 Ankara'nın 9 merkez ilçesi için kapasiteli tesis yerleşim problemi (CFLP) simülasyonu ve arayüzü.
@@ -17,7 +28,7 @@ Python 3.11+ ve Node 20+ gerekir.
 ```bash
 cd backend
 python -m venv .venv
-.venv/Scripts/python -m pip install numpy pulp highspy shapely numba fastapi "uvicorn[standard]" pydantic pytest truststore
+.venv/Scripts/python -m pip install -r requirements-dev.txt
 ```
 
 ```bash
@@ -48,6 +59,35 @@ cd backend && .venv/Scripts/python scripts/precompute.py
 
 Tek sunucudan servis etmek için `npm run build` yeterli. API, `frontend/dist` klasörü varsa onu
 kök adreste sunar (http://localhost:8000).
+
+## Yayınlama (GitHub → Hugging Face Spaces)
+
+Depo kökündeki `Dockerfile` arayüzü derler ve uygulamayı 7860 portunda tek sunucu olarak çalıştırır.
+`.github/workflows/sync-to-hf.yml`, `main` dalına yapılan her push'ta depoyu Hugging Face Space'e
+kopyalar. Space de kendini yeniden derler.
+
+Bir kerelik kurulum:
+
+1. Hugging Face'te **Docker** SDK'lı boş bir Space oluşturun.
+2. Hugging Face *Settings → Access Tokens* altından `write` yetkili bir token oluşturun.
+3. GitHub deposunda *Settings → Secrets and variables → Actions* altına gidin:
+   - **Secrets** sekmesine `HF_TOKEN` (token) ekleyin.
+   - **Variables** sekmesine `HF_SPACE` = `kullanıcı-adı/space-adı` ekleyin.
+4. Bir push yapın ya da *Actions* sekmesinden iş akışını elle çalıştırın.
+
+`precomputed/` klasörü varsayılan ayarlar için önceden hesaplanmış exact, sweep, optimize ve
+benchmark sonuçlarını içerir. Site açılır açılmaz bu sonuçlar gösterilir. Güncellemek için
+`scripts/precompute.py` çalıştırılıp `cache/` içeriği `precomputed/`'a kopyalanır.
+
+Docker imajını yerelde denemek için:
+
+```bash
+docker build -t ankara-cflp .
+```
+
+```bash
+docker run --rm -p 7860:7860 ankara-cflp
+```
 
 ## Veri
 

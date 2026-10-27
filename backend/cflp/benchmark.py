@@ -52,7 +52,9 @@ def run_benchmark(
     progress = progress or (lambda f, m: None)
     tasks = [(run, s) for run in runs for s in range(seeds)]
     results: list[dict] = []
-    workers = max(1, min(len(tasks), (os.cpu_count() or 2) - 1))
+    # konteynerde os.cpu_count() sunucunun tüm çekirdeklerini gösterebilir; BENCH_WORKERS ile sınırlanır
+    limit = int(os.environ.get("BENCH_WORKERS", (os.cpu_count() or 2) - 1))
+    workers = max(1, min(len(tasks), limit))
     with ProcessPoolExecutor(max_workers=workers) as pool:
         futs = [pool.submit(_one, spec, run, s, do_polish) for run, s in tasks]
         for n, f in enumerate(as_completed(futs)):

@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import threading
 import time
 import traceback
@@ -18,7 +19,9 @@ from pathlib import Path
 from typing import Any, Callable
 
 ROOT = Path(__file__).resolve().parents[2]
-CACHE = ROOT / "cache"
+CACHE = Path(os.environ.get("CFLP_CACHE_DIR", ROOT / "cache"))
+# Depoyla gelen, varsayılan ayarlar için önceden hesaplanmış sonuçlar (salt okunur)
+PRECOMPUTED = ROOT / "precomputed"
 CACHE_VERSION = "v1"
 
 
@@ -28,9 +31,10 @@ def cache_key(kind: str, payload: dict) -> str:
 
 
 def cache_get(kind: str, key: str) -> Any | None:
-    path = CACHE / kind / f"{key}.json"
-    if path.exists():
-        return json.loads(path.read_text(encoding="utf-8"))
+    for base in (CACHE, PRECOMPUTED):
+        path = base / kind / f"{key}.json"
+        if path.exists():
+            return json.loads(path.read_text(encoding="utf-8"))
     return None
 
 

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 from typing import Literal
 
 import numpy as np
@@ -24,7 +25,7 @@ from .jobs import ROOT, JobManager, cache_get, cache_key
 
 app = FastAPI(title="Ankara Hastane CFLP")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
-jobs = JobManager(workers=3)
+jobs = JobManager(workers=int(os.environ.get("JOB_WORKERS", 3)))
 
 
 # ---------------------------------------------------------------- şemalar
