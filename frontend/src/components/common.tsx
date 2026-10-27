@@ -58,11 +58,11 @@ export function SolutionKpis({ cost, kpi, types, investment, extra }: { cost: Co
 }
 
 /** Her sayfanın üstündeki başlık: adım numarası, başlık, tek paragraflık açıklama ve eylemler. */
-export function PageHeader({ step, title, children, actions }: { step: number; title: string; children?: ReactNode; actions?: ReactNode }) {
+export function PageHeader({ step, title, children, actions }: { step?: number; title: string; children?: ReactNode; actions?: ReactNode }) {
   return (
     <header className="page-head">
       <div>
-        <div className="eyebrow">Adım {step}</div>
+        {step != null && <div className="eyebrow">Adım {step}</div>}
         <h1 className="page-title">{title}</h1>
         {children && <p className="page-desc">{children}</p>}
       </div>

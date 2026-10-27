@@ -3,19 +3,21 @@ from __future__ import annotations
 
 import json
 import os
+import queue
+import threading
 from typing import Literal
 
 import numpy as np
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from cflp.benchmark import run_benchmark, run_one
 from cflp.exact import solve_exact
 from cflp.heuristics.pseudocode import PSEUDOCODE
-from cflp.heuristics.runner import run_full
+from cflp.heuristics.runner import make_config, run_algorithm, run_full
 from cflp.heuristics.trace import Tracer
 from cflp.instance import PROCESSED, Constraints, Instance, Params, build_problem
 from cflp.solution import solution_to_dict
@@ -305,6 +307,73 @@ def teach(req: TeachReq):
         "config": res["config"],
         "optimum": {"solution": solution_to_dict(pb, opt), "solver": info.to_dict()},
     }
+
+
+# ---------------------------------------------------------------- sunum ekranı: canlı çözüm
+
+# Sunum ekranındaki yöntemler; parametreler sabittir (README'deki varsayılanlar)
+METHODS = {
+    "ga_roulette": ("ga", {"selection": "roulette", "crossover": "one_point"}),
+    "ga_tournament": ("ga", {"selection": "tournament", "crossover": "one_point"}),
+    "ga_rank": ("ga", {"selection": "rank", "crossover": "one_point"}),
+    "de": ("de", {"strategy": "rand1"}),
+}
+LIVE_EVALS = 10_000
+
+
+class SolveReq(BaseModel):
+    scenario: Literal["single", "multi"]
+    method: Literal["ga_roulette", "ga_tournament", "ga_rank", "de"]
+    max_hospitals: int | None = Field(default=None, ge=1, le=200)
+    seed: int = Field(default=0, ge=0, le=10**9)
+
+
+@app.post("/api/solve")
+def solve(req: SolveReq):
+    """GA/DE'yi çalıştırır ve her nesli bir satır (NDJSON) olarak akıtır; arayüz haritayı
+    hesap sürerken günceller. Son satır en iyi çözümün tamamını taşır."""
+    pb = make_problem(Spec(scenario=req.scenario, constraints=ConstraintsIn(max_hospitals=req.max_hospitals)))
+    algo, cfg = METHODS[req.method]
+    config = make_config(algo, {**cfg, "seed": req.seed, "max_evals": LIVE_EVALS})
+    q: queue.Queue = queue.Queue()
+
+    def work():
+        try:
+            tr = Tracer(on_generation=lambda g: q.put({"type": "gen", **g}))
+            best, stats = run_algorithm(pb, algo, config, tr)
+            q.put({"type": "done", "best": solution_to_dict(pb, best), "stats": stats})
+        except Exception as e:  # noqa: BLE001 - hata akış içinde arayüze iletilir
+            q.put({"type": "error", "message": f"{type(e).__name__}: {e}"})
+        finally:
+            q.put(None)
+
+    threading.Thread(target=work, daemon=True).start()
+
+    def stream():
+        yield json.dumps({"type": "start", "max_evals": LIVE_EVALS}) + "\n"
+        while (item := q.get()) is not None:
+            yield json.dumps(item, ensure_ascii=False) + "\n"
+
+    return StreamingResponse(
+        stream(), media_type="application/x-ndjson", headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"}
+    )
+
+
+@app.get("/api/mip/{scenario}")
+def mip_table(scenario: Literal["single", "multi"]):
+    """Önceden hesaplanmış MIP sonuçları: sınırsız çözüm ve her hastane sayısı üst sınırı için çözüm."""
+    spec = Spec(scenario=scenario)
+    ex = cache_get("exact", cache_key("exact", ExactReq(spec=spec, time_limit=60).model_dump()))
+    sw = cache_get(
+        "sweep", cache_key("sweep", SweepReq(spec=spec, kind="count", time_limit=15, base_time_limit=60).model_dump())
+    )
+    if ex is None:
+        raise HTTPException(404, "MIP sonuçları önceden hesaplanmamış (backend/scripts/precompute.py)")
+    unlimited = {**ex["solution"], "solver": ex["solver"]}
+    n_star = unlimited["kpi"]["n_open"]
+    # sınır n_star'dan küçükse o sınır için çözülmüş nokta; değilse sınırsız çözüm geçerlidir
+    by_p = {str(pt["value"]): pt for pt in (sw or {}).get("points", []) if pt["value"] < n_star}
+    return {"unlimited": unlimited, "n_star": n_star, "by_p": by_p}
 
 
 # ---------------------------------------------------------------- derlenmiş frontend (üretim)

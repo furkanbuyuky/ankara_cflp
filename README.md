@@ -2,11 +2,19 @@
 
 Ankara'nın 9 merkez ilçesi için kapasiteli tesis yerleşim problemi (CFLP) simülasyonu ve arayüzü.
 Mevcut hastaneler yok sayılır. Yeni hastanelerin yeri, büyüklüğü (tek tip ya da küçük/orta/büyük)
-ve mahallelerin hangi hastaneye bağlanacağı belirlenir. Çözüm yöntemleri:
+ve mahallelerin hangi hastaneye bağlanacağı belirlenir.
 
-- **Exact:** MIP (PuLP + HiGHS)
-- **Genetik Algoritma:** rulet / turnuva / rank seçimi × tek nokta / iki nokta / uniform çaprazlama
-- **Diferansiyel Evrim:** rand/1, best/1, current-to-best/1
+Arayüzde iki sayfa var:
+
+- **Çözüm:** Senaryo (tek tip / üç tip), yöntem (MIP, GA-Rulet, GA-Turnuva, GA-Rank, DE), hastane sayısı
+  üst sınırı (Sınırsız ya da 1–30) ve seed seçilir. "Çöz"e basınca GA/DE sunucuda çalışır. Her nesil tarayıcıya
+  akar ve harita hesap sürerken güncellenir. Bitince maliyetin nesiller boyunca düşüşü timelapse olarak ileri geri
+  izlenebilir. MIP sonuçları (sınırsız ve her hastane sayısı sınırı için) önceden 60 sn'de hesaplanmıştır.
+  GA ve DE grafiğinde bu sonuç hedef çizgisi olarak görünür.
+- **Algoritma adım adım:** GA ve DE, 10 mahalle ve 6 adaylık küçük bir örnekte pseudocode satır satır
+  vurgulanarak çalıştırılır.
+
+Parametreler sabittir (`config/defaults.json`). GA ve DE 10.000 çözüm değerlendirir, bir çözüm birkaç saniye sürer.
 
 Tasarım kararları: [docs/DESIGN.md](docs/DESIGN.md)
 
@@ -138,6 +146,6 @@ backend/cflp/          model, maliyetler, exact MIP, sweep, benchmark
 backend/cflp/heuristics/  decoder, GA, DE, operatörler, iz kaydı (trace), pseudocode
 backend/server/        FastAPI uç noktaları, iş kuyruğu, disk önbelleği
 api/index.py           Vercel giriş noktası
-frontend/src/tabs/     5 sekme: Veri, Exact, Algoritma nasıl çalışır, Süreç, Karşılaştırma
+frontend/src/tabs/     2 sayfa: Çözüm (SolveTab) ve Algoritma adım adım (TeachTab)
 config/defaults.json   varsayılan parametreler ve hastane tipleri
 ```

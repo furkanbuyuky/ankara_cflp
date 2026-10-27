@@ -44,6 +44,9 @@ Aşağıdaki maddeler, uygulama sırasında ölçülen sonuçlara göre ilk tasa
 | Polish süresi | — | 10 sn, gap %0,1 | Sabit hastanelerle atama MIP'i de sıkı kapasitede yavaş |
 | Yayın | — | Vercel (Hobby): statik arayüz + `api/index.py` Python fonksiyonu, sunucusuz modda işler istek içinde çalışır, karşılaştırma tarayıcıdan paralel yürütülür (README → Yayınlama) | Hugging Face Docker Space'leri Temmuz 2026'dan beri ücretli |
 | API paketi adı | `backend/api` | `backend/server` | Vercel'in kökteki `api/` klasörüyle isim çakışmasın |
+| Arayüz kapsamı | 5 sekme (veri, exact, öğretim, süreç, karşılaştırma) | 2 sayfa: **Çözüm** (senaryo, yöntem, hastane sayısı slider'ı, seed, canlı çözüm ve timelapse) ve **Algoritma adım adım** | Sunumda ilk kez gören birinin hemen anlaması için. Parametreler sabit |
+| Canlı çözüm | Arka plan işi + ilerleme sorgulama | `/api/solve` her nesli NDJSON satırı olarak akıtır (Vercel Python fonksiyonları streaming'i destekler). "Polish" adımı yok | Harita hesap sürerken güncellenir, çözüm birkaç saniyede biter |
+| MIP sonuçları | İstek üzerine | Sınırsız ve her hastane sayısı sınırı için önceden hesaplanmış (`/api/mip/{senaryo}`, `precomputed/`) | Sabit parametrelerle tekrar hesaplamaya gerek yok |
 
 ---
 

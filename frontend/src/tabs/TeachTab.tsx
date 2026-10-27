@@ -92,14 +92,16 @@ function deriveViews(events: Ev[], nDemand: number): View[] {
 }
 
 export default function TeachTab() {
-  const { scenario, districts } = useApp();
+  const { districts } = useApp();
+  // sunumda sabit: üç tipli senaryo, 2 nesil, seed 0, decoder adımları açık
+  const scenario = "multi";
+  const gens = 2;
+  const traceDecoder = true;
+  const seed = 0;
   const [algo, setAlgo] = useState<"ga" | "de">("ga");
   const [selection, setSelection] = useState("roulette");
   const [crossover, setCrossover] = useState("one_point");
   const [strategy, setStrategy] = useState("rand1");
-  const [gens, setGens] = useState(2);
-  const [traceDecoder, setTraceDecoder] = useState(true);
-  const [seed, setSeed] = useState(0);
   const [data, setData] = useState<TeachResult | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [step, setStep] = useState(0);
@@ -116,7 +118,7 @@ export default function TeachTab() {
         setPlaying(false);
       })
       .catch((e) => setErr(String(e)));
-  }, [algo, selection, crossover, strategy, gens, traceDecoder, seed, scenario]);
+  }, [algo, selection, crossover, strategy]);
 
   const events = (data?.events ?? []) as Ev[];
   const views = useMemo(() => (data ? deriveViews(events, data.instance.demand.length) : []), [data]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -146,7 +148,7 @@ export default function TeachTab() {
   }, [N]);
 
   const header = (
-    <PageHeader step={3} title="Algoritma nasıl çalışır">
+    <PageHeader title="Algoritma adım adım">
       Genetik Algoritma ve Diferansiyel Evrim, 10 mahalle ve 6 adaylık küçük bir örnekte adım adım çalıştırılır. Solda o an çalışan
       pseudocode satırı vurgulanır, ortada işlemin ayrıntısı, sağda haritadaki etkisi görünür. Burada gösterilen kod, Ankara örneğini çözen kodun aynısıdır.
       Klavyede ← ve → ile adım adım ilerleyebilirsiniz.
@@ -194,11 +196,7 @@ export default function TeachTab() {
                 </select>
               </label>
             )}
-            <label className="field inline">Nesil
-              <select value={gens} onChange={(e) => setGens(Number(e.target.value))}>{[1, 2, 3].map((g) => <option key={g} value={g}>{g}</option>)}</select>
-            </label>
-            <label className="field inline">Seed <input type="number" min={0} value={seed} style={{ width: 56 }} onChange={(e) => setSeed(Number(e.target.value) || 0)} /></label>
-            <label className="field inline"><input type="checkbox" checked={traceDecoder} onChange={(e) => setTraceDecoder(e.target.checked)} /> Decoder adımları</label>
+
         </div>
         <span className="hint" style={{ marginLeft: "auto" }}>Örnek: {inst.demand.length} mahalle · {inst.candidates.length} aday · popülasyon {String(data.config.pop_size)}</span>
       </div>
