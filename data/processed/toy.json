@@ -199,57 +199,69 @@
  "candidates": [
   {
    "id": 0,
-   "name": "Aday 1 (100. Yıl)",
-   "district": "Çankaya",
-   "lat": 39.901269,
-   "lon": 32.867636,
-   "land_m2": 40000,
-   "land_price_tl_m2": 44500.0
+   "name": "Aday 1 (Eti)",
+   "district": "Yenimahalle",
+   "lat": 39.934209,
+   "lon": 32.81157,
+   "land_m2": 103000.0,
+   "land_price_tl_m2": 31600.0,
+   "parcel": "çayır",
+   "osm": "way/1189806742"
   },
   {
    "id": 1,
-   "name": "Aday 2 (Topraklık)",
-   "district": "Çankaya",
-   "lat": 39.921265,
-   "lon": 32.874009,
-   "land_m2": 80000,
-   "land_price_tl_m2": 35200.0
+   "name": "Aday 2 (Eti)",
+   "district": "Altındağ",
+   "lat": 39.94777,
+   "lon": 32.846227,
+   "land_m2": 44000.0,
+   "land_price_tl_m2": 19700.0,
+   "parcel": "inşaat alanı",
+   "osm": "way/1166746601"
   },
   {
    "id": 2,
    "name": "Aday 3 (Eti)",
-   "district": "Çankaya",
-   "lat": 39.933201,
-   "lon": 32.844498,
-   "land_m2": 160000,
-   "land_price_tl_m2": 44600.0
+   "district": "Altındağ",
+   "lat": 39.955235,
+   "lon": 32.863069,
+   "land_m2": 51000.0,
+   "land_price_tl_m2": 18500.0,
+   "parcel": "inşaat alanı",
+   "osm": "way/136842031"
   },
   {
    "id": 3,
-   "name": "Aday 4 (Fidanlık)",
-   "district": "Çankaya",
-   "lat": 39.924962,
-   "lon": 32.858555,
-   "land_m2": 35000,
-   "land_price_tl_m2": 46300.0
+   "name": "Aday 4 (Topraklık)",
+   "district": "Altındağ",
+   "lat": 39.942668,
+   "lon": 32.874415,
+   "land_m2": 141000.0,
+   "land_price_tl_m2": 14300.0,
+   "parcel": "inşaat alanı",
+   "osm": "way/683527112"
   },
   {
    "id": 4,
-   "name": "Aday 5 (Kavaklıdere)",
-   "district": "Çankaya",
-   "lat": 39.907895,
-   "lon": 32.860485,
-   "land_m2": 120000,
-   "land_price_tl_m2": 63200.0
+   "name": "Aday 5 (100. Yıl)",
+   "district": "Mamak",
+   "lat": 39.902513,
+   "lon": 32.899452,
+   "land_m2": 76000.0,
+   "land_price_tl_m2": 14900.0,
+   "parcel": "inşaat alanı",
+   "osm": "way/1455284574"
   },
   {
    "id": 5,
-   "name": "Aday 6 (Maltepe)",
-   "district": "Çankaya",
-   "lat": 39.928995,
-   "lon": 32.846426,
-   "land_m2": 200000,
-   "land_price_tl_m2": 38300.0
+   "name": "Aday 6 (100. Yıl)",
+   "district": "Mamak",
+   "lat": 39.901494,
+   "lon": 32.908791,
+   "land_m2": 66000.0,
+   "land_price_tl_m2": 17800.0,
+   "parcel": "çalılık",
+   "osm": "way/1324352054"
   }
  ],
  "meta": {
@@ -260,7 +272,7 @@
    "mahalle_boundaries": "OpenStreetMap admin_level=8 (github.com/izzetkalic/geojsons-of-turkey)",
    "district_population": "TÜİK ADNKS 2024",
    "mahalle_population": "Simülasyon: alan–yoğunluk modeli, ilçe toplamları korunur",
-   "candidates": "Simülasyon: mahallelerden seçilen adaylar; arazi ve arsa fiyatı ilçe profiline göre"
+   "candidates": "OSM boş/yapılaşmaya uygun parseller (inşaat, atıl sanayi, çayır vb.; ≥35.000 m², ana yollardan ≥100 m); arazi = parselin gerçek alanı, arsa fiyatı ilçe profiline göre simüle"
   }
  }
 }

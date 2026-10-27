@@ -22,7 +22,20 @@ ROOT = Path(__file__).resolve().parents[2]
 CACHE = Path(os.environ.get("CFLP_CACHE_DIR", ROOT / "cache"))
 # Depoyla gelen, varsayılan ayarlar için önceden hesaplanmış sonuçlar (salt okunur)
 PRECOMPUTED = ROOT / "precomputed"
-CACHE_VERSION = "v1"
+
+
+def _data_version() -> str:
+    """Örnek verisi ya da varsayılan parametreler değişince önbellek kendiliğinden geçersiz olsun."""
+    h = hashlib.sha1()
+    for path in sorted((ROOT / "data" / "processed").glob("*.json")) + [ROOT / "config" / "defaults.json"]:
+        h.update(path.name.encode())
+        h.update(path.read_bytes())
+    return h.hexdigest()[:10]
+
+
+CACHE_VERSION = "v2-" + _data_version()
+# Sunucusuz ortam (Vercel): istek bitince arka plan işi sürdürülemez, işler istek içinde çalışır
+SERVERLESS = os.environ.get("CFLP_SERVERLESS") == "1"
 
 
 def cache_key(kind: str, payload: dict) -> str:
@@ -105,7 +118,12 @@ class JobManager:
                 job.status, job.error = "error", f"{type(e).__name__}: {e}"
                 traceback.print_exc()
 
-        self.pool.submit(run)
+        if SERVERLESS:
+            run()
+            with self.lock:
+                self.inflight.pop(key, None)
+        else:
+            self.pool.submit(run)
         return job
 
     def get(self, job_id: str) -> Job | None:

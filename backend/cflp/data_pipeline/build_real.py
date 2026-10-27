@@ -5,6 +5,7 @@ Kaynaklar:
   - Mahalle sınırları: OSM admin_level=8 anlık görüntüsü   data/raw/turkey-admin-level-8.geojson
     (github.com/izzetkalic/geojsons-of-turkey)
   - İlçe nüfusları: TÜİK ADNKS 2024
+  - Aday parseller: OSM (Geofabrik Türkiye), osm_parcels.py   data/raw/parcels.json
 Mahalle nüfusları kamuya açık hazır bir veri setinde bulunamadığı için simüle edilir:
 ilçe nüfusu, alan–yoğunluk modeliyle mahallelere dağıtılır (küçük alanlı mahalleler yoğun
 kentsel doku, büyük alanlı eski köy mahalleleri seyrek). İlçe toplamları korunur.
@@ -25,6 +26,7 @@ from .common import (
     DISTRICTS,
     PROCESSED,
     ROOT,
+    candidates_from_parcels,
     district_table,
     make_candidates,
     make_toy,
@@ -124,13 +126,23 @@ def main() -> None:
     write_district_geojson(dpoly)
     mahalle = load_mahalle(dpoly)
     demand = simulate_population(mahalle, rng)
-    cand = make_candidates(demand, pick_candidates(demand, N_CANDIDATES, rng), rng)
+    parcels_path = RAW / "parcels.json"
+    parcels = json.loads(parcels_path.read_text(encoding="utf-8")) if parcels_path.exists() else None
+    if parcels:
+        cand = candidates_from_parcels(demand, parcels, N_CANDIDATES, rng)
+    else:
+        print("UYARI: data/raw/parcels.json yok; adaylar mahalle merkezlerinden simüle ediliyor")
+        cand = make_candidates(demand, pick_candidates(demand, N_CANDIDATES, rng), rng)
     sources = {
         "district_boundaries": "OpenStreetMap (Nominatim)",
         "mahalle_boundaries": "OpenStreetMap admin_level=8 (github.com/izzetkalic/geojsons-of-turkey)",
         "district_population": "TÜİK ADNKS 2024",
         "mahalle_population": "Simülasyon: alan–yoğunluk modeli, ilçe toplamları korunur",
-        "candidates": "Simülasyon: mahallelerden seçilen adaylar; arazi ve arsa fiyatı ilçe profiline göre",
+        "candidates": (
+            "OSM boş/yapılaşmaya uygun parseller (inşaat, atıl sanayi, çayır vb.; ≥35.000 m², ana yollardan ≥100 m); "
+            "arazi = parselin gerçek alanı, arsa fiyatı ilçe profiline göre simüle"
+            if parcels else "Simülasyon: mahallelerden seçilen adaylar; arazi ve arsa fiyatı ilçe profiline göre"
+        ),
     }
     data = {
         "id": "ankara",
@@ -144,7 +156,7 @@ def main() -> None:
     print("ankara:", write_instance(data), f"{len(mahalle)} mahalle → {len(demand)} talep noktası,",
           len(cand), "aday")
     trng = np.random.default_rng(7)
-    toy = make_toy(demand, trng)
+    toy = make_toy(demand, trng, parcels)
     print("toy:", write_instance({
         "id": "toy",
         "name": "Öğretim örneği (10 mahalle, 6 aday)",

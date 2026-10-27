@@ -90,8 +90,69 @@ def write_instance(data: dict) -> Path:
     return path
 
 
-def make_toy(demand: list[dict], rng: np.random.Generator, center=(39.915, 32.855)) -> dict:
-    """Sekme 3 için küçük öğretim örneği: merkeze en yakın 10 mahalle, 6 aday.
+PARCEL_KIND = {
+    "brownfield": "atıl sanayi alanı",
+    "greenfield": "yapılaşmamış arazi",
+    "construction": "inşaat alanı",
+    "grass": "boş alan (çim)",
+    "meadow": "çayır",
+    "farmland": "tarım arazisi",
+    "grassland": "bozkır",
+    "scrub": "çalılık",
+}
+MAX_LAND_M2 = 300_000  # bundan büyük parseller her tipi alır; değer gösterim için sınırlanır
+
+
+def _nearest_name(demand: list[dict], lat: float, lon: float) -> str:
+    pts = np.array([[p["lat"], p["lon"]] for p in demand])
+    return demand[int(np.argmin(haversine_km(np.array([[lat, lon]]), pts)[0]))]["name"]
+
+
+def parcel_candidate(c: int, parcel: dict, demand: list[dict], rng: np.random.Generator) -> dict:
+    prof = DISTRICTS[parcel["district"]]
+    return {
+        "id": c,
+        "name": f"Aday {c + 1} ({_nearest_name(demand, parcel['lat'], parcel['lon'])})",
+        "district": parcel["district"],
+        "lat": parcel["lat"],
+        "lon": parcel["lon"],
+        "land_m2": float(round(min(parcel["area_m2"], MAX_LAND_M2), -3)),
+        "land_price_tl_m2": round(float(prof["land_price"] * rng.lognormal(0, 0.25)), -2),
+        "parcel": PARCEL_KIND.get(parcel["kind"], parcel["kind"]),
+        "osm": parcel["osm"],
+    }
+
+
+def candidates_from_parcels(
+    demand: list[dict], parcels: list[dict], n: int, rng: np.random.Generator, min_spacing_km: float = 1.2
+) -> list[dict]:
+    """Gerçek parsellerden aday seçimi: 3 km içindeki nüfus ve parsel büyüklüğüyle ağırlıklı,
+    birbirine en az `min_spacing_km` uzak `n` parsel. Bir planlamacının kısa listesi gibi, büyük
+    hastane alabilecek parseller öne çıkar; neredeyse hiç nüfusa hizmet etmeyecek kırsal parseller elenir."""
+    dpts = np.array([[p["lat"], p["lon"]] for p in demand])
+    w = np.array([p["population"] for p in demand], dtype=float)
+    ppts = np.array([[p["lat"], p["lon"]] for p in parcels])
+    dist = haversine_km(ppts, dpts)
+    near3 = (dist <= 3.0) @ w
+    near6 = (dist <= 6.0) @ w
+    ok = near6 >= 20_000
+    area = np.array([min(p["area_m2"], 150_000) for p in parcels]) / 35_000
+    weight = np.where(ok, (near3 + 1_000) ** 0.7 * area**0.8, 0.0)
+    order = rng.choice(len(parcels), size=int(ok.sum()), replace=False, p=weight / weight.sum())
+    chosen: list[int] = []
+    for idx in order:
+        if chosen and haversine_km(ppts[[idx]], ppts[chosen]).min() < min_spacing_km:
+            continue
+        chosen.append(int(idx))
+        if len(chosen) == n:
+            break
+    return [parcel_candidate(c, parcels[i], demand, rng) for c, i in enumerate(chosen)]
+
+
+def make_toy(
+    demand: list[dict], rng: np.random.Generator, parcels: list[dict] | None = None, center=(39.915, 32.855)
+) -> dict:
+    """Sekme 3 için küçük öğretim örneği: merkeze en yakın mahallelerden 10'u ve 6 aday.
     Nüfuslar, 2–3 hastane gerektirecek şekilde ölçeklenir (toplam ≈ 450 bin)."""
     pts = np.array([[p["lat"], p["lon"]] for p in demand])
     dist = haversine_km(np.array([center]), pts)[0]
@@ -102,9 +163,28 @@ def make_toy(demand: list[dict], rng: np.random.Generator, center=(39.915, 32.85
     toy_demand = []
     for n, p in enumerate(sub):
         toy_demand.append({**p, "id": n, "population": int(round(p["population"] * scale, -2))})
-    cidx = pick_candidates(toy_demand, 6, rng, min_spacing_km=0.6)
-    cands = make_candidates(toy_demand, cidx, rng)
-    # öğretimde tip çeşitliliği görünsün: arazileri elle çeşitlendir
-    for c, land in zip(cands, [40_000, 80_000, 160_000, 35_000, 120_000, 200_000]):
-        c["land_m2"] = land
+    if parcels:
+        # merkeze en yakın parsellerden, birbirine en az 0,8 km uzak 6 tane; en az biri büyük hastane alabilsin
+        tpts = np.array([[p["lat"], p["lon"]] for p in toy_demand])
+        c0 = tpts.mean(axis=0)
+        ppts = np.array([[p["lat"], p["lon"]] for p in parcels])
+        order = np.argsort(haversine_km(np.array([c0]), ppts)[0])[:40]
+        chosen: list[int] = []
+        big = next((int(i) for i in order if parcels[i]["area_m2"] >= 120_000), None)
+        if big is not None:
+            chosen.append(big)
+        for i in order:
+            if len(chosen) == 6:
+                break
+            if chosen and haversine_km(ppts[[i]], ppts[chosen]).min() < 0.8:
+                continue
+            chosen.append(int(i))
+        chosen.sort(key=lambda i: (parcels[i]["lon"], parcels[i]["lat"]))
+        cands = [parcel_candidate(c, parcels[i], toy_demand, rng) for c, i in enumerate(chosen)]
+    else:
+        cidx = pick_candidates(toy_demand, 6, rng, min_spacing_km=0.6)
+        cands = make_candidates(toy_demand, cidx, rng)
+        # öğretimde tip çeşitliliği görünsün: arazileri elle çeşitlendir
+        for c, land in zip(cands, [40_000, 80_000, 160_000, 35_000, 120_000, 200_000]):
+            c["land_m2"] = land
     return {"demand": toy_demand, "candidates": cands}

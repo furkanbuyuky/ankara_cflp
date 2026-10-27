@@ -1,14 +1,3 @@
----
-title: Ankara Hastane CFLP
-emoji: 🏥
-colorFrom: blue
-colorTo: indigo
-sdk: docker
-app_port: 7860
-pinned: false
-short_description: Ankara için kapasiteli hastane yerleşimi — MIP, GA ve DE
----
-
 # Ankara Hastane CFLP
 
 Ankara'nın 9 merkez ilçesi için kapasiteli tesis yerleşim problemi (CFLP) simülasyonu ve arayüzü.
@@ -41,7 +30,7 @@ npm install
 İki terminalde:
 
 ```bash
-cd backend && .venv/Scripts/python -m uvicorn api.main:app --port 8000
+cd backend && .venv/Scripts/python -m uvicorn server.main:app --port 8000
 ```
 
 ```bash
@@ -60,26 +49,31 @@ cd backend && .venv/Scripts/python scripts/precompute.py
 Tek sunucudan servis etmek için `npm run build` yeterli. API, `frontend/dist` klasörü varsa onu
 kök adreste sunar (http://localhost:8000).
 
-## Yayınlama (GitHub → Hugging Face Spaces)
+## Yayınlama (Vercel)
 
-Depo kökündeki `Dockerfile` arayüzü derler ve uygulamayı 7860 portunda tek sunucu olarak çalıştırır.
-`.github/workflows/sync-to-hf.yml`, `main` dalına yapılan her push'ta depoyu Hugging Face Space'e
-kopyalar. Space de kendini yeniden derler.
+Uygulama Vercel'in ücretsiz (Hobby) planında çalışır. Arayüz statik olarak sunulur, `/api/*`
+istekleri [api/index.py](api/index.py) Python fonksiyonuna gider. Ayarlar [vercel.json](vercel.json)
+dosyasındadır. GitHub deposu bağlandıktan sonra her `git push` otomatik olarak yeniden yayınlanır.
 
-Bir kerelik kurulum:
+Bir kerelik kurulum: vercel.com'da GitHub hesabıyla giriş yapın, *Add New → Project → Import Git
+Repository* ile depoyu seçin, ayarlara dokunmadan **Deploy**'a basın.
 
-1. Hugging Face'te **Docker** SDK'lı boş bir Space oluşturun.
-2. Hugging Face *Settings → Access Tokens* altından `write` yetkili bir token oluşturun.
-3. GitHub deposunda *Settings → Secrets and variables → Actions* altına gidin:
-   - **Secrets** sekmesine `HF_TOKEN` (token) ekleyin.
-   - **Variables** sekmesine `HF_SPACE` = `kullanıcı-adı/space-adı` ekleyin.
-4. Bir push yapın ya da *Actions* sekmesinden iş akışını elle çalıştırın.
+Sunucusuz ortamın sınırları (istek başına en fazla 300 sn, arka plan işi yok) nedeniyle yayında
+uygulanan farklar:
+
+| Konu | Yerelde | Vercel'de |
+|---|---|---|
+| Uzun işler | Arka plan kuyruğu + ilerleme çubuğu | İstek içinde çalışır, bekleme göstergesi görünür |
+| Exact zaman limiti | 300 sn'ye kadar | En fazla 120 sn |
+| Sweep eğrisi | Nokta başına 15 sn | Toplam ~4 dk'ya sığacak şekilde kısaltılır |
+| Karşılaştırma | Sunucuda paralel süreçler | Her çalışma ayrı istek, tarayıcı 6'şar paralel gönderir |
+| Önbellek | `cache/` diskte kalıcı | Yalnızca `precomputed/` kalıcı, yeni sonuçlar geçicidir |
 
 `precomputed/` klasörü varsayılan ayarlar için önceden hesaplanmış exact, sweep, optimize ve
 benchmark sonuçlarını içerir. Site açılır açılmaz bu sonuçlar gösterilir. Güncellemek için
-`scripts/precompute.py` çalıştırılıp `cache/` içeriği `precomputed/`'a kopyalanır.
+`backend/scripts/precompute.py` çalıştırılıp `cache/` içeriği `precomputed/`'a kopyalanır.
 
-Docker imajını yerelde denemek için:
+Docker kullanan bir sunucuya (ör. Render) taşımak için kökteki [Dockerfile](Dockerfile) hazırdır:
 
 ```bash
 docker build -t ankara-cflp .
@@ -98,15 +92,30 @@ cd backend && .venv/Scripts/python -m cflp.data_pipeline.fetch_osm
 ```
 
 ```bash
+cd backend && .venv/Scripts/python -m cflp.data_pipeline.osm_parcels
+```
+
+```bash
 cd backend && .venv/Scripts/python -m cflp.data_pipeline.build_real
 ```
 
-`fetch_osm` ilçe sınırlarını Nominatim'den indirir. Mahalle sınırları için
-`data/raw/turkey-admin-level-8.geojson` dosyası
-[izzetkalic/geojsons-of-turkey](https://github.com/izzetkalic/geojsons-of-turkey) deposundan
-alınmıştır (OSM türevi, 63 MB). İlçe nüfusları TÜİK ADNKS 2024'ten gelir. Mahalle nüfusları
-alan–yoğunluk modeliyle simüle edilir. İnternet yoksa `python -m cflp.data_pipeline.synthetic`
-tamamen sentetik bir örnek üretir.
+| Veri | Kaynak |
+|---|---|
+| İlçe sınırları | OpenStreetMap, Nominatim (`fetch_osm`) |
+| Mahalle sınırları | OSM admin_level=8 anlık görüntüsü, `data/raw/turkey-admin-level-8.geojson` ([izzetkalic/geojsons-of-turkey](https://github.com/izzetkalic/geojsons-of-turkey), 63 MB) |
+| İlçe nüfusları | TÜİK ADNKS 2024 |
+| Mahalle nüfusları | İlçe nüfusu, alan–yoğunluk modeliyle mahallelere dağıtılır (simülasyon) |
+| Aday yerler | Gerçek OSM parselleri: [Geofabrik Türkiye](https://download.geofabrik.de/europe/turkey.html) dosyası (`data/raw/osm/turkey-latest.osm.pbf`, ~650 MB) `osm_parcels` ile işlenir |
+
+Aday parsel kuralları:
+- Etiket: inşaat alanı, atıl sanayi alanı, yapılaşmamış arazi, çayır, tarım arazisi, bozkır ya da çalılık.
+- En az 35.000 m², ince uzun olmayan (yol kenarı şeritleri ve kavşak adaları elenir).
+- Ana yollara en az 100 m uzak.
+- Park, koru, mezarlık, askeri alan, kampüs, havaalanı, su ya da korunan alan içinde değil.
+
+60 aday, 3 km içindeki nüfus ve parsel büyüklüğüyle ağırlıklı, birbirine en az 1,2 km uzak olacak şekilde seçilir. Arazi
+büyüklüğü parselin gerçek alanıdır. Arsa fiyatı ilçeye göre simüle edilir. İnternet yoksa
+`python -m cflp.data_pipeline.synthetic` tamamen sentetik bir örnek üretir.
 
 ## Testler
 
@@ -127,7 +136,8 @@ Testler şunları kontrol eder:
 ```
 backend/cflp/          model, maliyetler, exact MIP, sweep, benchmark
 backend/cflp/heuristics/  decoder, GA, DE, operatörler, iz kaydı (trace), pseudocode
-backend/api/           FastAPI uç noktaları, iş kuyruğu, disk önbelleği
+backend/server/        FastAPI uç noktaları, iş kuyruğu, disk önbelleği
+api/index.py           Vercel giriş noktası
 frontend/src/tabs/     5 sekme: Veri, Exact, Algoritma nasıl çalışır, Süreç, Karşılaştırma
 config/defaults.json   varsayılan parametreler ve hastane tipleri
 ```

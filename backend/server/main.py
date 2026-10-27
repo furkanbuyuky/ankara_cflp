@@ -1,4 +1,4 @@
-"""FastAPI uygulaması.  Çalıştırma:  uvicorn api.main:app --port 8000 (backend/ içinden)."""
+"""FastAPI uygulaması.  Çalıştırma:  uvicorn server.main:app --port 8000 (backend/ içinden)."""
 from __future__ import annotations
 
 import json
@@ -12,7 +12,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from cflp.benchmark import run_benchmark
+from cflp.benchmark import run_benchmark, run_one
 from cflp.exact import solve_exact
 from cflp.heuristics.pseudocode import PSEUDOCODE
 from cflp.heuristics.runner import run_full
@@ -21,11 +21,15 @@ from cflp.instance import PROCESSED, Constraints, Instance, Params, build_proble
 from cflp.solution import solution_to_dict
 from cflp.sweep import run_sweep
 
-from .jobs import ROOT, JobManager, cache_get, cache_key
+from .jobs import ROOT, SERVERLESS, JobManager, cache_get, cache_key
 
 app = FastAPI(title="Ankara Hastane CFLP")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 jobs = JobManager(workers=int(os.environ.get("JOB_WORKERS", 3)))
+
+# Sunucusuz ortamda bir istek en fazla ~300 sn sürebilir; uzun hesaplar buna göre kısıtlanır
+MAX_TIME_LIMIT = 120 if SERVERLESS else 600
+SWEEP_BUDGET = 230 if SERVERLESS else None
 
 
 # ---------------------------------------------------------------- şemalar
@@ -77,6 +81,14 @@ class TeachReq(BaseModel):
     generations: int = 2
 
 
+class BenchRunReq(BaseModel):
+    spec: Spec
+    run: RunIn
+    seed: int
+    max_evals: int = 10000
+    polish: bool = True
+
+
 class BenchmarkReq(BaseModel):
     spec: Spec
     runs: list[RunIn]
@@ -100,6 +112,13 @@ def spec_dict(spec: Spec) -> dict:
 
 
 # ---------------------------------------------------------------- veri
+
+
+@app.get("/api/config")
+def config():
+    """Frontend'in çalışma ortamına göre davranması için (sunucusuz modda karşılaştırmayı
+    tarayıcı yürütür, uzun süre seçenekleri kısıtlanır)."""
+    return {"serverless": SERVERLESS, "max_time_limit": MAX_TIME_LIMIT}
 
 
 @app.get("/api/defaults")
@@ -164,7 +183,7 @@ def _exact_job(req: ExactReq):
     def fn(job):
         job.message = "MIP çözülüyor (HiGHS)"
         pb = make_problem(req.spec)
-        sol, info = solve_exact(pb, time_limit=req.time_limit)
+        sol, info = solve_exact(pb, time_limit=min(req.time_limit, MAX_TIME_LIMIT))
         return {"solution": solution_to_dict(pb, sol), "solver": info.to_dict()}
 
     return fn
@@ -196,8 +215,9 @@ def sweep(req: SweepReq):
         def progress(f, m):
             job.progress, job.message = f, m
 
-        return run_sweep(pb, req.kind, time_limit=req.time_limit, base_time_limit=req.base_time_limit,
-                         progress=progress)
+        base_tl = min(req.base_time_limit, 40) if SERVERLESS else req.base_time_limit
+        return run_sweep(pb, req.kind, time_limit=req.time_limit, base_time_limit=base_tl,
+                         progress=progress, total_budget=SWEEP_BUDGET)
 
     return jobs.submit("sweep", req.model_dump(), fn).public()
 
@@ -237,6 +257,14 @@ def benchmark(req: BenchmarkReq):
         return run_benchmark(spec_dict(req.spec), runs, req.seeds, req.reference, req.polish, progress)
 
     return jobs.submit("benchmark", req.model_dump(), fn).public()
+
+
+@app.post("/api/bench_run")
+def bench_run(req: BenchRunReq):
+    """Karşılaştırmanın tek bir (konfigürasyon, seed) çalışması. Sunucusuz modda tarayıcı bu
+    istekleri paralel gönderir ve özeti kendisi hesaplar."""
+    run = {"label": req.run.label, "algo": req.run.algo, "config": {**req.run.config, "max_evals": req.max_evals}}
+    return run_one(spec_dict(req.spec), run, req.seed, req.polish)
 
 
 @app.get("/api/jobs/{job_id}")

@@ -1,5 +1,6 @@
 # Testler ve veri hattı için ek bağımlılıklar
--r requirements.txt
+-r ../requirements.txt
 pytest==9.1.1
 shapely==2.2.0
 truststore==0.10.5
+osmium==4.3.2

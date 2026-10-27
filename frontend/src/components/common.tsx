@@ -42,21 +42,32 @@ export function SolverBadge({ info }: { info: SolverInfo }) {
 export function SolutionKpis({ cost, kpi, types, investment, extra }: { cost: Cost; kpi: KpiT; types: HospitalType[]; investment: number; extra?: ReactNode }) {
   const mix = types.map((t) => `${kpi.by_type[t.key] ?? 0} ${t.name.toLowerCase()}`).join(" · ");
   return (
-    <div className="kpis">
-      <Kpi label="Toplam yıllık maliyet" value={mtl(cost.total)} sub={`Yatırım ${mtl(investment)}`} />
-      <Kpi label="Açılış (yıllık)" value={mtl(cost.fixed)} sub={pct(cost.fixed / cost.total)} />
-      <Kpi label="Ulaşım (yıllık)" value={mtl(cost.assign)} sub={pct(cost.assign / cost.total)} />
-      <Kpi label="Açılan hastane" value={n0(kpi.n_open)} sub={types.length > 1 ? mix : undefined} />
-      <Kpi label="Ort. mesafe" value={`${n1(kpi.avg_dist_km)} km`} sub={`en fazla ${n1(kpi.max_dist_km)} km`} />
-      <Kpi label="Ort. doluluk" value={pct(kpi.avg_util)} />
+    <div className="kpis" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(170px, 1fr))" }}>
+      <Kpi label="Toplam yıllık maliyet" value={mtl(cost.total)} sub={`Toplam yatırım ${mtl(investment)}`} />
+      <Kpi label="Açılan hastane" value={n0(kpi.n_open)} sub={`${types.length > 1 ? mix + " · " : ""}doluluk ${pct(kpi.avg_util)}`} />
+      <Kpi label="Ortalama mesafe" value={`${n1(kpi.avg_dist_km)} km`} sub={`en uzak ${n1(kpi.max_dist_km)} km`} />
       <Kpi
         label="Karşılanmayan talep"
         value={kpi.unmet_beds > 0 ? `${n0(kpi.unmet_beds)} yatak` : "Yok"}
-        sub={kpi.unmet_beds > 0 ? `${pct(kpi.unmet_pct / 100)} · ${kpi.unmet_count} mahalle · ceza ${mtl(cost.penalty)}` : undefined}
+        sub={kpi.unmet_beds > 0 ? `${pct(kpi.unmet_pct / 100)} · ${kpi.unmet_count} mahalle` : "tüm mahalleler bir hastaneye bağlı"}
         alert={kpi.unmet_beds > 0}
       />
       {extra}
     </div>
+  );
+}
+
+/** Her sayfanın üstündeki başlık: adım numarası, başlık, tek paragraflık açıklama ve eylemler. */
+export function PageHeader({ step, title, children, actions }: { step: number; title: string; children?: ReactNode; actions?: ReactNode }) {
+  return (
+    <header className="page-head">
+      <div>
+        <div className="eyebrow">Adım {step}</div>
+        <h1 className="page-title">{title}</h1>
+        {children && <p className="page-desc">{children}</p>}
+      </div>
+      {actions && <div className="page-actions">{actions}</div>}
+    </header>
   );
 }
 
@@ -93,13 +104,13 @@ export function GenesView({ genes, types, marks, cuts, size = 22 }: { genes: num
 
 export function CostBar({ cost }: { cost: Cost }) {
   const parts = [
-    { k: "Açılış", v: cost.fixed, c: "var(--accent)" },
+    { k: "Açılış (yıllıklandırılmış)", v: cost.fixed, c: "var(--accent)" },
     { k: "Ulaşım", v: cost.assign, c: "var(--type-S)" },
-    { k: "Ceza", v: cost.penalty, c: "var(--critical)" },
+    { k: "Karşılanmama cezası", v: cost.penalty, c: "var(--critical)" },
   ].filter((p) => p.v > 0);
   return (
     <div className="stack" style={{ gap: 6 }}>
-      <div style={{ display: "flex", height: 14, gap: 2, borderRadius: 4, overflow: "hidden" }}>
+      <div style={{ display: "flex", height: 10, gap: 2, borderRadius: 99, overflow: "hidden" }}>
         {parts.map((p) => (
           <div key={p.k} title={`${p.k}: ${mtl(p.v)}`} style={{ width: `${(p.v / cost.total) * 100}%`, background: p.c }} />
         ))}

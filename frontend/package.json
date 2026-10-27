@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "5.1.0",
     "chart.js": "4.4.4",
     "katex": "0.16.11",
     "leaflet": "1.9.4",

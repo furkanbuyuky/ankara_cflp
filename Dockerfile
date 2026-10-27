@@ -21,8 +21,8 @@ ENV PYTHONUNBUFFERED=1 \
 RUN useradd -m -u 1000 user
 WORKDIR /app
 
-COPY backend/requirements.txt backend/requirements.txt
-RUN pip install --no-cache-dir -r backend/requirements.txt
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY --chown=user backend/ backend/
 COPY --chown=user config/ config/
@@ -32,4 +32,4 @@ COPY --chown=user --from=web /app/frontend/dist frontend/dist
 
 USER user
 EXPOSE 7860
-CMD ["python", "-m", "uvicorn", "api.main:app", "--app-dir", "backend", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["python", "-m", "uvicorn", "server.main:app", "--app-dir", "backend", "--host", "0.0.0.0", "--port", "7860"]

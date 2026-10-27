@@ -8,3 +8,4 @@ cache/
 .claude/
 # 63 MB ham OSM mahalle sınırları; yalnızca veriyi yeniden üretmek için gerekir (README'ye bakın)
 data/raw/turkey-admin-level-8.geojson
+data/raw/osm/

@@ -12,7 +12,7 @@ from .heuristics.runner import run_full
 from .instance import Constraints, Instance, Params, build_problem
 
 
-def _one(spec: dict, run: dict, seed: int, do_polish: bool) -> dict:
+def run_one(spec: dict, run: dict, seed: int, do_polish: bool) -> dict:
     """Süreç havuzunda çalışır: problemi kendi içinde kurar."""
     pb = build_problem(
         Instance.load(spec["instance"]),
@@ -56,7 +56,7 @@ def run_benchmark(
     limit = int(os.environ.get("BENCH_WORKERS", (os.cpu_count() or 2) - 1))
     workers = max(1, min(len(tasks), limit))
     with ProcessPoolExecutor(max_workers=workers) as pool:
-        futs = [pool.submit(_one, spec, run, s, do_polish) for run, s in tasks]
+        futs = [pool.submit(run_one, spec, run, s, do_polish) for run, s in tasks]
         for n, f in enumerate(as_completed(futs)):
             results.append(f.result())
             progress((n + 1) / len(tasks), f"{n + 1}/{len(tasks)} çalışma bitti")

@@ -1,0 +1,3449 @@
+[
+ {
+  "osm": "way/35161106",
+  "kind": "farmland",
+  "district": "Çankaya",
+  "lat": 39.855254,
+  "lon": 32.946318,
+  "area_m2": 44200.0,
+  "compactness": 0.463
+ },
+ {
+  "osm": "way/35161205",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.859509,
+  "lon": 32.949759,
+  "area_m2": 50400.0,
+  "compactness": 0.302
+ },
+ {
+  "osm": "way/35161213",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.861734,
+  "lon": 32.949959,
+  "area_m2": 53600.0,
+  "compactness": 0.73
+ },
+ {
+  "osm": "way/136842031",
+  "kind": "construction",
+  "district": "Altındağ",
+  "lat": 39.955235,
+  "lon": 32.863069,
+  "area_m2": 50800.0,
+  "compactness": 0.758
+ },
+ {
+  "osm": "way/222382868",
+  "kind": "brownfield",
+  "district": "Çankaya",
+  "lat": 39.901355,
+  "lon": 32.761403,
+  "area_m2": 53500.0,
+  "compactness": 0.754
+ },
+ {
+  "osm": "way/224198000",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.021473,
+  "lon": 32.928684,
+  "area_m2": 64400.0,
+  "compactness": 0.389
+ },
+ {
+  "osm": "way/224198288",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.023862,
+  "lon": 32.934099,
+  "area_m2": 152000.0,
+  "compactness": 0.322
+ },
+ {
+  "osm": "way/224198957",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.027757,
+  "lon": 32.937802,
+  "area_m2": 40700.0,
+  "compactness": 0.639
+ },
+ {
+  "osm": "way/224198962",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.026437,
+  "lon": 32.938306,
+  "area_m2": 54000.0,
+  "compactness": 0.403
+ },
+ {
+  "osm": "way/224198964",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.022991,
+  "lon": 32.928724,
+  "area_m2": 38800.0,
+  "compactness": 0.558
+ },
+ {
+  "osm": "way/224198968",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.02532,
+  "lon": 32.933609,
+  "area_m2": 46600.0,
+  "compactness": 0.59
+ },
+ {
+  "osm": "way/224198969",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.025942,
+  "lon": 32.930041,
+  "area_m2": 51600.0,
+  "compactness": 0.387
+ },
+ {
+  "osm": "way/226035435",
+  "kind": "meadow",
+  "district": "Altındağ",
+  "lat": 40.039318,
+  "lon": 32.929819,
+  "area_m2": 91800.0,
+  "compactness": 0.497
+ },
+ {
+  "osm": "way/226035437",
+  "kind": "meadow",
+  "district": "Altındağ",
+  "lat": 40.037318,
+  "lon": 32.931046,
+  "area_m2": 74500.0,
+  "compactness": 0.682
+ },
+ {
+  "osm": "way/230672013",
+  "kind": "brownfield",
+  "district": "Çankaya",
+  "lat": 39.852976,
+  "lon": 32.653208,
+  "area_m2": 77200.0,
+  "compactness": 0.572
+ },
+ {
+  "osm": "way/243146209",
+  "kind": "grass",
+  "district": "Yenimahalle",
+  "lat": 39.962585,
+  "lon": 32.798614,
+  "area_m2": 53600.0,
+  "compactness": 0.748
+ },
+ {
+  "osm": "way/251404461",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.068307,
+  "lon": 32.913078,
+  "area_m2": 51200.0,
+  "compactness": 0.405
+ },
+ {
+  "osm": "way/251539436",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.080452,
+  "lon": 32.916584,
+  "area_m2": 49000.0,
+  "compactness": 0.575
+ },
+ {
+  "osm": "way/251543096",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.08117,
+  "lon": 32.92046,
+  "area_m2": 56600.0,
+  "compactness": 0.753
+ },
+ {
+  "osm": "way/251664697",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.083114,
+  "lon": 32.919041,
+  "area_m2": 37900.0,
+  "compactness": 0.483
+ },
+ {
+  "osm": "way/251689465",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.073977,
+  "lon": 32.936965,
+  "area_m2": 59500.0,
+  "compactness": 0.286
+ },
+ {
+  "osm": "way/252369217",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.074796,
+  "lon": 32.933127,
+  "area_m2": 40100.0,
+  "compactness": 0.371
+ },
+ {
+  "osm": "way/252563393",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.078841,
+  "lon": 32.932898,
+  "area_m2": 66300.0,
+  "compactness": 0.438
+ },
+ {
+  "osm": "way/252682689",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.07164,
+  "lon": 32.913242,
+  "area_m2": 41300.0,
+  "compactness": 0.793
+ },
+ {
+  "osm": "way/252691239",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.076843,
+  "lon": 32.911894,
+  "area_m2": 89300.0,
+  "compactness": 0.411
+ },
+ {
+  "osm": "way/252691249",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.079172,
+  "lon": 32.911092,
+  "area_m2": 35100.0,
+  "compactness": 0.596
+ },
+ {
+  "osm": "way/252867571",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.07153,
+  "lon": 32.894203,
+  "area_m2": 73600.0,
+  "compactness": 0.812
+ },
+ {
+  "osm": "way/252868705",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.0698,
+  "lon": 32.887776,
+  "area_m2": 187600.0,
+  "compactness": 0.462
+ },
+ {
+  "osm": "way/252928512",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.066646,
+  "lon": 32.885746,
+  "area_m2": 267000.0,
+  "compactness": 0.535
+ },
+ {
+  "osm": "way/252964727",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.066276,
+  "lon": 32.905748,
+  "area_m2": 55100.0,
+  "compactness": 0.602
+ },
+ {
+  "osm": "way/252966078",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.065284,
+  "lon": 32.903619,
+  "area_m2": 82900.0,
+  "compactness": 0.576
+ },
+ {
+  "osm": "way/252966110",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.065241,
+  "lon": 32.900429,
+  "area_m2": 73800.0,
+  "compactness": 0.339
+ },
+ {
+  "osm": "way/252966574",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.064778,
+  "lon": 32.896087,
+  "area_m2": 242200.0,
+  "compactness": 0.498
+ },
+ {
+  "osm": "way/252992474",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.080238,
+  "lon": 32.951475,
+  "area_m2": 39000.0,
+  "compactness": 0.454
+ },
+ {
+  "osm": "way/253018560",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.076979,
+  "lon": 32.953177,
+  "area_m2": 59900.0,
+  "compactness": 0.564
+ },
+ {
+  "osm": "way/253018628",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.079162,
+  "lon": 32.952858,
+  "area_m2": 41800.0,
+  "compactness": 0.474
+ },
+ {
+  "osm": "way/253018955",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.078836,
+  "lon": 32.954675,
+  "area_m2": 36700.0,
+  "compactness": 0.665
+ },
+ {
+  "osm": "way/253023110",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.084046,
+  "lon": 32.952631,
+  "area_m2": 160500.0,
+  "compactness": 0.642
+ },
+ {
+  "osm": "way/253028473",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.057412,
+  "lon": 32.92331,
+  "area_m2": 495600.0,
+  "compactness": 0.418
+ },
+ {
+  "osm": "way/253030885",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.064674,
+  "lon": 32.926544,
+  "area_m2": 70300.0,
+  "compactness": 0.797
+ },
+ {
+  "osm": "way/253067408",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.058836,
+  "lon": 32.929097,
+  "area_m2": 44200.0,
+  "compactness": 0.466
+ },
+ {
+  "osm": "way/253074488",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.060642,
+  "lon": 32.928511,
+  "area_m2": 134400.0,
+  "compactness": 0.26
+ },
+ {
+  "osm": "way/253075033",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.063645,
+  "lon": 32.934578,
+  "area_m2": 49900.0,
+  "compactness": 0.766
+ },
+ {
+  "osm": "way/254067535",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.081154,
+  "lon": 32.928319,
+  "area_m2": 38300.0,
+  "compactness": 0.336
+ },
+ {
+  "osm": "way/254132198",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.083157,
+  "lon": 32.929196,
+  "area_m2": 43500.0,
+  "compactness": 0.419
+ },
+ {
+  "osm": "way/254133421",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.077181,
+  "lon": 32.929634,
+  "area_m2": 36500.0,
+  "compactness": 0.656
+ },
+ {
+  "osm": "way/273212569",
+  "kind": "meadow",
+  "district": "Keçiören",
+  "lat": 40.038597,
+  "lon": 32.870171,
+  "area_m2": 50700.0,
+  "compactness": 0.496
+ },
+ {
+  "osm": "way/273212570",
+  "kind": "meadow",
+  "district": "Keçiören",
+  "lat": 40.038182,
+  "lon": 32.872031,
+  "area_m2": 42600.0,
+  "compactness": 0.603
+ },
+ {
+  "osm": "way/273213002",
+  "kind": "meadow",
+  "district": "Pursaklar",
+  "lat": 40.038467,
+  "lon": 32.876523,
+  "area_m2": 35200.0,
+  "compactness": 0.442
+ },
+ {
+  "osm": "way/327673263",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.029065,
+  "lon": 32.9141,
+  "area_m2": 85600.0,
+  "compactness": 0.643
+ },
+ {
+  "osm": "way/361650441",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.034584,
+  "lon": 32.909287,
+  "area_m2": 158000.0,
+  "compactness": 0.334
+ },
+ {
+  "osm": "way/361651344",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.032747,
+  "lon": 32.912441,
+  "area_m2": 37400.0,
+  "compactness": 0.349
+ },
+ {
+  "osm": "way/404667189",
+  "kind": "construction",
+  "district": "Çankaya",
+  "lat": 39.84476,
+  "lon": 32.852781,
+  "area_m2": 43000.0,
+  "compactness": 0.736
+ },
+ {
+  "osm": "way/405089799",
+  "kind": "grass",
+  "district": "Etimesgut",
+  "lat": 39.845803,
+  "lon": 32.534662,
+  "area_m2": 47700.0,
+  "compactness": 0.823
+ },
+ {
+  "osm": "way/419450567",
+  "kind": "scrub",
+  "district": "Yenimahalle",
+  "lat": 39.950549,
+  "lon": 32.808705,
+  "area_m2": 38700.0,
+  "compactness": 0.515
+ },
+ {
+  "osm": "way/419450576",
+  "kind": "scrub",
+  "district": "Yenimahalle",
+  "lat": 39.947006,
+  "lon": 32.80245,
+  "area_m2": 96400.0,
+  "compactness": 0.468
+ },
+ {
+  "osm": "way/419450594",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.945333,
+  "lon": 32.805241,
+  "area_m2": 35700.0,
+  "compactness": 0.71
+ },
+ {
+  "osm": "way/419450595",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.945733,
+  "lon": 32.808439,
+  "area_m2": 50100.0,
+  "compactness": 0.717
+ },
+ {
+  "osm": "way/419450597",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.948359,
+  "lon": 32.810386,
+  "area_m2": 80300.0,
+  "compactness": 0.725
+ },
+ {
+  "osm": "way/419450598",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.946348,
+  "lon": 32.811246,
+  "area_m2": 62400.0,
+  "compactness": 0.746
+ },
+ {
+  "osm": "way/419450602",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.947339,
+  "lon": 32.81427,
+  "area_m2": 119600.0,
+  "compactness": 0.757
+ },
+ {
+  "osm": "way/419450605",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.949587,
+  "lon": 32.8138,
+  "area_m2": 58400.0,
+  "compactness": 0.599
+ },
+ {
+  "osm": "way/419450608",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.950335,
+  "lon": 32.816615,
+  "area_m2": 35400.0,
+  "compactness": 0.637
+ },
+ {
+  "osm": "way/419450610",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.948415,
+  "lon": 32.819283,
+  "area_m2": 90000.0,
+  "compactness": 0.691
+ },
+ {
+  "osm": "way/419450614",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.949939,
+  "lon": 32.822737,
+  "area_m2": 95400.0,
+  "compactness": 0.346
+ },
+ {
+  "osm": "way/466450418",
+  "kind": "construction",
+  "district": "Çankaya",
+  "lat": 39.856027,
+  "lon": 32.844472,
+  "area_m2": 43000.0,
+  "compactness": 0.729
+ },
+ {
+  "osm": "relation/8441649",
+  "kind": "brownfield",
+  "district": "Yenimahalle",
+  "lat": 40.029474,
+  "lon": 32.768804,
+  "area_m2": 42600.0,
+  "compactness": 0.332
+ },
+ {
+  "osm": "relation/8443186",
+  "kind": "brownfield",
+  "district": "Yenimahalle",
+  "lat": 40.03501,
+  "lon": 32.764706,
+  "area_m2": 40900.0,
+  "compactness": 0.573
+ },
+ {
+  "osm": "relation/8445775",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.01479,
+  "lon": 32.753776,
+  "area_m2": 39900.0,
+  "compactness": 0.278
+ },
+ {
+  "osm": "way/672726653",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.693594,
+  "lon": 32.718407,
+  "area_m2": 262700.0,
+  "compactness": 0.323
+ },
+ {
+  "osm": "way/672726654",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.696489,
+  "lon": 32.698454,
+  "area_m2": 545100.0,
+  "compactness": 0.347
+ },
+ {
+  "osm": "way/672726655",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.698037,
+  "lon": 32.688909,
+  "area_m2": 942100.0,
+  "compactness": 0.403
+ },
+ {
+  "osm": "way/683527112",
+  "kind": "construction",
+  "district": "Altındağ",
+  "lat": 39.942668,
+  "lon": 32.874415,
+  "area_m2": 140600.0,
+  "compactness": 0.313
+ },
+ {
+  "osm": "way/683542308",
+  "kind": "construction",
+  "district": "Altındağ",
+  "lat": 39.946248,
+  "lon": 32.879444,
+  "area_m2": 178900.0,
+  "compactness": 0.657
+ },
+ {
+  "osm": "way/824770343",
+  "kind": "greenfield",
+  "district": "Etimesgut",
+  "lat": 39.876698,
+  "lon": 32.611586,
+  "area_m2": 50100.0,
+  "compactness": 0.562
+ },
+ {
+  "osm": "way/853447295",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.894647,
+  "lon": 32.662726,
+  "area_m2": 214600.0,
+  "compactness": 0.64
+ },
+ {
+  "osm": "way/853447296",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.896318,
+  "lon": 32.672126,
+  "area_m2": 57900.0,
+  "compactness": 0.709
+ },
+ {
+  "osm": "way/856392092",
+  "kind": "scrub",
+  "district": "Mamak",
+  "lat": 39.910448,
+  "lon": 32.940265,
+  "area_m2": 61000.0,
+  "compactness": 0.376
+ },
+ {
+  "osm": "way/856542151",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.874543,
+  "lon": 32.910583,
+  "area_m2": 190000.0,
+  "compactness": 0.258
+ },
+ {
+  "osm": "way/856546647",
+  "kind": "scrub",
+  "district": "Mamak",
+  "lat": 39.888609,
+  "lon": 32.916709,
+  "area_m2": 56000.0,
+  "compactness": 0.31
+ },
+ {
+  "osm": "way/856559207",
+  "kind": "farmland",
+  "district": "Çankaya",
+  "lat": 39.866903,
+  "lon": 32.88687,
+  "area_m2": 42300.0,
+  "compactness": 0.411
+ },
+ {
+  "osm": "way/856560204",
+  "kind": "scrub",
+  "district": "Çankaya",
+  "lat": 39.867478,
+  "lon": 32.876547,
+  "area_m2": 76200.0,
+  "compactness": 0.269
+ },
+ {
+  "osm": "way/856571679",
+  "kind": "construction",
+  "district": "Çankaya",
+  "lat": 39.862568,
+  "lon": 32.86619,
+  "area_m2": 49100.0,
+  "compactness": 0.784
+ },
+ {
+  "osm": "way/1022855649",
+  "kind": "construction",
+  "district": "Yenimahalle",
+  "lat": 39.957007,
+  "lon": 32.827696,
+  "area_m2": 134000.0,
+  "compactness": 0.646
+ },
+ {
+  "osm": "way/1024582695",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.030329,
+  "lon": 32.588196,
+  "area_m2": 2249000.0,
+  "compactness": 0.519
+ },
+ {
+  "osm": "way/1025810433",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.837442,
+  "lon": 32.705832,
+  "area_m2": 41000.0,
+  "compactness": 0.686
+ },
+ {
+  "osm": "way/1025810488",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.837123,
+  "lon": 32.707893,
+  "area_m2": 42300.0,
+  "compactness": 0.772
+ },
+ {
+  "osm": "way/1039100145",
+  "kind": "construction",
+  "district": "Keçiören",
+  "lat": 40.024834,
+  "lon": 32.820863,
+  "area_m2": 657400.0,
+  "compactness": 0.698
+ },
+ {
+  "osm": "way/1039100157",
+  "kind": "construction",
+  "district": "Yenimahalle",
+  "lat": 40.002296,
+  "lon": 32.764151,
+  "area_m2": 108200.0,
+  "compactness": 0.656
+ },
+ {
+  "osm": "way/1039134310",
+  "kind": "construction",
+  "district": "Yenimahalle",
+  "lat": 40.032403,
+  "lon": 32.643963,
+  "area_m2": 235400.0,
+  "compactness": 0.665
+ },
+ {
+  "osm": "way/1039134318",
+  "kind": "construction",
+  "district": "Yenimahalle",
+  "lat": 40.031319,
+  "lon": 32.636154,
+  "area_m2": 420400.0,
+  "compactness": 0.618
+ },
+ {
+  "osm": "way/1039134331",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.022903,
+  "lon": 32.628618,
+  "area_m2": 1531400.0,
+  "compactness": 0.353
+ },
+ {
+  "osm": "way/1039267118",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.031904,
+  "lon": 32.652427,
+  "area_m2": 340400.0,
+  "compactness": 0.364
+ },
+ {
+  "osm": "way/1039267121",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.015554,
+  "lon": 32.719358,
+  "area_m2": 42800.0,
+  "compactness": 0.672
+ },
+ {
+  "osm": "way/1039267122",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.013135,
+  "lon": 32.719812,
+  "area_m2": 78400.0,
+  "compactness": 0.46
+ },
+ {
+  "osm": "way/1039267123",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.01414,
+  "lon": 32.716249,
+  "area_m2": 82000.0,
+  "compactness": 0.293
+ },
+ {
+  "osm": "way/1039267124",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.019159,
+  "lon": 32.703554,
+  "area_m2": 268300.0,
+  "compactness": 0.584
+ },
+ {
+  "osm": "way/1039277838",
+  "kind": "construction",
+  "district": "Etimesgut",
+  "lat": 39.92293,
+  "lon": 32.599111,
+  "area_m2": 7018500.0,
+  "compactness": 0.453
+ },
+ {
+  "osm": "way/1039374603",
+  "kind": "meadow",
+  "district": "Yenimahalle",
+  "lat": 39.975486,
+  "lon": 32.666359,
+  "area_m2": 760700.0,
+  "compactness": 0.587
+ },
+ {
+  "osm": "way/1039995649",
+  "kind": "meadow",
+  "district": "Yenimahalle",
+  "lat": 39.993809,
+  "lon": 32.670317,
+  "area_m2": 620100.0,
+  "compactness": 0.784
+ },
+ {
+  "osm": "way/1040187723",
+  "kind": "meadow",
+  "district": "Yenimahalle",
+  "lat": 39.998258,
+  "lon": 32.699775,
+  "area_m2": 82300.0,
+  "compactness": 0.316
+ },
+ {
+  "osm": "way/1040187724",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.009331,
+  "lon": 32.722417,
+  "area_m2": 53200.0,
+  "compactness": 0.279
+ },
+ {
+  "osm": "way/1040187726",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.015292,
+  "lon": 32.711421,
+  "area_m2": 198500.0,
+  "compactness": 0.388
+ },
+ {
+  "osm": "way/1040187729",
+  "kind": "meadow",
+  "district": "Yenimahalle",
+  "lat": 40.020295,
+  "lon": 32.779673,
+  "area_m2": 129700.0,
+  "compactness": 0.651
+ },
+ {
+  "osm": "way/1040187736",
+  "kind": "construction",
+  "district": "Keçiören",
+  "lat": 40.03387,
+  "lon": 32.843417,
+  "area_m2": 98300.0,
+  "compactness": 0.563
+ },
+ {
+  "osm": "way/1040187737",
+  "kind": "scrub",
+  "district": "Keçiören",
+  "lat": 40.037689,
+  "lon": 32.840276,
+  "area_m2": 538100.0,
+  "compactness": 0.572
+ },
+ {
+  "osm": "way/1040187738",
+  "kind": "farmland",
+  "district": "Keçiören",
+  "lat": 40.030991,
+  "lon": 32.826965,
+  "area_m2": 114800.0,
+  "compactness": 0.679
+ },
+ {
+  "osm": "way/1040187739",
+  "kind": "farmland",
+  "district": "Keçiören",
+  "lat": 40.029966,
+  "lon": 32.851945,
+  "area_m2": 585500.0,
+  "compactness": 0.398
+ },
+ {
+  "osm": "way/1040187740",
+  "kind": "farmland",
+  "district": "Keçiören",
+  "lat": 40.026113,
+  "lon": 32.829783,
+  "area_m2": 187300.0,
+  "compactness": 0.647
+ },
+ {
+  "osm": "way/1040187746",
+  "kind": "farmland",
+  "district": "Keçiören",
+  "lat": 40.011167,
+  "lon": 32.798808,
+  "area_m2": 83700.0,
+  "compactness": 0.685
+ },
+ {
+  "osm": "way/1040187749",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.037119,
+  "lon": 32.78026,
+  "area_m2": 103000.0,
+  "compactness": 0.805
+ },
+ {
+  "osm": "way/1040187750",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.031659,
+  "lon": 32.778931,
+  "area_m2": 146000.0,
+  "compactness": 0.583
+ },
+ {
+  "osm": "way/1040189022",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.012839,
+  "lon": 32.726712,
+  "area_m2": 35400.0,
+  "compactness": 0.4
+ },
+ {
+  "osm": "way/1040189023",
+  "kind": "meadow",
+  "district": "Yenimahalle",
+  "lat": 40.019335,
+  "lon": 32.72,
+  "area_m2": 59800.0,
+  "compactness": 0.561
+ },
+ {
+  "osm": "way/1040189024",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.018542,
+  "lon": 32.710717,
+  "area_m2": 76700.0,
+  "compactness": 0.861
+ },
+ {
+  "osm": "way/1040189025",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.020862,
+  "lon": 32.708766,
+  "area_m2": 89900.0,
+  "compactness": 0.441
+ },
+ {
+  "osm": "way/1040189028",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.014849,
+  "lon": 32.688183,
+  "area_m2": 181100.0,
+  "compactness": 0.678
+ },
+ {
+  "osm": "way/1043517007",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.025431,
+  "lon": 32.609473,
+  "area_m2": 438700.0,
+  "compactness": 0.637
+ },
+ {
+  "osm": "way/1043517008",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.015671,
+  "lon": 32.613302,
+  "area_m2": 986500.0,
+  "compactness": 0.522
+ },
+ {
+  "osm": "way/1051137785",
+  "kind": "construction",
+  "district": "Yenimahalle",
+  "lat": 39.958582,
+  "lon": 32.822165,
+  "area_m2": 178900.0,
+  "compactness": 0.302
+ },
+ {
+  "osm": "way/1057416315",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.018121,
+  "lon": 32.578331,
+  "area_m2": 161400.0,
+  "compactness": 0.302
+ },
+ {
+  "osm": "way/1057416318",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.021858,
+  "lon": 32.597512,
+  "area_m2": 51700.0,
+  "compactness": 0.256
+ },
+ {
+  "osm": "way/1057418153",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.007512,
+  "lon": 32.589227,
+  "area_m2": 219900.0,
+  "compactness": 0.409
+ },
+ {
+  "osm": "way/1057661686",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.012347,
+  "lon": 32.588219,
+  "area_m2": 39000.0,
+  "compactness": 0.42
+ },
+ {
+  "osm": "way/1057661699",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.035909,
+  "lon": 32.586103,
+  "area_m2": 41600.0,
+  "compactness": 0.458
+ },
+ {
+  "osm": "way/1066811441",
+  "kind": "scrub",
+  "district": "Yenimahalle",
+  "lat": 40.023134,
+  "lon": 32.575922,
+  "area_m2": 107600.0,
+  "compactness": 0.629
+ },
+ {
+  "osm": "way/1066813178",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.036241,
+  "lon": 32.593486,
+  "area_m2": 46200.0,
+  "compactness": 0.517
+ },
+ {
+  "osm": "way/1066813179",
+  "kind": "farmland",
+  "district": "Sincan",
+  "lat": 40.007234,
+  "lon": 32.557962,
+  "area_m2": 39600.0,
+  "compactness": 0.593
+ },
+ {
+  "osm": "way/1066813181",
+  "kind": "farmland",
+  "district": "Sincan",
+  "lat": 40.005469,
+  "lon": 32.561892,
+  "area_m2": 129900.0,
+  "compactness": 0.59
+ },
+ {
+  "osm": "way/1072411060",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.01308,
+  "lon": 32.607227,
+  "area_m2": 50000.0,
+  "compactness": 0.73
+ },
+ {
+  "osm": "way/1082621852",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.914996,
+  "lon": 33.031708,
+  "area_m2": 40700.0,
+  "compactness": 0.686
+ },
+ {
+  "osm": "way/1083684362",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.911825,
+  "lon": 33.055347,
+  "area_m2": 51300.0,
+  "compactness": 0.557
+ },
+ {
+  "osm": "way/1083684363",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.910903,
+  "lon": 33.05751,
+  "area_m2": 35100.0,
+  "compactness": 0.784
+ },
+ {
+  "osm": "way/1083693420",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.912942,
+  "lon": 33.050606,
+  "area_m2": 38800.0,
+  "compactness": 0.458
+ },
+ {
+  "osm": "way/1083845922",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.915057,
+  "lon": 33.041412,
+  "area_m2": 81600.0,
+  "compactness": 0.317
+ },
+ {
+  "osm": "way/1083847228",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.915005,
+  "lon": 33.038667,
+  "area_m2": 72600.0,
+  "compactness": 0.693
+ },
+ {
+  "osm": "way/1083847229",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.915672,
+  "lon": 33.036562,
+  "area_m2": 43500.0,
+  "compactness": 0.699
+ },
+ {
+  "osm": "way/1086778725",
+  "kind": "construction",
+  "district": "Yenimahalle",
+  "lat": 39.95815,
+  "lon": 32.802968,
+  "area_m2": 310700.0,
+  "compactness": 0.63
+ },
+ {
+  "osm": "relation/14543287",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.029783,
+  "lon": 32.587602,
+  "area_m2": 2247500.0,
+  "compactness": 0.494
+ },
+ {
+  "osm": "way/1124561913",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.826956,
+  "lon": 32.570124,
+  "area_m2": 121300.0,
+  "compactness": 0.493
+ },
+ {
+  "osm": "way/1124565766",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.83973,
+  "lon": 32.638435,
+  "area_m2": 178700.0,
+  "compactness": 0.501
+ },
+ {
+  "osm": "relation/15044334",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.845702,
+  "lon": 32.618917,
+  "area_m2": 80800.0,
+  "compactness": 0.403
+ },
+ {
+  "osm": "way/1124629498",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.849199,
+  "lon": 32.623247,
+  "area_m2": 55800.0,
+  "compactness": 0.539
+ },
+ {
+  "osm": "way/1125036029",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.850146,
+  "lon": 32.629997,
+  "area_m2": 38700.0,
+  "compactness": 0.507
+ },
+ {
+  "osm": "relation/15054048",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.850152,
+  "lon": 32.621714,
+  "area_m2": 41700.0,
+  "compactness": 0.391
+ },
+ {
+  "osm": "way/1125492188",
+  "kind": "construction",
+  "district": "Etimesgut",
+  "lat": 39.878255,
+  "lon": 32.651458,
+  "area_m2": 35800.0,
+  "compactness": 0.759
+ },
+ {
+  "osm": "way/1125492206",
+  "kind": "grassland",
+  "district": "Etimesgut",
+  "lat": 39.881649,
+  "lon": 32.653814,
+  "area_m2": 51500.0,
+  "compactness": 0.449
+ },
+ {
+  "osm": "way/1133397007",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.019971,
+  "lon": 32.963516,
+  "area_m2": 39000.0,
+  "compactness": 0.539
+ },
+ {
+  "osm": "way/1133397021",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.030506,
+  "lon": 32.968392,
+  "area_m2": 47100.0,
+  "compactness": 0.368
+ },
+ {
+  "osm": "way/1133397023",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.030053,
+  "lon": 32.970045,
+  "area_m2": 62600.0,
+  "compactness": 0.379
+ },
+ {
+  "osm": "way/1140396235",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 39.985044,
+  "lon": 32.664615,
+  "area_m2": 82700.0,
+  "compactness": 0.679
+ },
+ {
+  "osm": "way/1140426832",
+  "kind": "meadow",
+  "district": "Yenimahalle",
+  "lat": 39.964622,
+  "lon": 32.835982,
+  "area_m2": 165100.0,
+  "compactness": 0.472
+ },
+ {
+  "osm": "way/1152252967",
+  "kind": "construction",
+  "district": "Çankaya",
+  "lat": 39.860736,
+  "lon": 32.839844,
+  "area_m2": 56200.0,
+  "compactness": 0.602
+ },
+ {
+  "osm": "way/1166746601",
+  "kind": "construction",
+  "district": "Altındağ",
+  "lat": 39.94777,
+  "lon": 32.846227,
+  "area_m2": 43800.0,
+  "compactness": 0.648
+ },
+ {
+  "osm": "relation/15820556",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.015223,
+  "lon": 33.05228,
+  "area_m2": 226100.0,
+  "compactness": 0.288
+ },
+ {
+  "osm": "relation/15820564",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.008459,
+  "lon": 33.046261,
+  "area_m2": 133600.0,
+  "compactness": 0.331
+ },
+ {
+  "osm": "relation/15827820",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.010336,
+  "lon": 33.057866,
+  "area_m2": 61600.0,
+  "compactness": 0.534
+ },
+ {
+  "osm": "relation/15820600",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.011234,
+  "lon": 33.054803,
+  "area_m2": 163300.0,
+  "compactness": 0.491
+ },
+ {
+  "osm": "relation/15848821",
+  "kind": "farmland",
+  "district": "Altındağ",
+  "lat": 40.001958,
+  "lon": 33.05148,
+  "area_m2": 54800.0,
+  "compactness": 0.361
+ },
+ {
+  "osm": "way/1184883572",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.835085,
+  "lon": 32.631355,
+  "area_m2": 66400.0,
+  "compactness": 0.662
+ },
+ {
+  "osm": "way/1186481308",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.891745,
+  "lon": 32.595438,
+  "area_m2": 51800.0,
+  "compactness": 0.652
+ },
+ {
+  "osm": "way/1186481309",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.890473,
+  "lon": 32.593344,
+  "area_m2": 39100.0,
+  "compactness": 0.548
+ },
+ {
+  "osm": "way/1186481393",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.645153,
+  "lon": 32.817912,
+  "area_m2": 39300.0,
+  "compactness": 0.7
+ },
+ {
+  "osm": "way/1186481394",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.638557,
+  "lon": 32.825575,
+  "area_m2": 38200.0,
+  "compactness": 0.758
+ },
+ {
+  "osm": "way/1189806742",
+  "kind": "meadow",
+  "district": "Yenimahalle",
+  "lat": 39.934209,
+  "lon": 32.81157,
+  "area_m2": 103100.0,
+  "compactness": 0.337
+ },
+ {
+  "osm": "way/1203507302",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.847232,
+  "lon": 32.61338,
+  "area_m2": 51300.0,
+  "compactness": 0.455
+ },
+ {
+  "osm": "way/1203507702",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.848344,
+  "lon": 32.60955,
+  "area_m2": 36200.0,
+  "compactness": 0.819
+ },
+ {
+  "osm": "way/1203963838",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.865053,
+  "lon": 32.663082,
+  "area_m2": 72800.0,
+  "compactness": 0.416
+ },
+ {
+  "osm": "way/1204138891",
+  "kind": "grassland",
+  "district": "Çankaya",
+  "lat": 39.881975,
+  "lon": 32.661942,
+  "area_m2": 115200.0,
+  "compactness": 0.611
+ },
+ {
+  "osm": "relation/15053841",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.867765,
+  "lon": 32.642169,
+  "area_m2": 41500.0,
+  "compactness": 0.414
+ },
+ {
+  "osm": "way/1204664606",
+  "kind": "farmland",
+  "district": "Çankaya",
+  "lat": 39.837212,
+  "lon": 32.672654,
+  "area_m2": 55900.0,
+  "compactness": 0.327
+ },
+ {
+  "osm": "way/1204713568",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.832846,
+  "lon": 32.675519,
+  "area_m2": 52100.0,
+  "compactness": 0.312
+ },
+ {
+  "osm": "way/1204719110",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.834723,
+  "lon": 32.667391,
+  "area_m2": 49000.0,
+  "compactness": 0.409
+ },
+ {
+  "osm": "way/1204725134",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.846638,
+  "lon": 32.610129,
+  "area_m2": 85300.0,
+  "compactness": 0.509
+ },
+ {
+  "osm": "way/1204734242",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.874442,
+  "lon": 32.640428,
+  "area_m2": 39900.0,
+  "compactness": 0.509
+ },
+ {
+  "osm": "way/1204839456",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.814833,
+  "lon": 32.668638,
+  "area_m2": 51200.0,
+  "compactness": 0.354
+ },
+ {
+  "osm": "way/1204839457",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.817168,
+  "lon": 32.668773,
+  "area_m2": 37100.0,
+  "compactness": 0.365
+ },
+ {
+  "osm": "way/1204839458",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.817362,
+  "lon": 32.662563,
+  "area_m2": 50200.0,
+  "compactness": 0.278
+ },
+ {
+  "osm": "way/1204839468",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.824885,
+  "lon": 32.671741,
+  "area_m2": 41700.0,
+  "compactness": 0.607
+ },
+ {
+  "osm": "way/1204842880",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.801474,
+  "lon": 32.660789,
+  "area_m2": 50300.0,
+  "compactness": 0.844
+ },
+ {
+  "osm": "way/1204842886",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.80828,
+  "lon": 32.663893,
+  "area_m2": 35300.0,
+  "compactness": 0.339
+ },
+ {
+  "osm": "way/1204843989",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.798276,
+  "lon": 32.65379,
+  "area_m2": 36200.0,
+  "compactness": 0.604
+ },
+ {
+  "osm": "relation/16335098",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.844379,
+  "lon": 32.691752,
+  "area_m2": 35900.0,
+  "compactness": 0.314
+ },
+ {
+  "osm": "relation/16337721",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.836402,
+  "lon": 32.681099,
+  "area_m2": 54300.0,
+  "compactness": 0.504
+ },
+ {
+  "osm": "relation/16337718",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.836856,
+  "lon": 32.677181,
+  "area_m2": 97000.0,
+  "compactness": 0.255
+ },
+ {
+  "osm": "relation/16337715",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.84068,
+  "lon": 32.677561,
+  "area_m2": 45400.0,
+  "compactness": 0.394
+ },
+ {
+  "osm": "relation/16337713",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.841033,
+  "lon": 32.674362,
+  "area_m2": 44700.0,
+  "compactness": 0.534
+ },
+ {
+  "osm": "way/1208332795",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.858732,
+  "lon": 32.623127,
+  "area_m2": 38400.0,
+  "compactness": 0.434
+ },
+ {
+  "osm": "relation/16338265",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.857244,
+  "lon": 32.617015,
+  "area_m2": 35600.0,
+  "compactness": 0.687
+ },
+ {
+  "osm": "relation/16338580",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.85418,
+  "lon": 32.608915,
+  "area_m2": 50200.0,
+  "compactness": 0.517
+ },
+ {
+  "osm": "way/1208458832",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.848726,
+  "lon": 32.61949,
+  "area_m2": 48700.0,
+  "compactness": 0.555
+ },
+ {
+  "osm": "way/1208471726",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.845992,
+  "lon": 32.602083,
+  "area_m2": 51000.0,
+  "compactness": 0.571
+ },
+ {
+  "osm": "way/1208471729",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.847306,
+  "lon": 32.59982,
+  "area_m2": 46300.0,
+  "compactness": 0.516
+ },
+ {
+  "osm": "way/1208474426",
+  "kind": "brownfield",
+  "district": "Etimesgut",
+  "lat": 39.847709,
+  "lon": 32.621828,
+  "area_m2": 51500.0,
+  "compactness": 0.796
+ },
+ {
+  "osm": "way/1208811530",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.84401,
+  "lon": 32.600682,
+  "area_m2": 40100.0,
+  "compactness": 0.793
+ },
+ {
+  "osm": "way/1208827745",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.837043,
+  "lon": 32.588475,
+  "area_m2": 42500.0,
+  "compactness": 0.697
+ },
+ {
+  "osm": "way/1209150908",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.838371,
+  "lon": 32.59735,
+  "area_m2": 48300.0,
+  "compactness": 0.485
+ },
+ {
+  "osm": "way/1210718702",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.792153,
+  "lon": 32.619968,
+  "area_m2": 136200.0,
+  "compactness": 0.495
+ },
+ {
+  "osm": "way/1210785541",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.8126,
+  "lon": 32.625213,
+  "area_m2": 442700.0,
+  "compactness": 0.767
+ },
+ {
+  "osm": "way/1210787023",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.797002,
+  "lon": 32.609963,
+  "area_m2": 558200.0,
+  "compactness": 0.437
+ },
+ {
+  "osm": "way/1210791502",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.792071,
+  "lon": 32.615693,
+  "area_m2": 105200.0,
+  "compactness": 0.606
+ },
+ {
+  "osm": "way/1210791503",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.795521,
+  "lon": 32.616898,
+  "area_m2": 146900.0,
+  "compactness": 0.275
+ },
+ {
+  "osm": "relation/16262979",
+  "kind": "grassland",
+  "district": "Çankaya",
+  "lat": 39.869263,
+  "lon": 32.65075,
+  "area_m2": 36400.0,
+  "compactness": 0.281
+ },
+ {
+  "osm": "way/1211561806",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.827754,
+  "lon": 32.586071,
+  "area_m2": 318300.0,
+  "compactness": 0.314
+ },
+ {
+  "osm": "way/1211561815",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.825949,
+  "lon": 32.583013,
+  "area_m2": 204300.0,
+  "compactness": 0.281
+ },
+ {
+  "osm": "way/1211587621",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.809476,
+  "lon": 32.57469,
+  "area_m2": 110900.0,
+  "compactness": 0.635
+ },
+ {
+  "osm": "way/1211587622",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.807592,
+  "lon": 32.576305,
+  "area_m2": 59600.0,
+  "compactness": 0.419
+ },
+ {
+  "osm": "way/1211650790",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.802446,
+  "lon": 32.577787,
+  "area_m2": 51800.0,
+  "compactness": 0.694
+ },
+ {
+  "osm": "way/1211650792",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.798928,
+  "lon": 32.574938,
+  "area_m2": 110500.0,
+  "compactness": 0.406
+ },
+ {
+  "osm": "way/1211650793",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.793259,
+  "lon": 32.57773,
+  "area_m2": 101200.0,
+  "compactness": 0.343
+ },
+ {
+  "osm": "way/1211650794",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.802904,
+  "lon": 32.574892,
+  "area_m2": 75200.0,
+  "compactness": 0.25
+ },
+ {
+  "osm": "relation/16393573",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.833775,
+  "lon": 32.63949,
+  "area_m2": 266600.0,
+  "compactness": 0.345
+ },
+ {
+  "osm": "relation/16393574",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.836653,
+  "lon": 32.633992,
+  "area_m2": 95100.0,
+  "compactness": 0.339
+ },
+ {
+  "osm": "relation/16381530",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.831637,
+  "lon": 32.633676,
+  "area_m2": 232300.0,
+  "compactness": 0.404
+ },
+ {
+  "osm": "relation/16393579",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.847864,
+  "lon": 32.626387,
+  "area_m2": 146800.0,
+  "compactness": 0.639
+ },
+ {
+  "osm": "way/1211658425",
+  "kind": "construction",
+  "district": "Etimesgut",
+  "lat": 39.801773,
+  "lon": 32.560258,
+  "area_m2": 58200.0,
+  "compactness": 0.383
+ },
+ {
+  "osm": "way/1211662828",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.834243,
+  "lon": 32.585926,
+  "area_m2": 91400.0,
+  "compactness": 0.635
+ },
+ {
+  "osm": "way/1211807332",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.828654,
+  "lon": 32.59567,
+  "area_m2": 546000.0,
+  "compactness": 0.644
+ },
+ {
+  "osm": "way/1211807334",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.833214,
+  "lon": 32.594164,
+  "area_m2": 192500.0,
+  "compactness": 0.464
+ },
+ {
+  "osm": "way/1211890079",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.831794,
+  "lon": 32.586621,
+  "area_m2": 52500.0,
+  "compactness": 0.416
+ },
+ {
+  "osm": "way/1211895014",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.82398,
+  "lon": 32.581162,
+  "area_m2": 39500.0,
+  "compactness": 0.293
+ },
+ {
+  "osm": "way/1211900200",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.796141,
+  "lon": 32.577755,
+  "area_m2": 45500.0,
+  "compactness": 0.452
+ },
+ {
+  "osm": "way/1211900206",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.800316,
+  "lon": 32.577726,
+  "area_m2": 78000.0,
+  "compactness": 0.59
+ },
+ {
+  "osm": "way/1211900211",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.797897,
+  "lon": 32.572184,
+  "area_m2": 81100.0,
+  "compactness": 0.77
+ },
+ {
+  "osm": "way/1211900212",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.799417,
+  "lon": 32.569978,
+  "area_m2": 51300.0,
+  "compactness": 0.633
+ },
+ {
+  "osm": "way/1211900213",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.801395,
+  "lon": 32.570901,
+  "area_m2": 63600.0,
+  "compactness": 0.788
+ },
+ {
+  "osm": "way/1211900223",
+  "kind": "grassland",
+  "district": "Etimesgut",
+  "lat": 39.807839,
+  "lon": 32.564696,
+  "area_m2": 116800.0,
+  "compactness": 0.263
+ },
+ {
+  "osm": "way/1211900224",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.805038,
+  "lon": 32.563933,
+  "area_m2": 45600.0,
+  "compactness": 0.449
+ },
+ {
+  "osm": "way/1211901825",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.791779,
+  "lon": 32.572992,
+  "area_m2": 64700.0,
+  "compactness": 0.597
+ },
+ {
+  "osm": "way/1211901826",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.792615,
+  "lon": 32.570935,
+  "area_m2": 52600.0,
+  "compactness": 0.594
+ },
+ {
+  "osm": "way/1211901829",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.802897,
+  "lon": 32.568073,
+  "area_m2": 124600.0,
+  "compactness": 0.374
+ },
+ {
+  "osm": "way/1211909246",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.795537,
+  "lon": 32.569867,
+  "area_m2": 42700.0,
+  "compactness": 0.803
+ },
+ {
+  "osm": "way/1211909247",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.795838,
+  "lon": 32.572211,
+  "area_m2": 36200.0,
+  "compactness": 0.778
+ },
+ {
+  "osm": "way/1211910431",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.797047,
+  "lon": 32.557901,
+  "area_m2": 35500.0,
+  "compactness": 0.447
+ },
+ {
+  "osm": "way/1211910436",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.802065,
+  "lon": 32.564871,
+  "area_m2": 56800.0,
+  "compactness": 0.605
+ },
+ {
+  "osm": "way/1211910437",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.803825,
+  "lon": 32.56579,
+  "area_m2": 64900.0,
+  "compactness": 0.352
+ },
+ {
+  "osm": "relation/16400072",
+  "kind": "grassland",
+  "district": "Etimesgut",
+  "lat": 39.818711,
+  "lon": 32.578924,
+  "area_m2": 70200.0,
+  "compactness": 0.338
+ },
+ {
+  "osm": "way/1211915344",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.815779,
+  "lon": 32.582555,
+  "area_m2": 43100.0,
+  "compactness": 0.572
+ },
+ {
+  "osm": "way/1211915345",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.814712,
+  "lon": 32.579281,
+  "area_m2": 48600.0,
+  "compactness": 0.292
+ },
+ {
+  "osm": "way/1211921271",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.819489,
+  "lon": 32.585156,
+  "area_m2": 150900.0,
+  "compactness": 0.617
+ },
+ {
+  "osm": "way/1212031688",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.814775,
+  "lon": 32.586061,
+  "area_m2": 169200.0,
+  "compactness": 0.272
+ },
+ {
+  "osm": "way/1212052472",
+  "kind": "grassland",
+  "district": "Etimesgut",
+  "lat": 39.816533,
+  "lon": 32.565039,
+  "area_m2": 112200.0,
+  "compactness": 0.367
+ },
+ {
+  "osm": "way/1212056903",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.810563,
+  "lon": 32.562736,
+  "area_m2": 66600.0,
+  "compactness": 0.558
+ },
+ {
+  "osm": "way/1212056907",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.806601,
+  "lon": 32.567227,
+  "area_m2": 41100.0,
+  "compactness": 0.4
+ },
+ {
+  "osm": "relation/16400707",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.807796,
+  "lon": 32.557985,
+  "area_m2": 374600.0,
+  "compactness": 0.277
+ },
+ {
+  "osm": "relation/16400709",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.802366,
+  "lon": 32.554042,
+  "area_m2": 334400.0,
+  "compactness": 0.296
+ },
+ {
+  "osm": "way/1212091790",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.795247,
+  "lon": 32.57607,
+  "area_m2": 42500.0,
+  "compactness": 0.795
+ },
+ {
+  "osm": "way/1212210896",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.862726,
+  "lon": 32.617046,
+  "area_m2": 176700.0,
+  "compactness": 0.318
+ },
+ {
+  "osm": "way/1212210897",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.861516,
+  "lon": 32.618775,
+  "area_m2": 45600.0,
+  "compactness": 0.311
+ },
+ {
+  "osm": "way/1212210898",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.859153,
+  "lon": 32.610617,
+  "area_m2": 70600.0,
+  "compactness": 0.735
+ },
+ {
+  "osm": "way/1212210899",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.859146,
+  "lon": 32.607578,
+  "area_m2": 72800.0,
+  "compactness": 0.391
+ },
+ {
+  "osm": "way/1212215220",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.862614,
+  "lon": 32.607233,
+  "area_m2": 67100.0,
+  "compactness": 0.656
+ },
+ {
+  "osm": "way/1212215221",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.864425,
+  "lon": 32.61012,
+  "area_m2": 42100.0,
+  "compactness": 0.68
+ },
+ {
+  "osm": "way/1212215227",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.86314,
+  "lon": 32.599812,
+  "area_m2": 62900.0,
+  "compactness": 0.735
+ },
+ {
+  "osm": "way/1212215228",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.865201,
+  "lon": 32.599905,
+  "area_m2": 41000.0,
+  "compactness": 0.635
+ },
+ {
+  "osm": "way/1212215229",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.862977,
+  "lon": 32.597018,
+  "area_m2": 71200.0,
+  "compactness": 0.744
+ },
+ {
+  "osm": "way/1212215234",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.867981,
+  "lon": 32.601572,
+  "area_m2": 118100.0,
+  "compactness": 0.303
+ },
+ {
+  "osm": "way/1212215245",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.870358,
+  "lon": 32.594672,
+  "area_m2": 115300.0,
+  "compactness": 0.476
+ },
+ {
+  "osm": "way/1212218359",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.866911,
+  "lon": 32.594014,
+  "area_m2": 60300.0,
+  "compactness": 0.315
+ },
+ {
+  "osm": "way/1212218371",
+  "kind": "grassland",
+  "district": "Etimesgut",
+  "lat": 39.861328,
+  "lon": 32.591664,
+  "area_m2": 86200.0,
+  "compactness": 0.435
+ },
+ {
+  "osm": "way/1212222882",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.855021,
+  "lon": 32.602769,
+  "area_m2": 79800.0,
+  "compactness": 0.303
+ },
+ {
+  "osm": "way/1212222917",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.871698,
+  "lon": 32.61275,
+  "area_m2": 63900.0,
+  "compactness": 0.524
+ },
+ {
+  "osm": "way/1212222919",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.868413,
+  "lon": 32.606714,
+  "area_m2": 131500.0,
+  "compactness": 0.431
+ },
+ {
+  "osm": "way/1212222923",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.87247,
+  "lon": 32.61061,
+  "area_m2": 54600.0,
+  "compactness": 0.691
+ },
+ {
+  "osm": "way/1212222924",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.867669,
+  "lon": 32.604225,
+  "area_m2": 52500.0,
+  "compactness": 0.603
+ },
+ {
+  "osm": "way/1212223942",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.865011,
+  "lon": 32.591381,
+  "area_m2": 185200.0,
+  "compactness": 0.251
+ },
+ {
+  "osm": "way/1212225156",
+  "kind": "grassland",
+  "district": "Etimesgut",
+  "lat": 39.876628,
+  "lon": 32.61143,
+  "area_m2": 47700.0,
+  "compactness": 0.428
+ },
+ {
+  "osm": "way/1212225157",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.876389,
+  "lon": 32.61367,
+  "area_m2": 37000.0,
+  "compactness": 0.692
+ },
+ {
+  "osm": "way/1212225183",
+  "kind": "grassland",
+  "district": "Etimesgut",
+  "lat": 39.882618,
+  "lon": 32.610417,
+  "area_m2": 65400.0,
+  "compactness": 0.295
+ },
+ {
+  "osm": "way/1212227131",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.864365,
+  "lon": 32.622026,
+  "area_m2": 44900.0,
+  "compactness": 0.735
+ },
+ {
+  "osm": "way/1212227133",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.865985,
+  "lon": 32.623799,
+  "area_m2": 46400.0,
+  "compactness": 0.324
+ },
+ {
+  "osm": "way/1212231708",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.809744,
+  "lon": 32.662058,
+  "area_m2": 72800.0,
+  "compactness": 0.33
+ },
+ {
+  "osm": "way/1212231711",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.805355,
+  "lon": 32.659546,
+  "area_m2": 236800.0,
+  "compactness": 0.28
+ },
+ {
+  "osm": "way/1212231712",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.805734,
+  "lon": 32.66516,
+  "area_m2": 298400.0,
+  "compactness": 0.276
+ },
+ {
+  "osm": "way/1212547892",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.873062,
+  "lon": 32.591655,
+  "area_m2": 67200.0,
+  "compactness": 0.654
+ },
+ {
+  "osm": "way/1212547893",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.875443,
+  "lon": 32.59373,
+  "area_m2": 79700.0,
+  "compactness": 0.63
+ },
+ {
+  "osm": "way/1212552810",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.879452,
+  "lon": 32.588108,
+  "area_m2": 260100.0,
+  "compactness": 0.38
+ },
+ {
+  "osm": "way/1213653561",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.872229,
+  "lon": 32.617912,
+  "area_m2": 79000.0,
+  "compactness": 0.364
+ },
+ {
+  "osm": "way/1213653562",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.874904,
+  "lon": 32.616891,
+  "area_m2": 58100.0,
+  "compactness": 0.476
+ },
+ {
+  "osm": "way/1213653566",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.876722,
+  "lon": 32.62176,
+  "area_m2": 45000.0,
+  "compactness": 0.521
+ },
+ {
+  "osm": "way/1213653567",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.87654,
+  "lon": 32.617322,
+  "area_m2": 69100.0,
+  "compactness": 0.527
+ },
+ {
+  "osm": "way/1213653568",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.878295,
+  "lon": 32.619008,
+  "area_m2": 36400.0,
+  "compactness": 0.407
+ },
+ {
+  "osm": "way/1213653571",
+  "kind": "grassland",
+  "district": "Etimesgut",
+  "lat": 39.874715,
+  "lon": 32.62173,
+  "area_m2": 52600.0,
+  "compactness": 0.311
+ },
+ {
+  "osm": "way/1213658073",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.876583,
+  "lon": 32.602315,
+  "area_m2": 77600.0,
+  "compactness": 0.587
+ },
+ {
+  "osm": "way/1225044992",
+  "kind": "grassland",
+  "district": "Çankaya",
+  "lat": 39.884397,
+  "lon": 32.717617,
+  "area_m2": 122800.0,
+  "compactness": 0.669
+ },
+ {
+  "osm": "way/1228633950",
+  "kind": "construction",
+  "district": "Yenimahalle",
+  "lat": 40.004984,
+  "lon": 32.744773,
+  "area_m2": 2886300.0,
+  "compactness": 0.622
+ },
+ {
+  "osm": "relation/16856882",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.807978,
+  "lon": 32.637807,
+  "area_m2": 951100.0,
+  "compactness": 0.643
+ },
+ {
+  "osm": "relation/16856883",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.806213,
+  "lon": 32.624903,
+  "area_m2": 804300.0,
+  "compactness": 0.733
+ },
+ {
+  "osm": "relation/16856884",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.80604,
+  "lon": 32.617302,
+  "area_m2": 481600.0,
+  "compactness": 0.427
+ },
+ {
+  "osm": "relation/16856932",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.83805,
+  "lon": 32.623303,
+  "area_m2": 221900.0,
+  "compactness": 0.327
+ },
+ {
+  "osm": "relation/16856933",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.843798,
+  "lon": 32.616631,
+  "area_m2": 183700.0,
+  "compactness": 0.478
+ },
+ {
+  "osm": "relation/16856936",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.830399,
+  "lon": 32.601306,
+  "area_m2": 175400.0,
+  "compactness": 0.528
+ },
+ {
+  "osm": "relation/16856885",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.81086,
+  "lon": 32.606779,
+  "area_m2": 1116800.0,
+  "compactness": 0.484
+ },
+ {
+  "osm": "relation/16856934",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.839585,
+  "lon": 32.619898,
+  "area_m2": 50000.0,
+  "compactness": 0.509
+ },
+ {
+  "osm": "relation/16856786",
+  "kind": "scrub",
+  "district": "Etimesgut",
+  "lat": 39.774575,
+  "lon": 32.600565,
+  "area_m2": 77300.0,
+  "compactness": 0.298
+ },
+ {
+  "osm": "relation/16859507",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.754191,
+  "lon": 32.618029,
+  "area_m2": 7855200.0,
+  "compactness": 0.312
+ },
+ {
+  "osm": "relation/16859742",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.734257,
+  "lon": 32.602192,
+  "area_m2": 14821500.0,
+  "compactness": 0.267
+ },
+ {
+  "osm": "relation/16400690",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.787955,
+  "lon": 32.555065,
+  "area_m2": 39700.0,
+  "compactness": 0.341
+ },
+ {
+  "osm": "way/1233491672",
+  "kind": "grassland",
+  "district": "Etimesgut",
+  "lat": 39.805604,
+  "lon": 32.596503,
+  "area_m2": 39500.0,
+  "compactness": 0.758
+ },
+ {
+  "osm": "relation/16856939",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.813602,
+  "lon": 32.618876,
+  "area_m2": 431300.0,
+  "compactness": 0.378
+ },
+ {
+  "osm": "relation/16863090",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.817621,
+  "lon": 32.626836,
+  "area_m2": 560200.0,
+  "compactness": 0.282
+ },
+ {
+  "osm": "relation/16381476",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.818356,
+  "lon": 32.638206,
+  "area_m2": 1060800.0,
+  "compactness": 0.593
+ },
+ {
+  "osm": "relation/16393572",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.827561,
+  "lon": 32.642047,
+  "area_m2": 460400.0,
+  "compactness": 0.328
+ },
+ {
+  "osm": "relation/16863092",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.82508,
+  "lon": 32.625597,
+  "area_m2": 1820900.0,
+  "compactness": 0.289
+ },
+ {
+  "osm": "relation/16863089",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.8309,
+  "lon": 32.629937,
+  "area_m2": 245000.0,
+  "compactness": 0.609
+ },
+ {
+  "osm": "relation/16863091",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.826948,
+  "lon": 32.635319,
+  "area_m2": 74000.0,
+  "compactness": 0.532
+ },
+ {
+  "osm": "way/1233496641",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.816579,
+  "lon": 32.554796,
+  "area_m2": 1145400.0,
+  "compactness": 0.659
+ },
+ {
+  "osm": "way/1233499169",
+  "kind": "meadow",
+  "district": "Sincan",
+  "lat": 39.896642,
+  "lon": 32.581256,
+  "area_m2": 27050400.0,
+  "compactness": 0.548
+ },
+ {
+  "osm": "way/1233500527",
+  "kind": "farmland",
+  "district": "Sincan",
+  "lat": 39.858321,
+  "lon": 32.552196,
+  "area_m2": 7030700.0,
+  "compactness": 0.382
+ },
+ {
+  "osm": "way/1233547656",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.830353,
+  "lon": 32.547749,
+  "area_m2": 2389500.0,
+  "compactness": 0.551
+ },
+ {
+  "osm": "way/1233547657",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.825308,
+  "lon": 32.553115,
+  "area_m2": 192500.0,
+  "compactness": 0.581
+ },
+ {
+  "osm": "relation/16863881",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.82367,
+  "lon": 32.567484,
+  "area_m2": 662400.0,
+  "compactness": 0.25
+ },
+ {
+  "osm": "relation/16863892",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.787031,
+  "lon": 32.541518,
+  "area_m2": 94200.0,
+  "compactness": 0.272
+ },
+ {
+  "osm": "relation/16400695",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.791799,
+  "lon": 32.541498,
+  "area_m2": 200700.0,
+  "compactness": 0.267
+ },
+ {
+  "osm": "relation/16856878",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.785426,
+  "lon": 32.63642,
+  "area_m2": 16461600.0,
+  "compactness": 0.39
+ },
+ {
+  "osm": "relation/16887627",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.851451,
+  "lon": 32.610562,
+  "area_m2": 433500.0,
+  "compactness": 0.357
+ },
+ {
+  "osm": "way/1235567375",
+  "kind": "farmland",
+  "district": "Etimesgut",
+  "lat": 39.797378,
+  "lon": 32.544049,
+  "area_m2": 85900.0,
+  "compactness": 0.419
+ },
+ {
+  "osm": "way/1237294407",
+  "kind": "farmland",
+  "district": "Sincan",
+  "lat": 39.872998,
+  "lon": 32.54246,
+  "area_m2": 551300.0,
+  "compactness": 0.422
+ },
+ {
+  "osm": "way/1237315458",
+  "kind": "meadow",
+  "district": "Sincan",
+  "lat": 39.940944,
+  "lon": 32.486513,
+  "area_m2": 83400.0,
+  "compactness": 0.285
+ },
+ {
+  "osm": "way/1237315465",
+  "kind": "meadow",
+  "district": "Sincan",
+  "lat": 39.894015,
+  "lon": 32.478454,
+  "area_m2": 1339500.0,
+  "compactness": 0.646
+ },
+ {
+  "osm": "way/1237321906",
+  "kind": "farmland",
+  "district": "Sincan",
+  "lat": 39.900019,
+  "lon": 32.487387,
+  "area_m2": 476200.0,
+  "compactness": 0.493
+ },
+ {
+  "osm": "way/1237321912",
+  "kind": "meadow",
+  "district": "Sincan",
+  "lat": 39.903444,
+  "lon": 32.495509,
+  "area_m2": 77500.0,
+  "compactness": 0.583
+ },
+ {
+  "osm": "way/1237322571",
+  "kind": "meadow",
+  "district": "Sincan",
+  "lat": 39.926475,
+  "lon": 32.487989,
+  "area_m2": 36700.0,
+  "compactness": 0.57
+ },
+ {
+  "osm": "way/1237337229",
+  "kind": "meadow",
+  "district": "Sincan",
+  "lat": 39.913732,
+  "lon": 32.475163,
+  "area_m2": 35700.0,
+  "compactness": 0.637
+ },
+ {
+  "osm": "way/1237351360",
+  "kind": "meadow",
+  "district": "Sincan",
+  "lat": 39.93498,
+  "lon": 32.517942,
+  "area_m2": 104300.0,
+  "compactness": 0.613
+ },
+ {
+  "osm": "way/1237351379",
+  "kind": "meadow",
+  "district": "Sincan",
+  "lat": 39.940916,
+  "lon": 32.544674,
+  "area_m2": 51400.0,
+  "compactness": 0.463
+ },
+ {
+  "osm": "way/1237351400",
+  "kind": "meadow",
+  "district": "Sincan",
+  "lat": 39.939031,
+  "lon": 32.540543,
+  "area_m2": 82700.0,
+  "compactness": 0.349
+ },
+ {
+  "osm": "way/1245630596",
+  "kind": "grassland",
+  "district": "Çankaya",
+  "lat": 39.889777,
+  "lon": 32.743263,
+  "area_m2": 35400.0,
+  "compactness": 0.545
+ },
+ {
+  "osm": "way/1303687840",
+  "kind": "grassland",
+  "district": "Altındağ",
+  "lat": 40.009893,
+  "lon": 32.907847,
+  "area_m2": 144700.0,
+  "compactness": 0.552
+ },
+ {
+  "osm": "way/1317910083",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.638261,
+  "lon": 32.707337,
+  "area_m2": 490700.0,
+  "compactness": 0.457
+ },
+ {
+  "osm": "way/1317910102",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.672311,
+  "lon": 32.720846,
+  "area_m2": 231200.0,
+  "compactness": 0.528
+ },
+ {
+  "osm": "way/1317910105",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.633964,
+  "lon": 32.711099,
+  "area_m2": 88100.0,
+  "compactness": 0.671
+ },
+ {
+  "osm": "way/1317916039",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.652058,
+  "lon": 32.72159,
+  "area_m2": 43700.0,
+  "compactness": 0.533
+ },
+ {
+  "osm": "way/1317916046",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.674941,
+  "lon": 32.726378,
+  "area_m2": 107800.0,
+  "compactness": 0.642
+ },
+ {
+  "osm": "way/1317916056",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.680453,
+  "lon": 32.726284,
+  "area_m2": 76600.0,
+  "compactness": 0.64
+ },
+ {
+  "osm": "way/1317916057",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.674588,
+  "lon": 32.724156,
+  "area_m2": 72500.0,
+  "compactness": 0.479
+ },
+ {
+  "osm": "way/1323578868",
+  "kind": "scrub",
+  "district": "Mamak",
+  "lat": 39.799116,
+  "lon": 32.993131,
+  "area_m2": 198100.0,
+  "compactness": 0.303
+ },
+ {
+  "osm": "way/1323578869",
+  "kind": "scrub",
+  "district": "Mamak",
+  "lat": 39.794385,
+  "lon": 32.98916,
+  "area_m2": 325100.0,
+  "compactness": 0.265
+ },
+ {
+  "osm": "way/1323578871",
+  "kind": "scrub",
+  "district": "Mamak",
+  "lat": 39.797505,
+  "lon": 32.99862,
+  "area_m2": 444000.0,
+  "compactness": 0.271
+ },
+ {
+  "osm": "way/1324352054",
+  "kind": "scrub",
+  "district": "Mamak",
+  "lat": 39.901494,
+  "lon": 32.908791,
+  "area_m2": 65800.0,
+  "compactness": 0.315
+ },
+ {
+  "osm": "relation/18250821",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.793197,
+  "lon": 32.688954,
+  "area_m2": 72300.0,
+  "compactness": 0.583
+ },
+ {
+  "osm": "way/1331471481",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.802728,
+  "lon": 32.687516,
+  "area_m2": 101100.0,
+  "compactness": 0.377
+ },
+ {
+  "osm": "way/1336291592",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.635324,
+  "lon": 32.827801,
+  "area_m2": 119800.0,
+  "compactness": 0.545
+ },
+ {
+  "osm": "way/1362410312",
+  "kind": "construction",
+  "district": "Altındağ",
+  "lat": 39.945972,
+  "lon": 32.866686,
+  "area_m2": 484900.0,
+  "compactness": 0.731
+ },
+ {
+  "osm": "way/1386157482",
+  "kind": "construction",
+  "district": "Yenimahalle",
+  "lat": 39.981223,
+  "lon": 32.74044,
+  "area_m2": 49000.0,
+  "compactness": 0.671
+ },
+ {
+  "osm": "way/1393065617",
+  "kind": "construction",
+  "district": "Sincan",
+  "lat": 39.928135,
+  "lon": 32.577874,
+  "area_m2": 88600.0,
+  "compactness": 0.692
+ },
+ {
+  "osm": "way/1417942666",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.856902,
+  "lon": 32.764011,
+  "area_m2": 65500.0,
+  "compactness": 0.465
+ },
+ {
+  "osm": "way/1420809563",
+  "kind": "construction",
+  "district": "Çankaya",
+  "lat": 39.851935,
+  "lon": 32.725247,
+  "area_m2": 61400.0,
+  "compactness": 0.508
+ },
+ {
+  "osm": "way/1420809564",
+  "kind": "construction",
+  "district": "Çankaya",
+  "lat": 39.843719,
+  "lon": 32.722171,
+  "area_m2": 65500.0,
+  "compactness": 0.715
+ },
+ {
+  "osm": "way/1420809566",
+  "kind": "construction",
+  "district": "Çankaya",
+  "lat": 39.849359,
+  "lon": 32.728846,
+  "area_m2": 89600.0,
+  "compactness": 0.419
+ },
+ {
+  "osm": "relation/19464170",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.123335,
+  "lon": 32.912811,
+  "area_m2": 1505100.0,
+  "compactness": 0.372
+ },
+ {
+  "osm": "relation/19541688",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.795233,
+  "lon": 32.866671,
+  "area_m2": 940600.0,
+  "compactness": 0.686
+ },
+ {
+  "osm": "relation/19540839",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.804073,
+  "lon": 32.867856,
+  "area_m2": 956400.0,
+  "compactness": 0.328
+ },
+ {
+  "osm": "relation/19541693",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.795732,
+  "lon": 32.879792,
+  "area_m2": 96500.0,
+  "compactness": 0.441
+ },
+ {
+  "osm": "relation/19463462",
+  "kind": "farmland",
+  "district": "Pursaklar",
+  "lat": 40.115757,
+  "lon": 32.926272,
+  "area_m2": 581200.0,
+  "compactness": 0.546
+ },
+ {
+  "osm": "way/1441872760",
+  "kind": "construction",
+  "district": "Gölbaşı",
+  "lat": 39.80733,
+  "lon": 32.690737,
+  "area_m2": 80900.0,
+  "compactness": 0.649
+ },
+ {
+  "osm": "way/1443586725",
+  "kind": "construction",
+  "district": "Keçiören",
+  "lat": 40.01679,
+  "lon": 32.813059,
+  "area_m2": 129600.0,
+  "compactness": 0.354
+ },
+ {
+  "osm": "way/1455284560",
+  "kind": "construction",
+  "district": "Mamak",
+  "lat": 39.936394,
+  "lon": 32.976068,
+  "area_m2": 97700.0,
+  "compactness": 0.505
+ },
+ {
+  "osm": "way/1455284574",
+  "kind": "construction",
+  "district": "Mamak",
+  "lat": 39.902513,
+  "lon": 32.899452,
+  "area_m2": 76100.0,
+  "compactness": 0.413
+ },
+ {
+  "osm": "way/1459552083",
+  "kind": "farmland",
+  "district": "Çankaya",
+  "lat": 39.865774,
+  "lon": 32.687919,
+  "area_m2": 95700.0,
+  "compactness": 0.688
+ },
+ {
+  "osm": "way/1473901383",
+  "kind": "construction",
+  "district": "Gölbaşı",
+  "lat": 39.787535,
+  "lon": 32.700915,
+  "area_m2": 42500.0,
+  "compactness": 0.751
+ },
+ {
+  "osm": "relation/20202835",
+  "kind": "farmland",
+  "district": "Gölbaşı",
+  "lat": 39.78884,
+  "lon": 32.688399,
+  "area_m2": 105900.0,
+  "compactness": 0.271
+ },
+ {
+  "osm": "way/1485384760",
+  "kind": "construction",
+  "district": "Etimesgut",
+  "lat": 39.908641,
+  "lon": 32.70635,
+  "area_m2": 537200.0,
+  "compactness": 0.805
+ },
+ {
+  "osm": "way/1493036403",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.84445,
+  "lon": 32.648293,
+  "area_m2": 54700.0,
+  "compactness": 0.341
+ },
+ {
+  "osm": "way/1493036404",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.845827,
+  "lon": 32.643789,
+  "area_m2": 79900.0,
+  "compactness": 0.34
+ },
+ {
+  "osm": "way/1493535609",
+  "kind": "grassland",
+  "district": "Çankaya",
+  "lat": 39.839621,
+  "lon": 32.650598,
+  "area_m2": 43300.0,
+  "compactness": 0.478
+ },
+ {
+  "osm": "way/1498150109",
+  "kind": "meadow",
+  "district": "Çankaya",
+  "lat": 39.831518,
+  "lon": 32.651924,
+  "area_m2": 65700.0,
+  "compactness": 0.257
+ },
+ {
+  "osm": "way/1502509891",
+  "kind": "brownfield",
+  "district": "Keçiören",
+  "lat": 40.017807,
+  "lon": 32.829594,
+  "area_m2": 440700.0,
+  "compactness": 0.263
+ },
+ {
+  "osm": "way/1502509893",
+  "kind": "brownfield",
+  "district": "Keçiören",
+  "lat": 40.019492,
+  "lon": 32.83482,
+  "area_m2": 61500.0,
+  "compactness": 0.494
+ },
+ {
+  "osm": "way/1502509897",
+  "kind": "brownfield",
+  "district": "Keçiören",
+  "lat": 40.02039,
+  "lon": 32.838601,
+  "area_m2": 49200.0,
+  "compactness": 0.589
+ },
+ {
+  "osm": "way/1502509898",
+  "kind": "brownfield",
+  "district": "Keçiören",
+  "lat": 40.021287,
+  "lon": 32.839887,
+  "area_m2": 36900.0,
+  "compactness": 0.498
+ },
+ {
+  "osm": "way/1503617168",
+  "kind": "brownfield",
+  "district": "Yenimahalle",
+  "lat": 40.008373,
+  "lon": 32.724365,
+  "area_m2": 42700.0,
+  "compactness": 0.832
+ },
+ {
+  "osm": "way/1519843904",
+  "kind": "construction",
+  "district": "Yenimahalle",
+  "lat": 39.978965,
+  "lon": 32.66063,
+  "area_m2": 44900.0,
+  "compactness": 0.492
+ },
+ {
+  "osm": "way/1530378204",
+  "kind": "grass",
+  "district": "Yenimahalle",
+  "lat": 39.950091,
+  "lon": 32.744161,
+  "area_m2": 329700.0,
+  "compactness": 0.561
+ },
+ {
+  "osm": "way/1530378793",
+  "kind": "grass",
+  "district": "Yenimahalle",
+  "lat": 39.956916,
+  "lon": 32.750933,
+  "area_m2": 75500.0,
+  "compactness": 0.252
+ },
+ {
+  "osm": "way/1546964081",
+  "kind": "construction",
+  "district": "Çankaya",
+  "lat": 39.911321,
+  "lon": 32.744864,
+  "area_m2": 47400.0,
+  "compactness": 0.778
+ },
+ {
+  "osm": "way/1552377231",
+  "kind": "meadow",
+  "district": "Etimesgut",
+  "lat": 39.971061,
+  "lon": 32.645789,
+  "area_m2": 44600.0,
+  "compactness": 0.645
+ },
+ {
+  "osm": "relation/21372090",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.88037,
+  "lon": 32.970229,
+  "area_m2": 60600.0,
+  "compactness": 0.53
+ },
+ {
+  "osm": "relation/21372099",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.871281,
+  "lon": 32.97743,
+  "area_m2": 47700.0,
+  "compactness": 0.418
+ },
+ {
+  "osm": "relation/21376274",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.882403,
+  "lon": 32.989216,
+  "area_m2": 95500.0,
+  "compactness": 0.273
+ },
+ {
+  "osm": "relation/21376321",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.882532,
+  "lon": 33.001643,
+  "area_m2": 177200.0,
+  "compactness": 0.355
+ },
+ {
+  "osm": "relation/21376323",
+  "kind": "farmland",
+  "district": "Mamak",
+  "lat": 39.884183,
+  "lon": 33.003686,
+  "area_m2": 118000.0,
+  "compactness": 0.332
+ },
+ {
+  "osm": "way/1563650053",
+  "kind": "farmland",
+  "district": "Yenimahalle",
+  "lat": 40.019504,
+  "lon": 32.641262,
+  "area_m2": 57500.0,
+  "compactness": 0.668
+ }
+]

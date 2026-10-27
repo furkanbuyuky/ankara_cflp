@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { postJSON } from "../api";
-import { Seg } from "../components/common";
+import { PageHeader, Seg } from "../components/common";
 import MapView, { MapLegend } from "../components/MapView";
 import { explain, OperatorView, PopulationList, PseudocodePanel, VISUAL_KINDS } from "../components/TeachViz";
 import { mtl, n0, n1 } from "../format";
@@ -137,7 +137,7 @@ export default function TeachTab() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement)?.tagName === "INPUT" || (e.target as HTMLElement)?.tagName === "SELECT") return;
-      if (!document.querySelector('[role="tabpanel"]:not([hidden]) .teach-root')) return;
+      if (!document.querySelector("section:not([hidden]) .teach-root")) return;
       if (e.key === "ArrowRight") setStep((s) => Math.min(N - 1, s + 1));
       if (e.key === "ArrowLeft") setStep((s) => Math.max(0, s - 1));
     };
@@ -145,8 +145,15 @@ export default function TeachTab() {
     return () => window.removeEventListener("keydown", onKey);
   }, [N]);
 
-  if (err) return <div className="notice error">{err}</div>;
-  if (!data || !N) return <div className="notice">Yükleniyor…</div>;
+  const header = (
+    <PageHeader step={3} title="Algoritma nasıl çalışır">
+      Genetik Algoritma ve Diferansiyel Evrim, 10 mahalle ve 6 adaylık küçük bir örnekte adım adım çalıştırılır. Solda o an çalışan
+      pseudocode satırı vurgulanır, ortada işlemin ayrıntısı, sağda haritadaki etkisi görünür. Burada gösterilen kod, Ankara örneğini çözen kodun aynısıdır.
+      Klavyede ← ve → ile adım adım ilerleyebilirsiniz.
+    </PageHeader>
+  );
+  if (err) return <>{header}<div className="notice error">{err}</div></>;
+  if (!data || !N) return <>{header}<div className="notice">Yükleniyor…</div></>;
   const ev = events[Math.min(step, N - 1)];
   const view = views[Math.min(step, N - 1)];
   const types = data.problem.types;
@@ -161,10 +168,11 @@ export default function TeachTab() {
   const opt = data.optimum.solution;
 
   return (
+    <>
+    {header}
     <div className="stack teach-root">
-      <div className="card">
-        <div className="row between">
-          <div className="row" style={{ gap: 12 }}>
+      <div className="toolbar">
+        <div className="row" style={{ gap: 12 }}>
             <Seg value={algo} onChange={setAlgo} options={[{ value: "ga", label: "Genetik Algoritma" }, { value: "de", label: "Diferansiyel Evrim" }]} />
             {algo === "ga" ? (
               <>
@@ -191,10 +199,11 @@ export default function TeachTab() {
             </label>
             <label className="field inline">Seed <input type="number" min={0} value={seed} style={{ width: 56 }} onChange={(e) => setSeed(Number(e.target.value) || 0)} /></label>
             <label className="field inline"><input type="checkbox" checked={traceDecoder} onChange={(e) => setTraceDecoder(e.target.checked)} /> Decoder adımları</label>
-          </div>
-          <span className="muted small">Öğretim örneği: {inst.demand.length} mahalle, {inst.candidates.length} aday, popülasyon {String(data.config.pop_size)}</span>
         </div>
-        <div className="player" style={{ marginTop: 10 }}>
+        <span className="hint" style={{ marginLeft: "auto" }}>Örnek: {inst.demand.length} mahalle · {inst.candidates.length} aday · popülasyon {String(data.config.pop_size)}</span>
+      </div>
+      <div className="card sticky-player" style={{ boxShadow: "var(--shadow-md)" }}>
+        <div className="player">
           <button className="btn icon" onClick={() => { setPlaying(false); setStep(0); }} title="Başa sar">⏮</button>
           <button className="btn icon" onClick={() => { setPlaying(false); setStep((s) => Math.max(0, s - 1)); }} title="Geri (←)">◀</button>
           <button className="btn primary icon" style={{ minWidth: 40 }} onClick={() => { if (step >= N - 1) setStep(0); setPlaying(!playing); }}>{playing ? "⏸" : "▶"}</button>
@@ -212,12 +221,12 @@ export default function TeachTab() {
 
       <div className="teach-grid">
         <div className="card">
-          <h2 style={{ marginBottom: 8 }}>Pseudocode</h2>
+          <div className="card-head"><h2>Pseudocode</h2><span className="badge accent">{algo === "ga" ? "GA" : "DE"}</span></div>
           <PseudocodePanel code={data.pseudocode} line={ev.line} sub={ev.sub} variants={variants} />
         </div>
         <div className="stack">
           <div className="card">
-            <h2 style={{ marginBottom: 8 }}>İşlem</h2>
+            <div className="card-head"><h2>Bu adımda ne oluyor?</h2></div>
             <OperatorView ev={ev} types={types} genes={view.genes} inst={inst} />
             {!VISUAL_KINDS.has(ev.kind) && <div className="muted small">Bu adımda gösterilecek ek görsel yok.</div>}
           </div>
@@ -236,13 +245,13 @@ export default function TeachTab() {
               dimDemand={view.dim}
               focusDemand={view.focusDemand}
               focusCands={view.focusCands}
-              height={360}
+              height={380}
               showDistrictLabels={false}
+              overlay={<MapLegend types={types} candidates={false} />}
             />
-            <div style={{ padding: "8px 12px" }}><MapLegend types={types} /></div>
           </div>
           <div className="card">
-            <h2 style={{ marginBottom: 8 }}>Örnek verisi</h2>
+            <div className="card-head"><h2>Örnek verisi</h2></div>
             <div className="table-wrap">
               <table className="data">
                 <thead><tr><th>Gen</th><th>Aday</th><th className="r">Arazi</th><th>Sığan tipler</th></tr></thead>
@@ -267,5 +276,6 @@ export default function TeachTab() {
         </div>
       </div>
     </div>
+    </>
   );
 }

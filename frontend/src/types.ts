@@ -38,6 +38,8 @@ export interface Candidate {
   lon: number;
   land_m2: number;
   land_price_tl_m2: number;
+  parcel?: string; // OSM parsel türü (ör. "inşaat alanı")
+  osm?: string; // ör. "way/123"
 }
 
 export interface District {

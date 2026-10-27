@@ -38,7 +38,27 @@ export function useThemeVersion(): number {
 }
 
 export function isDark(): boolean {
-  const t = document.documentElement.getAttribute("data-theme");
-  if (t) return t === "dark";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return document.documentElement.getAttribute("data-theme") === "dark";
+}
+
+const THEME_KEY = "cflp-theme";
+
+/** Varsayılan açık tema; kullanıcının seçimi tarayıcıda hatırlanır. */
+export function initTheme(): void {
+  let t = "light";
+  try {
+    t = localStorage.getItem(THEME_KEY) === "dark" ? "dark" : "light";
+  } catch {
+    /* depolama kapalıysa varsayılan */
+  }
+  document.documentElement.setAttribute("data-theme", t);
+}
+
+export function setTheme(t: "light" | "dark"): void {
+  document.documentElement.setAttribute("data-theme", t);
+  try {
+    localStorage.setItem(THEME_KEY, t);
+  } catch {
+    /* depolama kapalıysa yalnızca bu oturum */
+  }
 }

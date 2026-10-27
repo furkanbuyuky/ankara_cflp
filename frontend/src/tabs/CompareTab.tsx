@@ -1,9 +1,10 @@
 import type { ChartConfiguration } from "chart.js";
 import { useEffect, useMemo, useState } from "react";
 import { postJSON, useCachedJob } from "../api";
+import { useClientBenchmark } from "../bench";
 import { cssVar, runColor, withAlpha } from "../colors";
 import ChartBox, { baseOptions, merge } from "../components/ChartBox";
-import { JobStatus } from "../components/common";
+import { JobStatus, PageHeader } from "../components/common";
 import { mtl, n0, n1, pct } from "../format";
 import { PRESETS } from "../runs";
 import { useApp } from "../state";
@@ -12,7 +13,7 @@ import type { BenchResult, ExactResult } from "../types";
 const MAX_CONFIGS = 4;
 
 export default function CompareTab() {
-  const { scenario, makeSpec } = useApp();
+  const { scenario, makeSpec, server } = useApp();
   const [chosen, setChosen] = useState<string[]>([PRESETS[0].label, PRESETS[1].label, PRESETS[2].label, PRESETS[4].label]);
   const [seeds, setSeeds] = useState(10);
   const [budget, setBudget] = useState(10000);
@@ -42,25 +43,43 @@ export default function CompareTab() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [specKey, chosen, seeds, budget, polish, ref],
   );
+  // Hazır (önbellekteki) sonuç varsa her iki modda da oradan gelir. Yoksa yerelde sunucu işi,
+  // sunucusuz yayında tarayıcının paralel yürüttüğü çalışmalar kullanılır.
   const bench = useCachedJob<BenchResult>("benchmark", body);
+  const client = useClientBenchmark();
+  const bodyKey = JSON.stringify(body);
+  const resetClient = client.reset;
+  useEffect(() => resetClient(), [bodyKey, resetClient]);
+  const useClient = server.serverless;
+  const res = bench.result ?? (useClient ? client.result : null);
+  const job = useClient && client.job ? client.job : bench.job;
+  const running = bench.running || client.running;
+  const error = bench.error ?? client.error;
+  const start = () => (useClient ? client.run(body) : bench.run());
   const toggle = (label: string) =>
     setChosen((c) => (c.includes(label) ? c.filter((x) => x !== label) : c.length < MAX_CONFIGS ? [...c, label] : c));
-  const res = bench.result;
 
   return (
+    <>
+    <PageHeader
+      step={5}
+      title="Karşılaştırma"
+      actions={
+        <button className="btn primary" disabled={running || runs.length === 0} onClick={start}>
+          {running ? "Çalışıyor…" : res ? "Yeniden çalıştır" : "Karşılaştırmayı başlat"}
+        </button>
+      }
+    >
+      Metasezgiseller rastlantısaldır. Tek bir çalışmaya bakmak yanıltıcı olabilir. Burada her konfigürasyon {seeds} farklı seed ile
+      aynı bütçede çalıştırılır ({scenario === "single" ? "S1 · Tek tip" : "S2 · Üç tip"}), sonuçların dağılımı ve MIP'e göre farkı karşılaştırılır.
+    </PageHeader>
     <div className="stack">
       <div className="card">
         <div className="card-head">
           <div>
-            <h2>Çoklu seed karşılaştırması</h2>
-            <p className="muted small">
-              Her konfigürasyon {seeds} farklı seed ile, aynı değerlendirme bütçesiyle çalışır ({scenario === "single" ? "S1 · Tek tip" : "S2 · Üç tip"}).
-              Tek bir şanslı çalışma yerine dağılım karşılaştırılır. En fazla {MAX_CONFIGS} konfigürasyon.
-            </p>
+            <h2>Konfigürasyonlar</h2>
+            <p className="hint">En fazla {MAX_CONFIGS} tanesini seçin.</p>
           </div>
-          <button className="btn primary" disabled={bench.running || runs.length === 0} onClick={() => bench.run()}>
-            {bench.running ? "Çalışıyor…" : res ? "Yeniden çalıştır" : "Karşılaştırmayı başlat"}
-          </button>
         </div>
         <div className="row" style={{ gap: 6 }}>
           {PRESETS.map((p) => {
@@ -75,7 +94,7 @@ export default function CompareTab() {
             );
           })}
         </div>
-        <div className="row" style={{ gap: 14, marginTop: 10 }}>
+        <div className="row" style={{ gap: 18, marginTop: 14, paddingTop: 14, borderTop: "1px solid var(--border)" }}>
           <label className="field inline">Seed sayısı
             <select value={seeds} onChange={(e) => setSeeds(Number(e.target.value))}>{[3, 5, 10, 20].map((s) => <option key={s} value={s}>{s}</option>)}</select>
           </label>
@@ -83,16 +102,17 @@ export default function CompareTab() {
             <select value={budget} onChange={(e) => setBudget(Number(e.target.value))}>{[2000, 5000, 10000, 20000].map((b) => <option key={b} value={b}>{n0(b)} değerlendirme</option>)}</select>
           </label>
           <label className="field inline"><input type="checkbox" checked={polish} onChange={(e) => setPolish(e.target.checked)} /> Polish (atamayı MIP ile iyileştir)</label>
-          <span className="muted small">
+          <span className="hint" style={{ marginLeft: "auto" }}>
             {ref ? `Referans: MIP en iyi ${mtl(ref.solution.cost.total)}${ref.solver.status !== "optimal" && ref.solver.bound ? `, alt sınır ${mtl(ref.solver.bound)}` : ""}` : "MIP referansı yok (Sekme 2'de çözün)"}
           </span>
         </div>
-        {(bench.job || bench.error) && <div style={{ marginTop: 10 }}><JobStatus job={bench.job} error={bench.error} /></div>}
+        {(job || error) && <div style={{ marginTop: 10 }}><JobStatus job={job} error={error} /></div>}
       </div>
 
-      {!res && !bench.running && <div className="notice">Henüz sonuç yok. Seçili konfigürasyonlarla "Karşılaştırmayı başlat"a basın. Çalışmalar paralel koşar.</div>}
+      {!res && !running && <div className="notice">Henüz sonuç yok. Seçili konfigürasyonlarla "Karşılaştırmayı başlat"a basın. Çalışmalar paralel koşar.</div>}
       {res && <Results res={res} refBound={ref?.solver.bound ?? null} />}
     </div>
+    </>
   );
 }
 

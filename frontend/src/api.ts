@@ -27,8 +27,16 @@ export function useJob<T>(endpoint: string) {
     async (body: unknown) => {
       const my = ++token.current;
       setError(null);
+      // Sunucusuz modda istek, hesap bitene kadar yanıt vermez; o sürede bir bekleme durumu gösterilir
+      const t0 = Date.now();
+      const pending = (): Job<T> => ({
+        id: "", kind: "", status: "running", progress: 0, message: "Hesaplanıyor…", cached: false,
+        elapsed: (Date.now() - t0) / 1000, error: null,
+      });
+      setJob(pending());
+      const tick = setInterval(() => my === token.current && setJob((j) => (j && !j.id ? pending() : j)), 1000);
       try {
-        let j = await postJSON<Job<T>>(endpoint, body);
+        let j = await postJSON<Job<T>>(endpoint, body).finally(() => clearInterval(tick));
         if (my !== token.current) return null;
         setJob(j);
         while (j.status === "queued" || j.status === "running") {
@@ -41,7 +49,10 @@ export function useJob<T>(endpoint: string) {
         if (j.status === "error") setError(j.error ?? "Bilinmeyen hata");
         return j.result ?? null;
       } catch (e) {
-        if (my === token.current) setError(String(e));
+        if (my === token.current) {
+          setJob(null);
+          setError(String(e));
+        }
         return null;
       }
     },

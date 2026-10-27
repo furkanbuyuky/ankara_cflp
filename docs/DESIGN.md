@@ -31,6 +31,9 @@ Aşağıdaki maddeler, uygulama sırasında ölçülen sonuçlara göre ilk tasa
 | Talep noktaları | OSM Overpass, mahalle merkezleri | OSM admin_level=8 anlık görüntüsü ([izzetkalic/geojsons-of-turkey](https://github.com/izzetkalic/geojsons-of-turkey)), 375 mahalle | Overpass sunucuları uzun süre 502/504 döndü |
 | Mahalle nüfusu | TÜİK mahalle verisi | İlçe nüfusu (TÜİK ADNKS 2024), alan–yoğunluk modeliyle mahallelere dağıtılır | Kamuya açık, hazır mahalle nüfus verisi bulunamadı |
 | Aday sayısı | ~50 | 60 | Tek tipte yeterli seçenek kalsın diye |
+| Aday yerler | Mahalle merkezlerinden rastgele, arazi rastgele | Gerçek OSM parselleri (Geofabrik): yapılaşmaya uygun etiketler, ≥35.000 m², ana yollara ≥100 m, park/kampüs/korunan alan dışında; arazi = gerçek parsel alanı | Rastgele konumlar yol ve otoyol üstüne düşebiliyordu |
+| Önbellek anahtarı | İstek | İstek + veri ve varsayılan parametre dosyalarının özeti | Veri değişince eski hazır sonuçlar kendiliğinden geçersiz olur |
+| Arayüz | Üstte sekmeler, sistem teması | Sol kenar menü, varsayılan açık tema (koyu tema düğmesi), Inter yazı tipi, her sayfada adım başlığı ve açıklama | Daha sade ve anlaşılır bir sunum |
 | Varsayılan parametreler | β = 3,0 | β = 2,5, α = 250, tip maliyetleri yeniden kalibre edildi (`config/defaults.json`) | Daha dengeli S/M/L karışımı, makul hastane sayısı (S1: 23, S2: 16) |
 | Atama kümesi | Tüm adaylar | Her mahalle en yakın 15 adaya atanabilir (`assign_k_nearest`, UI'dan değişir) | MIP boyutu yaklaşık 4 kat küçülür. Exact ve sezgiseller aynı kümeyi kullanır |
 | MIP | Temel formülasyon | + geçerli eşitsizlik (toplam kapasite ≥ karşılanan talep) + GA ile başlangıç çözümü (sweep'te) | Kapasite çok sıkı (%95–98 doluluk), LP sınırı zayıf |
@@ -39,6 +42,8 @@ Aşağıdaki maddeler, uygulama sırasında ölçülen sonuçlara göre ilk tasa
 | Hız | Saf Python | Decoder'ın numba ile derlenmiş eşi (iz kaydı Python sürümünden). Eşdeğerlik testle sınanır | 10.000 değerlendirme ~20 sn → ~3 sn |
 | Altlık harita | — | OpenStreetMap karoları (koyu temada CSS filtresi) | CARTO artık API anahtarı istiyor |
 | Polish süresi | — | 10 sn, gap %0,1 | Sabit hastanelerle atama MIP'i de sıkı kapasitede yavaş |
+| Yayın | — | Vercel (Hobby): statik arayüz + `api/index.py` Python fonksiyonu, sunucusuz modda işler istek içinde çalışır, karşılaştırma tarayıcıdan paralel yürütülür (README → Yayınlama) | Hugging Face Docker Space'leri Temmuz 2026'dan beri ücretli |
+| API paketi adı | `backend/api` | `backend/server` | Vercel'in kökteki `api/` klasörüyle isim çakışmasın |
 
 ---
 

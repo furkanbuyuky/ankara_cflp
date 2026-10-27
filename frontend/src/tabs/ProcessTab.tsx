@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { postJSON, useCachedJob } from "../api";
 import { cssVar, runColor, withAlpha } from "../colors";
 import ChartBox, { baseOptions, merge } from "../components/ChartBox";
-import { JobStatus, Kpi, Seg } from "../components/common";
+import { JobStatus, Kpi, PageHeader, Seg } from "../components/common";
 import MapView, { MapLegend } from "../components/MapView";
 import { mtl, n0, n1, pct } from "../format";
 import { autoLabel, PRESETS, RunConfigEditor } from "../runs";
@@ -69,14 +69,27 @@ export default function ProcessTab() {
   const result = opt.result;
 
   return (
+    <>
+    <PageHeader
+      step={4}
+      title="Optimizasyon süreci"
+      actions={
+        <button className="btn primary" disabled={opt.running || runs.length === 0} onClick={() => opt.run()}>
+          {opt.running ? "Çalışıyor…" : result ? "Yeniden çalıştır" : "Çalıştır"}
+        </button>
+      }
+    >
+      Seçilen algoritmalar Ankara örneğinde aynı değerlendirme bütçesiyle yarışır. Zaman çizelgesini oynattıkça haritada o ana
+      kadarki en iyi çözüm, grafikte maliyetin nasıl düştüğü görünür. Yatay çizgiler MIP'in bulduğu en iyi çözümü ve alt sınırı gösterir.
+    </PageHeader>
     <div className="stack">
       <div className="card">
         <div className="card-head">
           <div>
-            <h2>Çalışmalar</h2>
-            <p className="muted small">Her çalışma Ankara örneğinde aynı değerlendirme bütçesiyle koşar (yarış modu). En fazla 4 çalışma.</p>
+            <h2>Yarışan algoritmalar</h2>
+            <p className="hint">En fazla 4 çalışma. "Ayarlar" ile popülasyon, olasılıklar ve operatörler değiştirilebilir.</p>
           </div>
-          <div className="row">
+          <div className="row" style={{ gap: 14 }}>
             <label className="field inline">Bütçe
               <select value={budget} onChange={(e) => setBudget(Number(e.target.value))}>
                 {[2000, 5000, 10000, 20000, 40000].map((b) => <option key={b} value={b}>{n0(b)} değerlendirme</option>)}
@@ -88,19 +101,16 @@ export default function ProcessTab() {
               Hastane ≤
               {maxH != null && <input type="number" min={1} max={60} value={maxH} style={{ width: 56 }} onChange={(e) => setMaxH(Number(e.target.value) || 1)} />}
             </label>
-            <button className="btn primary" disabled={opt.running || runs.length === 0} onClick={() => opt.run()}>
-              {opt.running ? "Çalışıyor…" : result ? "Yeniden çalıştır" : "Çalıştır"}
-            </button>
           </div>
         </div>
         <div className="stack" style={{ gap: 6 }}>
           {runs.map((r, i) => (
-            <div key={i} className="stack" style={{ gap: 6, padding: "6px 8px", borderRadius: 8, background: "var(--surface-2)" }}>
+            <div key={i} className="stack" style={{ gap: 8, padding: "8px 12px", borderRadius: 10, background: "var(--surface-2)", border: "1px solid var(--border)" }}>
               <div className="row between">
                 <span className="row" style={{ gap: 8 }}>
                   <i className="dot" style={{ background: `var(--run-${i + 1})` }} />
                   <b>{r.label}</b>
-                  <span className="muted small">{Object.entries(r.config).map(([k, v]) => `${k}=${v}`).join(", ")}</span>
+                  <span className="hint">{Object.entries(r.config).map(([k, v]) => `${k}=${v}`).join(", ")}</span>
                 </span>
                 <span className="row">
                   <button className="btn small ghost" onClick={() => setEditing(editing === i ? null : i)}>{editing === i ? "Kapat" : "Ayarlar"}</button>
@@ -111,8 +121,8 @@ export default function ProcessTab() {
             </div>
           ))}
           {runs.length < 4 && (
-            <div className="row">
-              <span className="muted small">Ekle:</span>
+            <div className="row" style={{ marginTop: 4 }}>
+              <span className="hint">Ekle:</span>
               {PRESETS.map((p) => (
                 <button key={p.label} className="btn small" onClick={() => setRuns([...runs, { ...p, label: autoLabel(p) }])}>{p.label}</button>
               ))}
@@ -125,6 +135,7 @@ export default function ProcessTab() {
       {!result && !opt.running && <div className="notice">Henüz sonuç yok. "Çalıştır" ile başlatın (bütçe başına birkaç saniye sürer).</div>}
       {result && <Player result={result} reference={ref} types={types} instance={instance} districts={districts} beds={params.beds_per_1000} />}
     </div>
+    </>
   );
 }
 
@@ -285,7 +296,7 @@ function Player(props: {
 
   return (
     <div className="stack">
-      <div className="card">
+      <div className="card sticky-player" style={{ boxShadow: "var(--shadow-md)" }}>
         <div className="player">
           <button className="btn icon" onClick={() => { setPlaying(false); setT(0); }} title="Başa sar" aria-label="Başa sar">⏮</button>
           <button className="btn icon" onClick={() => jump(-1)} title="Önceki iyileşme">◀</button>
@@ -307,12 +318,12 @@ function Player(props: {
 
       <div className="split-wide">
         <div className="card flush">
-          <div className="row between" style={{ padding: "10px 12px" }}>
-            <Seg value={String(sel)} onChange={(v) => setSel(Number(v))} options={runs.map((r, i) => ({ value: String(i), label: <span className="row" style={{ gap: 6 }}><i className="dot" style={{ background: runColor(i) }} />{r.label}</span> }))} />
-            <MapLegend types={types} candidates={false} />
+          <div className="row between" style={{ padding: "12px 14px", borderBottom: "1px solid var(--border)" }}>
+            <span className="hint">Haritada gösterilen:</span>
+            <Seg value={String(sel)} onChange={(v) => setSel(Number(v))} options={runs.map((r, i) => ({ value: String(i), label: <span className="row" style={{ gap: 6, flexWrap: "nowrap" }}><i className="dot" style={{ background: runColor(i) }} />{r.label}</span> }))} />
           </div>
-          <MapView instance={instance} districts={districts} types={types} solution={cur} demandBeds={demandBeds} newOpen={newOpen} recentlyClosed={closed} height={560} candidateMode="plain" />
-          <div className="small muted" style={{ padding: "8px 12px" }}>
+          <MapView instance={instance} districts={districts} types={types} solution={cur} demandBeds={demandBeds} newOpen={newOpen} recentlyClosed={closed} height={580} candidateMode="plain" overlay={<MapLegend types={types} candidates={false} />} />
+          <div className="card-foot hint">
             Son iyileşme (nesil {gens[cur.improvedAt].gen}): {newOpen.length ? `${newOpen.length} hastane açıldı/tipi değişti (yeşil halka)` : "yeni açılış yok"}
             {closed.length ? `, ${closed.length} hastane kapandı (kırmızı kesikli kare)` : ""}.
           </div>

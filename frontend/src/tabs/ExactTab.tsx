@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useCachedJob } from "../api";
 import { typeColor } from "../colors";
 import ChartBox, { baseOptions, merge } from "../components/ChartBox";
-import { CostBar, JobStatus, Kpi, Seg, SolutionKpis, SolverBadge } from "../components/common";
+import { CostBar, JobStatus, Kpi, PageHeader, Seg, SolutionKpis, SolverBadge } from "../components/common";
 import MapView, { MapLegend } from "../components/MapView";
 import { mtl, n0, n1, pct } from "../format";
 import { scenarioTypes, useApp } from "../state";
@@ -28,7 +28,7 @@ function pointAt(sw: SweepResult | null, v: number): SweepPoint | null {
 }
 
 export default function ExactTab() {
-  const { instance, districts, params, scenario, setScenario, makeSpec } = useApp();
+  const { instance, districts, params, scenario, setScenario, makeSpec, server } = useApp();
   const [view, setView] = useState<View>(scenario);
   const [timeLimit, setTimeLimit] = useState(60);
   const [maxDist, setMaxDist] = useState<number | null>(null);
@@ -40,6 +40,9 @@ export default function ExactTab() {
   useEffect(() => {
     if (view !== "compare") setScenario(view);
   }, [view, setScenario]);
+  useEffect(() => {
+    setView((v) => (v === "compare" ? v : scenario));
+  }, [scenario]);
 
   const cons: Constraints = { max_distance_km: maxDist, min_utilization: minUtil };
   const specS1 = makeSpec(cons, "single");
@@ -93,53 +96,63 @@ export default function ExactTab() {
   const swRunning = sw1.running || sw2.running;
   const scenarios: Scenario[] = view === "compare" ? ["single", "multi"] : [view];
 
+  const statusRow = (ex1.job || ex2.job || ex1.error || ex2.error) && (
+    <div className="row" style={{ gap: 16, flex: 1, minWidth: 260, justifyContent: "flex-end" }}>
+      {showS1 && <JobStatus job={ex1.job} error={ex1.error} expectSeconds={timeLimit + 5} />}
+      {showS2 && <JobStatus job={ex2.job} error={ex2.error} expectSeconds={timeLimit + 5} />}
+    </div>
+  );
+
   return (
-    <div className="stack">
-      <div className="card">
-        <div className="row between">
-          <div className="row" style={{ gap: 14 }}>
-            <Seg<View>
-              value={view}
-              onChange={setView}
-              options={[
-                { value: "single", label: "S1 · Tek tip" },
-                { value: "multi", label: "S2 · Üç tip" },
-                { value: "compare", label: "Karşılaştır" },
-              ]}
-            />
-            <label className="field inline">
-              <input type="checkbox" checked={maxDist != null} onChange={(e) => setMaxDist(e.target.checked ? 8 : null)} />
-              Maks. mesafe
-              {maxDist != null && (
-                <input type="number" min={2} max={40} step={1} value={maxDist} style={{ width: 64 }} onChange={(e) => setMaxDist(Number(e.target.value) || 8)} />
-              )}
-              {maxDist != null && "km"}
-            </label>
-            <label className="field inline">
-              <input type="checkbox" checked={minUtil != null} onChange={(e) => setMinUtil(e.target.checked ? 0.6 : null)} />
-              Min. doluluk
-              {minUtil != null && (
-                <input type="number" min={10} max={95} step={5} value={Math.round(minUtil * 100)} style={{ width: 60 }} onChange={(e) => setMinUtil((Number(e.target.value) || 60) / 100)} />
-              )}
-              {minUtil != null && "%"}
-            </label>
-            <label className="field inline">
-              Zaman limiti
-              <select value={timeLimit} onChange={(e) => setTimeLimit(Number(e.target.value))}>
-                {[30, 60, 120, 300].map((t) => <option key={t} value={t}>{t} sn</option>)}
-              </select>
-            </label>
-          </div>
+    <>
+      <PageHeader
+        step={2}
+        title="Exact çözüm"
+        actions={
           <button className="btn primary" onClick={solveAll} disabled={anyRunning}>
             {anyRunning ? "Çözülüyor…" : "MIP ile çöz"}
           </button>
-        </div>
-        {(ex1.job || ex2.job || ex1.error || ex2.error) && (
-          <div className="row" style={{ marginTop: 10, gap: 16 }}>
-            {showS1 && <JobStatus job={ex1.job} error={ex1.error} expectSeconds={timeLimit + 5} />}
-            {showS2 && <JobStatus job={ex2.job} error={ex2.error} expectSeconds={timeLimit + 5} />}
-          </div>
-        )}
+        }
+      >
+        Problem karma tamsayılı program (MIP) olarak HiGHS ile çözülür. Bu boyutta optimalliği kanıtlamak çok uzun sürdüğü için
+        sonuç, bulunan en iyi çözüm ve optimumun altına inemeyeceği alt sınırla birlikte gösterilir. Varsayılan ayarların sonuçları hazırdır.
+      </PageHeader>
+    <div className="stack">
+      <div className="toolbar">
+        <Seg<View>
+          value={view}
+          onChange={setView}
+          options={[
+            { value: "single", label: "S1 · Tek tip" },
+            { value: "multi", label: "S2 · Üç tip" },
+            { value: "compare", label: "S1 ve S2 karşılaştır" },
+          ]}
+        />
+        <span className="sep" />
+        <label className="field inline">
+          <input type="checkbox" checked={maxDist != null} onChange={(e) => setMaxDist(e.target.checked ? 8 : null)} />
+          Maks. mesafe
+          {maxDist != null && (
+            <input type="number" min={2} max={40} step={1} value={maxDist} style={{ width: 64 }} onChange={(e) => setMaxDist(Number(e.target.value) || 8)} />
+          )}
+          {maxDist != null && "km"}
+        </label>
+        <label className="field inline">
+          <input type="checkbox" checked={minUtil != null} onChange={(e) => setMinUtil(e.target.checked ? 0.6 : null)} />
+          Min. doluluk
+          {minUtil != null && (
+            <input type="number" min={10} max={95} step={5} value={Math.round(minUtil * 100)} style={{ width: 60 }} onChange={(e) => setMinUtil((Number(e.target.value) || 60) / 100)} />
+          )}
+          {minUtil != null && "%"}
+        </label>
+        <span className="sep" />
+        <label className="field inline">
+          Zaman limiti
+          <select value={timeLimit} onChange={(e) => setTimeLimit(Number(e.target.value))}>
+            {[30, 60, 120, 300].filter((t) => t <= server.max_time_limit).map((t) => <option key={t} value={t}>{t} sn</option>)}
+          </select>
+        </label>
+        {statusRow}
       </div>
 
       <div className={view === "compare" ? "two" : ""}>
@@ -171,7 +184,7 @@ export default function ExactTab() {
           <div>
             <h2>Üst sınır analizi</h2>
             <p className="muted small">
-              Sınır her değer için ayrıca çözülür (nokta başına 15 sn). Sınır bağlayıcı olmaktan çıkınca çözüm kısıtsız optimumla aynı kalır.
+              Sınır her değer için ayrıca çözülür (nokta başına {server.serverless ? "en fazla 15 sn, toplam ~4 dk" : "15 sn"}). Sınır bağlayıcı olmaktan çıkınca çözüm kısıtsız optimumla aynı kalır.
             </p>
           </div>
           <div className="row">
@@ -202,6 +215,7 @@ export default function ExactTab() {
         )}
       </div>
     </div>
+    </>
   );
 }
 
@@ -229,13 +243,14 @@ function ScenarioPanel(props: {
           types={types}
           solution={sol}
           demandBeds={demandBeds}
-          height={compact ? 460 : 600}
+          height={compact ? 480 : 620}
           group={mapGroup}
           showDistrictLabels={!compact}
+          overlay={<MapLegend types={types} />}
         />
         {!sol && (
-          <div style={{ position: "absolute", inset: 0, display: "grid", placeItems: "center", pointerEvents: "none", zIndex: 600 }}>
-            <div className="notice" style={{ pointerEvents: "auto" }}>
+          <div className="map-empty">
+            <div className="notice">
               {running ? "MIP çözülüyor…" : checking ? "Önbellek kontrol ediliyor…" : "Henüz çözüm yok — \"MIP ile çöz\" düğmesine basın."}
             </div>
           </div>
@@ -250,12 +265,12 @@ function ScenarioPanel(props: {
               {shown && <SolverBadge info={shown.solver} />}
             </div>
           </div>
-          <MapLegend types={types} />
+          {!sol && <p className="hint">Sonuç burada görünecek.</p>}
           {sol && shown && (
-            <div className="stack" style={{ marginTop: 12 }}>
+            <div className="stack" style={{ gap: 14 }}>
               <SolutionKpis cost={sol.cost} kpi={sol.kpi} types={types} investment={sol.investment}
                 extra={shown.solver.bound != null && shown.solver.status !== "optimal" ? (
-                  <Kpi label="Alt sınır (bound)" value={mtl(shown.solver.bound)} sub={`optimum ${mtl(shown.solver.bound)} – ${mtl(sol.cost.total)} arasında`} />
+                  <Kpi label="Alt sınır" value={mtl(shown.solver.bound)} sub={`optimum bu değer ile ${mtl(sol.cost.total)} arasında`} />
                 ) : undefined}
               />
               <CostBar cost={sol.cost} />

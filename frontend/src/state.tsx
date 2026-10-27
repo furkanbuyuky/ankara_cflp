@@ -13,6 +13,13 @@ interface AppState {
   districts: GeoJSON.FeatureCollection | null;
   makeSpec: (constraints?: Constraints, scenario?: Scenario) => Spec;
   loadError: string | null;
+  /** Sunucusuz yayın (Vercel): uzun işler istek içinde çalışır, süre sınırlıdır */
+  server: ServerConfig;
+}
+
+export interface ServerConfig {
+  serverless: boolean;
+  max_time_limit: number;
 }
 
 const Ctx = createContext<AppState | null>(null);
@@ -24,14 +31,17 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [instance, setInstance] = useState<Instance | null>(null);
   const [districts, setDistricts] = useState<GeoJSON.FeatureCollection | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [server, setServer] = useState<ServerConfig>({ serverless: false, max_time_limit: 600 });
 
   useEffect(() => {
     Promise.all([
       getJSON<Params>("/api/defaults"),
       getJSON<Instance>("/api/instances/ankara"),
       getJSON<GeoJSON.FeatureCollection>("/api/districts"),
+      getJSON<ServerConfig>("/api/config").catch(() => null),
     ])
-      .then(([d, i, g]) => {
+      .then(([d, i, g, c]) => {
+        if (c) setServer(c);
         setDefaults(d);
         setInstance(i);
         setDistricts(g);
@@ -70,6 +80,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
     districts,
     makeSpec,
     loadError,
+    server,
   };
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

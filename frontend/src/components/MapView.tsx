@@ -1,6 +1,6 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { cssVar, isDark, typeColor, useThemeVersion } from "../colors";
 import { n0, n1, pct } from "../format";
 import type { HospitalType, Instance } from "../types";
@@ -28,6 +28,8 @@ interface Props {
   showLines?: boolean;
   group?: string; // aynı gruptaki haritalar birlikte kayar/yakınlaşır
   showDistrictLabels?: boolean;
+  /** Haritanın sol altına yerleşen lejant ya da not */
+  overlay?: ReactNode;
 }
 
 // --- senkron haritalar (karşılaştırma görünümü)
@@ -45,7 +47,7 @@ export function hospitalSize(typeIndex: number, nTypes: number): number {
 export default function MapView(props: Props) {
   const {
     instance, districts, types, solution, demandBeds, candidateMode = "plain", kmax, newOpen, recentlyClosed,
-    focusDemand, focusCands, dimDemand, height = 520, showLines = true, group, showDistrictLabels = true,
+    focusDemand, focusCands, dimDemand, height = 520, showLines = true, group, showDistrictLabels = true, overlay,
   } = props;
   const el = useRef<HTMLDivElement>(null);
   const map = useRef<L.Map | null>(null);
@@ -64,8 +66,18 @@ export default function MapView(props: Props) {
       demand: L.layerGroup().addTo(m),
       sites: L.layerGroup().addTo(m),
     };
-    const pts = instance.demand.map((d) => [d.lat, d.lon] as [number, number]);
-    m.fitBounds(L.latLngBounds(pts), { padding: [16, 16] });
+    const bounds = L.latLngBounds(instance.demand.map((d) => [d.lat, d.lon] as [number, number]));
+    // Gizli sekmede ya da yerleşim tamamlanmadan kurulan harita sıfır boyutludur; o anda sığdırma
+    // en yüksek yakınlaştırmayı seçer. Bu yüzden ilk gerçek boyut alındığında yeniden sığdırılır.
+    let fitted = false;
+    const fit = () => {
+      if (fitted || !el.current || el.current.clientWidth === 0 || el.current.clientHeight === 0) return;
+      m.invalidateSize();
+      m.fitBounds(bounds, { padding: [16, 16] });
+      fitted = true;
+    };
+    m.setView(bounds.getCenter(), 11);
+    fit();
     if (group) {
       if (!groups.has(group)) groups.set(group, new Set());
       groups.get(group)!.add(m);
@@ -76,7 +88,10 @@ export default function MapView(props: Props) {
         syncing = false;
       });
     }
-    const ro = new ResizeObserver(() => m.invalidateSize());
+    const ro = new ResizeObserver(() => {
+      m.invalidateSize();
+      fit();
+    });
     ro.observe(el.current);
     return () => {
       ro.disconnect();
@@ -107,7 +122,7 @@ export default function MapView(props: Props) {
     lg.clearLayers();
     if (!districts) return;
     const gj = L.geoJSON(districts, {
-      style: { color: cssVar("--muted"), weight: 1.2, dashArray: "4 4", fill: false, opacity: 0.8 },
+      style: { color: cssVar("--ink-2"), weight: 1, dashArray: "3 4", fill: false, opacity: 0.45 },
       interactive: false,
     });
     lg.addLayer(gj);
@@ -150,8 +165,8 @@ export default function MapView(props: Props) {
         const c = instance.candidates[j];
         L.polyline([[d.lat, d.lon], [c.lat, c.lon]], {
           color: t ? typeColor(t.key) : muted,
-          weight: focusDemand === i ? 3 : 1.1,
-          opacity: focusDemand === i ? 0.95 : 0.5,
+          weight: focusDemand === i ? 3 : 0.9,
+          opacity: focusDemand === i ? 0.95 : 0.38,
           interactive: false,
         }).addTo(ls.lines);
       });
@@ -167,7 +182,7 @@ export default function MapView(props: Props) {
         color: unmet ? critical : focusDemand === i ? cssVar("--warning") : surface,
         weight: unmet || focusDemand === i ? 2.5 : 1,
         fillColor: dim.has(i) ? muted : t ? typeColor(t.key) : ink,
-        fillOpacity: dim.has(i) ? 0.25 : t ? 0.55 : 0.45,
+        fillOpacity: dim.has(i) ? 0.2 : t ? 0.5 : 0.35,
       });
       marker.bindTooltip(() => {
         let html = `<b>${d.name}</b> <span style="color:${muted}">${d.district}</span><br>Nüfus: ${n0(d.population)}`;
@@ -203,7 +218,7 @@ export default function MapView(props: Props) {
           const mk = L.marker([c.lat, c.lon], { icon, zIndexOffset: 1000 + k * 10, keyboard: false });
           mk.bindTooltip(() => {
             const ld = load.get(j) ?? 0;
-            let html = `<b>Aday ${j + 1}</b> · ${t.name} hastane (${n0(t.beds)} yatak)<br><span style="color:${muted}">${c.district} · ${c.name.replace(/^Aday \d+ /, "")}</span>`;
+            let html = `<b>Aday ${j + 1}</b> · ${t.name} hastane (${n0(t.beds)} yatak)<br><span style="color:${muted}">${c.district} · ${c.name.replace(/^Aday \d+ /, "")}${c.parcel ? ` · ${c.parcel}` : ""}</span>`;
             if (demandBeds) html += `<br>Yük: ${n0(ld)} / ${n0(t.beds)} yatak (${pct(ld / t.beds)})`;
             if (assign) html += `<br>Bağlı mahalle: ${assign.filter((x) => x === j).length}`;
             return html;
@@ -211,7 +226,8 @@ export default function MapView(props: Props) {
           mk.addTo(ls.sites);
         } else {
           let border = muted;
-          if (candidateMode === "eligibility" && kmax) border = kmax[j] > 0 ? typeColor(types[kmax[j] - 1].key) : critical;
+          const fit = kmax ? types[Math.min(kmax[j], types.length) - 1] : undefined; // senaryo değişirken kmax eski olabilir
+          if (candidateMode === "eligibility" && kmax) border = fit ? typeColor(fit.key) : critical;
           const cls = ["cand-icon", closed.has(j) ? "closed-recent" : ""].join(" ");
           const size = candidateMode === "eligibility" ? 12 : 9;
           const icon = L.divIcon({
@@ -222,8 +238,10 @@ export default function MapView(props: Props) {
           });
           const mk = L.marker([c.lat, c.lon], { icon, zIndexOffset: 500, keyboard: false });
           mk.bindTooltip(() => {
-            let html = `<b>Aday ${j + 1}</b> <span style="color:${muted}">${c.district}</span><br>Arazi: ${n0(c.land_m2 / 1000)} bin m²<br>Arsa: ${n0(c.land_price_tl_m2)} ₺/m²`;
-            if (kmax) html += `<br>Sığan en büyük tip: ${kmax[j] > 0 ? types[kmax[j] - 1].name : "hiçbiri"}`;
+            let html = `<b>Aday ${j + 1}</b> <span style="color:${muted}">${c.district}</span>`;
+            if (c.parcel) html += `<br>Parsel: ${c.parcel}`;
+            html += `<br>Arazi: ${n0(c.land_m2 / 1000)} bin m²${c.land_m2 >= 300000 ? "+" : ""}<br>Arsa: ${n0(c.land_price_tl_m2)} ₺/m²`;
+            if (kmax) html += `<br>Sığan en büyük tip: ${fit ? fit.name : "hiçbiri"}`;
             return html;
           });
           mk.addTo(ls.sites);
@@ -233,7 +251,12 @@ export default function MapView(props: Props) {
   }, [instance, solution, types, demandBeds, candidateMode, kmax, newOpen, recentlyClosed, focusDemand, focusCands,
       dimDemand, showLines, theme]);
 
-  return <div ref={el} className="map" style={{ height }} />;
+  return (
+    <div className="map-wrap">
+      <div ref={el} className="map" style={{ height }} />
+      {overlay && <div className="map-legend">{overlay}</div>}
+    </div>
+  );
 }
 
 export function MapLegend({ types, unmet = true, candidates = true }: { types: HospitalType[]; unmet?: boolean; candidates?: boolean }) {
